@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LevelManager="*uid://d0pay5qc68fba"
+Manager="*uid://d0pay5qc68fba"
 
 [display]
 

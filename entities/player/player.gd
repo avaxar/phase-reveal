@@ -41,6 +41,9 @@ const CUBE = preload("uid://dfe3nvn1lo8gt")
 var is_dead: bool = false
 
 func _ready() -> void:
+	Manager.mask_changed.connect(_on_mask_changed)
+	_on_mask_changed(true, true, true)
+
 	buffer_timer.wait_time = jump_buffer_time
 	coyote_timer.wait_time = coyote_time
 	current_gravity = default_gravity
@@ -177,3 +180,13 @@ func die() -> void:
 	is_dead = true
 	sprite.play("dead")
 	collision_shape_2d.set_deferred("disabled", true)
+
+func _on_mask_changed(_red_changed: bool, _green_changed: bool, _blue_changed: bool) -> void:
+	sprite.material.set_shader_parameter(
+		"mask_color",
+		Color(
+			1.0 if Manager.red_mask else 0.5,
+			1.0 if Manager.green_mask else 0.5,
+			1.0 if Manager.blue_mask else 0.5
+		)
+	)

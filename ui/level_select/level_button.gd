@@ -21,4 +21,4 @@ func unlock() -> void:
 
 func _on_texture_button_pressed() -> void:
 	if unlocked:
-		LevelManager.load_level(level_number)
+		Manager.load_level(level_number)

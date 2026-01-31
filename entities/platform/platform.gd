@@ -43,3 +43,11 @@ const BOTTOM_RIGHT = Vector2i(25, 4)
 
 		bottom_right = Vector2i(4, 4) + 16 * tile_size
 		top_left = Vector2i(-4, -4)
+
+
+func _process(_delta: float) -> void:
+	var color := Color(1.0 if red_mask else 0.5, 1.0 if green_mask else 0.5, 1.0 if blue_mask else 0.5)
+	if is_included():
+		modulate = Color(color, 1.0)
+	else:
+		modulate = Color(color, 0.25)

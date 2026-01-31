@@ -21,8 +21,8 @@ func _unhandled_input(event):
 func play_current_frame():
 	if current_index > frames.size() - 1:
 		await get_tree().create_timer(end_wait_time).timeout 
-		LevelManager.load_level(1)
-		LevelManager.unlock_level(1)
+		Manager.load_level(1)
+		Manager.unlock_level(1)
 		return
 	
 	var frame := frames[current_index]

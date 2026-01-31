@@ -39,10 +39,10 @@ func _ready() -> void:
 
 func setup_levels() -> void:
 	var level_buttons: Array[Node] = level_select_container.get_children()
-	if level_buttons.size() != LevelManager.get_level_total():
+	if level_buttons.size() != Manager.get_level_total():
 		print("NUMBER OF LEVEL BUTTONS ARENT THE SAME AS LEVELS")
-	for num in range(LevelManager.get_level_total()):
-		if LevelManager.is_level_available(num + 1):
+	for num in range(Manager.get_level_total()):
+		if Manager.is_level_available(num + 1):
 			level_buttons[num].unlock()
 		else:
 			level_buttons[num].lock()

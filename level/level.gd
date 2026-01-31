@@ -3,27 +3,12 @@ extends Node2D
 
 @onready var collision_proxies := $CollisionProxies
 @onready var passthrough_visualizer := $PassthroughVisualizer
-
-@export var red_mask := true:
-	set(value):
-		if red_mask != value:
-			red_mask = value
-			update_masks(true, false, false)
-
-@export var green_mask := true:
-	set(value):
-		if green_mask != value:
-			green_mask = value
-			update_masks(false, true, false)
-
-@export var blue_mask := true:
-	set(value):
-		if blue_mask != value:
-			blue_mask = value
-			update_masks(false, false, true)
+@onready var player := $Player
+@onready var hud = $CanvasLayer/HUD
 
 
 func _ready():
+	Manager.mask_changed.connect(update_masks)
 	for maskable: Maskable in get_tree().get_nodes_in_group("maskables"):
 		maskable.mask_joined.connect(_on_mask_joined)
 		maskable.mask_freed.connect(_on_mask_freed)
@@ -34,7 +19,7 @@ func _process(_delta: float) -> void:
 		if maskable in maskable_rects:
 			continue
 
-		maskable.disabled = not is_mask_included(maskable)
+		maskable.disabled = not maskable.is_included()
 
 	watch_masks()
 	regenerate_chunks()
@@ -61,18 +46,10 @@ func _on_mask_joined(maskable: Maskable) -> void:
 
 func _on_mask_freed(maskable: Maskable) -> void:
 	print("Left: ", maskable)
-	maskable.disabled = not is_mask_included(maskable)
+	maskable.disabled = not maskable.is_included()
 	update_mask(maskable, true)
 	if maskable in maskable_rects:
 		maskable_rects.erase(maskable)
-
-
-func is_mask_included(maskable: Maskable) -> bool:
-	return (
-		(maskable.red_mask and red_mask)
-		or (maskable.green_mask and green_mask)
-		or (maskable.blue_mask and blue_mask)
-	)
 
 
 func watch_masks() -> void:
@@ -96,12 +73,12 @@ func update_masks(red_changed: bool, green_changed: bool, blue_changed: bool) ->
 
 
 func update_mask(maskable: Maskable, remove := false) -> void:
-	if (not is_mask_included(maskable) or remove) and maskable_drawn[maskable]:
+	if (not maskable.is_included() or remove) and maskable_drawn[maskable]:
 		if maskable in maskable_rects:
 			mask_rect(maskable_rects[maskable], -1)
 
 		maskable_drawn[maskable] = false
-	elif is_mask_included(maskable) and not maskable_drawn[maskable]:
+	elif maskable.is_included() and not maskable_drawn[maskable]:
 		mask_rect(maskable_rects[maskable], 1)
 		maskable_drawn[maskable] = true
 

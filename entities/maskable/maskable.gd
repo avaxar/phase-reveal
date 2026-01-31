@@ -66,6 +66,14 @@ var _bypass_setter := false # This is so inelegant
 			_bypass_setter = false
 
 
+func is_included() -> bool:
+	return (
+		(red_mask and Manager.red_mask)
+		or (green_mask and Manager.green_mask)
+		or (blue_mask and Manager.blue_mask)
+	)
+
+
 var mask_intersection_count := 0
 signal mask_joined(maskable: Maskable)
 signal mask_freed(maskable: Maskable)

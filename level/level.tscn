@@ -4,20 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://dgtdex5wsl6ij" path="res://entities/fbutton/fbutton.tscn" id="2_44x8d"]
 [ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="2_ktfr2"]
 [ext_resource type="TileSet" uid="uid://c6bve3aguyrjg" path="res://level/tileset.tres" id="2_vkbyq"]
+[ext_resource type="PackedScene" uid="uid://dfe3nvn1lo8gt" path="res://entities/cube/cube.tscn" id="4_6gtgk"]
+[ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="5_cw150"]
 [ext_resource type="Shader" uid="uid://4j5wbt6no0ji" path="res://level/passthrough_visualizer.gdshader" id="5_ivpvi"]
 [ext_resource type="PackedScene" uid="uid://b7sawdtg0b2mv" path="res://entities/player/player.tscn" id="5_ktfr2"]
+[ext_resource type="PackedScene" uid="uid://bnnfsc0sh8514" path="res://ui/hud/hud.tscn" id="7_ivpvi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gtgk"]
 shader = ExtResource("5_ivpvi")
 
 [node name="Level" type="Node2D" unique_id=1104770908]
 script = ExtResource("1_7lnir")
-blue_mask = false
 
 [node name="CollisionProxies" type="Node2D" parent="." unique_id=1940272453]
 metadata/_edit_lock_ = true
 
 [node name="Objects" type="Node2D" parent="." unique_id=1284680800]
+metadata/_edit_lock_ = true
 
 [node name="FButton" parent="Objects" unique_id=2123144035 node_paths=PackedStringArray("triggered_doors") instance=ExtResource("2_44x8d")]
 position = Vector2(67, 241)
@@ -25,6 +28,30 @@ triggered_doors = [NodePath("../Door")]
 
 [node name="Door" parent="Objects" unique_id=1756922949 instance=ExtResource("2_ktfr2")]
 position = Vector2(472, 217)
+
+[node name="Cube" parent="Objects" unique_id=753110043 instance=ExtResource("4_6gtgk")]
+position = Vector2(91, 162)
+
+[node name="PlatformRed" parent="Objects" unique_id=1702604198 instance=ExtResource("5_cw150")]
+modulate = Color(1, 0.5, 0.5, 0.25)
+position = Vector2(257, 220)
+tile_size = Vector2i(5, 2)
+red_mask = true
+bottom_right = Vector2i(84, 36)
+
+[node name="PlatformGreen" parent="Objects" unique_id=990362742 instance=ExtResource("5_cw150")]
+modulate = Color(0.5, 1, 0.5, 0.25)
+position = Vector2(257, 220)
+tile_size = Vector2i(2, 2)
+green_mask = true
+bottom_right = Vector2i(36, 36)
+
+[node name="PlatformBlue" parent="Objects" unique_id=1002163274 instance=ExtResource("5_cw150")]
+modulate = Color(0.5, 0.5, 1, 0.25)
+position = Vector2(305, 220)
+tile_size = Vector2i(2, 2)
+blue_mask = true
+bottom_right = Vector2i(36, 36)
 
 [node name="PassthroughVisualizer" type="Node2D" parent="." unique_id=1087875782]
 material = SubResource("ShaderMaterial_6gtgk")
@@ -36,3 +63,8 @@ tile_set = ExtResource("2_vkbyq")
 
 [node name="Player" parent="." unique_id=1531806938 instance=ExtResource("5_ktfr2")]
 position = Vector2(234, 86)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1298670889]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1694291700 instance=ExtResource("7_ivpvi")]
+metadata/_edit_lock_ = true

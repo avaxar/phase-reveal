@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://co1bw1xg4mtr8" path="res://entities/player/player.gd" id="1_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bkof7m1cajpd" path="res://entities/player/monkey_idle_sheet.png" id="1_symyc"]
+[ext_resource type="Shader" uid="uid://1twdmw0y4ana" path="res://entities/player/color_mask.gdshader" id="2_26q78"]
 [ext_resource type="Texture2D" uid="uid://ccum6pt4d4bmx" path="res://entities/player/monkey_dead_sheet.png" id="2_fkugw"]
 [ext_resource type="Texture2D" uid="uid://1iq7inc840m4" path="res://entities/player/monkey_jump_sheet.png" id="2_sglur"]
 [ext_resource type="Texture2D" uid="uid://bcjbgihg41kef" path="res://entities/player/monkey_run_sheet.png" id="3_bls4j"]
@@ -11,6 +12,11 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abrql"]
 radius = 7.0
 height = 16.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bectd"]
+shader = ExtResource("2_26q78")
+shader_parameter/mask_color = Vector4(1, 1, 1, 1)
+shader_parameter/eyes_color = Vector4(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bectd"]
 atlas = ExtResource("2_fkugw")
@@ -272,6 +278,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_abrql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1549436077]
+material = SubResource("ShaderMaterial_bectd")
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_26q78")
 animation = &"hold_jump"
