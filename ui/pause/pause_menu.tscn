@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://c2xyo4rwn443e"]
+
+[ext_resource type="Texture2D" uid="uid://b6llid8bchogv" path="res://ui/pause/pause_menu.png" id="1_2m2aa"]
+[ext_resource type="Script" uid="uid://cbnd652clcwp3" path="res://ui/pause/pause_menu.gd" id="1_3na8v"]
+[ext_resource type="Texture2D" uid="uid://dy17ofws0p67s" path="res://ui/pause/pause_button.png" id="2_3na8v"]
+[ext_resource type="FontFile" uid="uid://caod7um2jwkef" path="res://ui/buttons/button_font.ttf" id="3_gdxq3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_obs3c"]
+font = ExtResource("3_gdxq3")
+font_size = 17
+font_color = Color(0.3647059, 0.1254902, 0.2784314, 1)
+
+[node name="PauseMenu" type="Control" unique_id=87079771]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3na8v")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1642909659]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2m2aa")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1826600411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 12
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect/MarginContainer" unique_id=572021986]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/CenterContainer" unique_id=47208021]
+layout_mode = 2
+
+[node name="ResumeButton" type="TextureButton" parent="TextureRect/MarginContainer/CenterContainer/VBoxContainer" unique_id=1284205481]
+layout_mode = 2
+texture_normal = ExtResource("2_3na8v")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/CenterContainer/VBoxContainer/ResumeButton" unique_id=2116006427]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+label_settings = SubResource("LabelSettings_obs3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="TextureButton" parent="TextureRect/MarginContainer/CenterContainer/VBoxContainer" unique_id=1237640435]
+layout_mode = 2
+texture_normal = ExtResource("2_3na8v")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/CenterContainer/VBoxContainer/RestartButton" unique_id=1637412429]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+label_settings = SubResource("LabelSettings_obs3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="TextureButton" parent="TextureRect/MarginContainer/CenterContainer/VBoxContainer" unique_id=1496129095]
+layout_mode = 2
+texture_normal = ExtResource("2_3na8v")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/CenterContainer/VBoxContainer/MenuButton" unique_id=78709086]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back to Menu"
+label_settings = SubResource("LabelSettings_obs3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureRect/MarginContainer/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/CenterContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
