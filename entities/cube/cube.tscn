@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dfe3nvn1lo8gt"]
+
+[ext_resource type="Texture2D" uid="uid://c3bu8kjxkam5r" path="res://level/tileset.png" id="1_j6f7r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nub1p"]
+atlas = ExtResource("1_j6f7r")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vul6u"]
+atlas = ExtResource("1_j6f7r")
+region = Rect2(128, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sftye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nub1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vul6u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2xqw"]
+size = Vector2(14, 14)
+
+[node name="Cube" type="RigidBody2D" unique_id=753110043]
+collision_layer = 8
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=439062762]
+sprite_frames = SubResource("SpriteFrames_sftye")
+autoplay = "default"
+frame_progress = 0.72246057
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=96503316]
+shape = SubResource("RectangleShape2D_t2xqw")
