@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bim5bk451w4jv"]
+
+[ext_resource type="PackedScene" uid="uid://dhlfykxrhdtei" path="res://ui/buttons/button.tscn" id="1_p4cpm"]
+[ext_resource type="Texture2D" uid="uid://ds8aho50do5yg" path="res://ui/buttons/back.png" id="2_8utvd"]
+
+[node name="BackButton" unique_id=1490667886 instance=ExtResource("1_p4cpm")]
+custom_minimum_size = Vector2(70, 70)
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+pivot_offset = Vector2(35, 35)
+action_id = "back"
+
+[node name="TextureButton" parent="." index="0" unique_id=2116613539]
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 34.0
+offset_bottom = 34.0
+pivot_offset = Vector2(35, 35)
+texture_normal = ExtResource("2_8utvd")
+
+[node name="Label" parent="TextureButton" index="0" unique_id=664656670]
+visible = false

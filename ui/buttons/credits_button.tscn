@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ddfo6w7rqhvjv"]
+
+[ext_resource type="PackedScene" uid="uid://dhlfykxrhdtei" path="res://ui/buttons/button.tscn" id="1_ql5r3"]
+[ext_resource type="Texture2D" uid="uid://dx327lkvikd1l" path="res://ui/buttons/button2.png" id="2_cfjy1"]
+
+[node name="CreditsButton" unique_id=1490667886 instance=ExtResource("1_ql5r3")]
+
+[node name="TextureButton" parent="." index="0" unique_id=2116613539]
+texture_normal = ExtResource("2_cfjy1")

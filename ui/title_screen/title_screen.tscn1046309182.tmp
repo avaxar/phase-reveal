@@ -19,8 +19,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rhiq2")
+pitch_step = null
+pitch_base = null
+pitch_max = null
 
 [node name="ButtonsContainer" type="MarginContainer" parent="." unique_id=484583836]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -57,6 +61,7 @@ action_id = "exit"
 label_text = "Exit Game"
 
 [node name="SplashContainer" type="MarginContainer" parent="." unique_id=1341069424]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

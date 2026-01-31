@@ -6,6 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_5gjou"]
 font = ExtResource("3_x66oa")
+font_size = 17
 font_color = Color(0.3647059, 0.1254902, 0.2784314, 1)
 
 [node name="Button" type="Control" unique_id=1490667886]

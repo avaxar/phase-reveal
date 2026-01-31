@@ -1,4 +1,5 @@
 extends Control
+const LEVEL_SELECT = preload("uid://bu6jy5mbuujwc")
 
 @export var pitch_step: float = 0.1
 @export var pitch_base: float = 1.0
@@ -9,6 +10,9 @@ extends Control
 @onready var circular_container: CircularContainer = $CreditsContainer/CircularContainer
 @onready var splash_container: MarginContainer = $SplashContainer
 @onready var buttons_container: MarginContainer = $ButtonsContainer
+@onready var credits_container: MarginContainer = $CreditsContainer
+@onready var back_container: MarginContainer = $BackContainer
+@onready var level_select_container: GridContainer = $LevelSelectContainer
 
 var count: int = 0
 var pitch: float = pitch_base
@@ -20,8 +24,13 @@ func _ready() -> void:
 	for c: GameButton in diagonal_container.get_children():
 		c.on_button_hover.connect(on_button_hover)
 		c.on_button_pressed.connect(on_button_pressed)
-	#for c: GameButton in circular_container.get_children():
-		#c.on_button_hover.connect(on_button_hover)
+	for c: GameButton in circular_container.get_children():
+		c.on_button_hover.connect(on_button_hover)
+		c.on_button_pressed.connect(on_button_pressed)
+	
+	var back: GameButton = back_container.get_child(0)
+	back.on_button_hover.connect(on_button_hover)
+	back.on_button_pressed.connect(on_button_pressed)
 	
 	#if diagonal_container.get_child_count() > 0:
 		#diagonal_container.get_child(0).grab_button_focus()
@@ -34,6 +43,7 @@ func on_button_hover() -> void:
 	hover_sound.play()
 	
 func on_button_pressed(action_id: String) -> void:
+	print("PRESS")
 	click_sound.play()
 	match action_id:
 		"start":
@@ -41,22 +51,34 @@ func on_button_pressed(action_id: String) -> void:
 		"levels":
 			load_level_select()
 		"credits":
-			load_credits(true)
+			load_credits()
 		"exit":
 			get_tree().quit()
 		"back":
-			load_credits(false)
+			load_main()
 			
 func start_game() -> void:
 	print("Start")
 
 func load_level_select() -> void:
-	pass
+	splash_container.visible = false
+	buttons_container.visible = false
+	level_select_container.visible = true
+	back_container.visible = true
 
-func load_credits(b: bool) -> void:
-	splash_container.visible = !b
-	buttons_container.visible = !b
+func load_credits() -> void:
+	splash_container.visible = false
+	buttons_container.visible = false
+	credits_container.visible = true
+	back_container.visible = true
 	#if b and circular_container.get_child_count() > 0:
 		#circular_container.get_child(0).grab_button_focus()
 	#if !b and diagonal_container.get_child_count() > 0:
 		#diagonal_container.get_child(0).grab_button_focus()
+
+func load_main() -> void:
+	splash_container.visible = true
+	buttons_container.visible = true
+	credits_container.visible = false
+	level_select_container.visible = false
+	back_container.visible = false
