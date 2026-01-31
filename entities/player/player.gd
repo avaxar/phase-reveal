@@ -24,6 +24,7 @@ extends CharacterBody2D
 @onready var debug_label: Label = $DebugLabel
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var hitbox: CollisionShape2D = $Hitbox/CollisionShape2D
+@onready var box_detector: Area2D = $BoxDetector
 
 # Buffer Jump & Coyote Time
 var jump_available: bool = true
@@ -33,6 +34,9 @@ var jump_buffer: bool = false
 var current_gravity: float = 0
 
 var was_on_floor: bool = false
+
+var has_box: bool = false
+const CUBE = preload("uid://dfe3nvn1lo8gt")
 
 var is_dead: bool = false
 
@@ -91,7 +95,7 @@ func handle_anim() -> void:
 	if is_dead:
 		return
 	
-	if !was_on_floor and is_on_floor():
+	if !was_on_floor and is_on_floor() and !has_box:
 		sprite.play("land")
 	
 	if sprite.is_playing() and sprite.animation == "land":
@@ -99,13 +103,22 @@ func handle_anim() -> void:
 	
 	if !is_on_floor():
 		if sprite.animation != "jump":
-			sprite.play("jump")
+			if has_box:
+				sprite.play("hold_jump")
+			else:
+				sprite.play("jump")
 		return
 	
 	if !is_zero_approx(velocity.x):
-		sprite.play("walk")
+		if has_box:
+			sprite.play("hold_walk")
+		else:
+			sprite.play("walk")
 	else:
-		sprite.play("idle")
+		if has_box:
+			sprite.play("hold_idle")
+		else:
+			sprite.play("idle")
 
 func handle_flip() -> void:
 	if !is_zero_approx(velocity.x):
@@ -116,8 +129,29 @@ func jump() -> void:
 	jump_available = false
 	
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		if has_box:
+			drop_box()
+		else:
+			try_pickup_box()
+
 	if event.is_action_pressed("pause"):
 		get_tree().paused = !get_tree().paused
+
+func try_pickup_box() -> void:
+	var bodies: Array = box_detector.get_overlapping_bodies()
+	for body in bodies:
+		if body is cube:
+			has_box = true
+			body.queue_free()
+			return
+
+func drop_box() -> void:
+	print("BOX DROP!")
+	var nc: cube = CUBE.instantiate()
+	get_parent().add_child(nc)
+	nc.global_position = global_position + Vector2(0, -30)
+	has_box = false
 
 func _on_coyote_timer_timeout() -> void:
 	jump_available = false

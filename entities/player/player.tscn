@@ -40,6 +40,10 @@ region = Rect2(120, 0, 40, 45)
 atlas = ExtResource("3_qiwj3")
 region = Rect2(160, 0, 40, 45)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwj3"]
+atlas = ExtResource("3_qiwj3")
+region = Rect2(0, 0, 40, 45)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqrof"]
 atlas = ExtResource("4_26q78")
 region = Rect2(0, 0, 40, 45)
@@ -155,6 +159,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qiwj3")
+}],
+"loop": true,
+"name": &"hold_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yqrof")
 }, {
 "duration": 1.0,
@@ -246,9 +258,13 @@ height = 18.0
 [sub_resource type="LabelSettings" id="LabelSettings_bls4j"]
 font_size = 10
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiwj3"]
+size = Vector2(40, 28)
+
 [node name="Player" type="CharacterBody2D" unique_id=1531806938]
-collision_layer = 9
+collision_layer = 8
 script = ExtResource("1_bls4j")
+jump_velocity = -300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392856416]
 position = Vector2(0, -1)
@@ -258,7 +274,7 @@ shape = SubResource("CapsuleShape2D_abrql")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1549436077]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_26q78")
-animation = &"dead"
+animation = &"hold_jump"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1603256221]
 collision_layer = 0
@@ -276,6 +292,7 @@ one_shot = true
 one_shot = true
 
 [node name="DebugLabel" type="Label" parent="." unique_id=316048822]
+visible = false
 offset_left = -19.0
 offset_top = -65.0
 offset_right = 21.0
@@ -283,5 +300,13 @@ offset_bottom = -42.0
 text = "s"
 label_settings = SubResource("LabelSettings_bls4j")
 horizontal_alignment = 1
+
+[node name="BoxDetector" type="Area2D" parent="." unique_id=374719536]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxDetector" unique_id=973951330]
+position = Vector2(1, -7)
+shape = SubResource("RectangleShape2D_qiwj3")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

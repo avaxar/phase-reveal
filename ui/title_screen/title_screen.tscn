@@ -36,7 +36,7 @@ script = ExtResource("1_rhiq2")
 
 [node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1406185190]
 repeat_size = Vector2(1430, 0)
-autoscroll = Vector2(80, 0)
+autoscroll = Vector2(90, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1638935411]
 z_index = -1
@@ -67,7 +67,7 @@ repeat_size = Vector2(3840, 0)
 autoscroll = Vector2(20, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1653323484]
-position = Vector2(85, 136)
+position = Vector2(58, 135)
 texture = ExtResource("5_qhokr")
 
 [node name="ButtonsContainer" type="MarginContainer" parent="." unique_id=484583836]
