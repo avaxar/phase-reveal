@@ -27,13 +27,13 @@ func _ready() -> void:
 	for c: GameButton in circular_container.get_children():
 		c.on_button_hover.connect(on_button_hover)
 		c.on_button_pressed.connect(on_button_pressed)
-	
+
 	var back: GameButton = back_container.get_child(0)
 	back.on_button_hover.connect(on_button_hover)
 	back.on_button_pressed.connect(on_button_pressed)
-	
+
 	setup_levels()
-	
+
 	#if diagonal_container.get_child_count() > 0:
 		#diagonal_container.get_child(0).grab_button_focus()
 
@@ -46,14 +46,14 @@ func setup_levels() -> void:
 			level_buttons[num].unlock()
 		else:
 			level_buttons[num].lock()
-		
+
 func on_button_hover() -> void:
 	pitch = min(pitch + pitch_step, pitch_max)
 	if hover_sound.playing == false:
 		pitch = pitch_base
 	hover_sound.pitch_scale = pitch
 	hover_sound.play()
-	
+
 func on_button_pressed(action_id: String) -> void:
 	click_sound.play()
 	match action_id:
@@ -67,7 +67,7 @@ func on_button_pressed(action_id: String) -> void:
 			get_tree().quit()
 		"back":
 			load_main()
-			
+
 func start_game() -> void:
 	get_tree().change_scene_to_packed(INTRO)
 

@@ -41,7 +41,7 @@ func deactivate() -> void:
 func tween_button_entered() -> void:
 	if tween:
 		tween.kill()
-		
+
 	tween = get_tree().create_tween()
 	tween.tween_property(texture_button, "position", original_position + move_length, 0.1)
 	tween.tween_property(self, "scale", original_scale * scale_size, 0.1)

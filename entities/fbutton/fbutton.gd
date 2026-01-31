@@ -41,7 +41,7 @@ var pressed := false:
 			for x in range(1, width - 1):
 				tile_map.set_cell(Vector2i(x, 0), 0, MIDDLE_PRESSED if pressed else MIDDLE_STILL)
 			tile_map.set_cell(Vector2i(width - 1, 0), 0, RIGHT_PRESSED if pressed else RIGHT_STILL)
-		
+
 		collision_shape.position = Vector2(width * 16.0 / 2.0, 10.0)
 		collision_shape.shape.size = Vector2(width * 16.0, 12.0)
 

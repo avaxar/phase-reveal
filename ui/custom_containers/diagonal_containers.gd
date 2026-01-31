@@ -22,7 +22,7 @@ func _notification(what):
 		var count: int = 0
 		var current_x: float = 0.0
 		var increment: float = x_dev
-		
+
 		# Must re-sort the children
 		for c in get_children():
 			c.position = Vector2(current_x, count * y_dev)

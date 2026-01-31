@@ -13,7 +13,7 @@ func lock() -> void:
 	level_label.hide()
 	lock_sprite.show()
 	unlocked = false
-	
+
 func unlock() -> void:
 	level_label.show()
 	lock_sprite.hide()

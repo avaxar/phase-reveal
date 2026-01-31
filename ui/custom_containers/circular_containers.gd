@@ -23,9 +23,9 @@ func _notification(what):
 		var count: int = children.size()
 		if count == 0:
 			return
-			
+
 		var mid: float = (count - 1) / 2
-		
+
 		# Must re-sort the children
 		for i in count:
 			var c = children[i]
