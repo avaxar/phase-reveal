@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7sawdtg0b2mv"]
 
-[ext_resource type="Script" uid="uid://co1bw1xg4mtr8" path="res://entities/player/player.gd" id="1_bls4j"]
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bkof7m1cajpd" path="res://entities/player/monkey_idle_sheet.png" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://1iq7inc840m4" path="res://entities/player/monkey_jump_sheet.png" id="2_sglur"]
 [ext_resource type="Texture2D" uid="uid://bcjbgihg41kef" path="res://entities/player/monkey_run_sheet.png" id="3_bls4j"]
@@ -144,6 +144,7 @@ animations = [{
 font_size = 10
 
 [node name="Player" type="CharacterBody2D" unique_id=1531806938]
+collision_layer = 9
 script = ExtResource("1_bls4j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392856416]

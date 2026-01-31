@@ -11,20 +11,21 @@ size = Vector2(40, 8)
 [node name="Platform" unique_id=1702604198 instance=ExtResource("1_wocd5")]
 script = ExtResource("2_lly8c")
 tile_size = Vector2i(2, 0)
-top_left = Vector2i(12, 12)
-bottom_right = Vector2i(52, 20)
+top_left = Vector2i(-4, -4)
+bottom_right = Vector2i(36, 4)
 
 [node name="CollisionShape" parent="." index="0" unique_id=1415267103]
-position = Vector2(32, 16)
+position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_8vvea")
 
 [node name="MaskArea" parent="." index="1" unique_id=1766599155]
-position = Vector2(32, 16)
+position = Vector2(16, 0)
 
 [node name="CollisionShape" parent="MaskArea" index="0" unique_id=1575829748]
 shape = SubResource("RectangleShape2D_8vvea")
 
 [node name="TileMap" type="TileMapLayer" parent="." index="2" unique_id=1359034309]
-tile_map_data = PackedByteArray("AAAAAAAAAAAXAAIAAAABAAAAAAAYAAIAAAAAAAEAAAAXAAQAAAABAAEAAAAYAAQAAAACAAAAAAAYAAIAAAACAAEAAAAYAAQAAAADAAAAAAAZAAIAAAADAAEAAAAZAAQAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAYAAQAAAABAAAAAAAYAAQAAAACAAAAAAAZAAQAAAD/////AAAXAAIAAAAAAP//AAAYAAIAAAABAP//AAAYAAIAAAACAP//AAAZAAIAAAD//wAAAAAXAAQAAAA=")
 tile_set = ExtResource("3_8vvea")
+collision_enabled = false
 metadata/_edit_lock_ = true

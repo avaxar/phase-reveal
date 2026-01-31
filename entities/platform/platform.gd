@@ -17,29 +17,29 @@ const BOTTOM = Vector2i(24, 4)
 const BOTTOM_RIGHT = Vector2i(25, 4)
 
 @export var tile_size := Vector2i(2, 1):
-    set(value):
-        if tile_map == null:
-            set_deferred("tile_size", value)
-            return
+	set(value):
+		if tile_map == null:
+			set_deferred("tile_size", value)
+			return
 
-        tile_size = value
-        tile_map.clear()
+		tile_size = value
+		tile_map.clear()
 
-        tile_map.set_cell(Vector2i(0, 0), 0, TOP_LEFT)
-        for x in range(tile_size.x):
-            tile_map.set_cell(Vector2i(x + 1, 0), 0, TOP)
-        tile_map.set_cell(Vector2i(tile_size.x + 1, 0), 0, TOP_RIGHT)
+		tile_map.set_cell(Vector2i(-1, -1), 0, TOP_LEFT)
+		for x in range(tile_size.x):
+			tile_map.set_cell(Vector2i(x, -1), 0, TOP)
+		tile_map.set_cell(Vector2i(tile_size.x, -1), 0, TOP_RIGHT)
 
-        for y in range(tile_size.y):
-            tile_map.set_cell(Vector2i(0, y + 1), 0, LEFT)
-            for x in range(tile_size.x):
-                tile_map.set_cell(Vector2i(x + 1, y + 1), 0, MIDDLE)
-            tile_map.set_cell(Vector2i(tile_size.x + 1, y + 1), 0, RIGHT)
+		for y in range(tile_size.y):
+			tile_map.set_cell(Vector2i(-1, y), 0, LEFT)
+			for x in range(tile_size.x):
+				tile_map.set_cell(Vector2i(x, y), 0, MIDDLE)
+			tile_map.set_cell(Vector2i(tile_size.x, y), 0, RIGHT)
 
-        tile_map.set_cell(Vector2i(0, tile_size.y + 1), 0, BOTTOM_LEFT)
-        for x in range(tile_size.x):
-            tile_map.set_cell(Vector2i(x + 1, tile_size.y + 1), 0, BOTTOM)
-        tile_map.set_cell(Vector2i(tile_size.x + 1, tile_size.y + 1), 0, BOTTOM_RIGHT)
+		tile_map.set_cell(Vector2i(-1, tile_size.y), 0, BOTTOM_LEFT)
+		for x in range(tile_size.x):
+			tile_map.set_cell(Vector2i(x, tile_size.y), 0, BOTTOM)
+		tile_map.set_cell(Vector2i(tile_size.x, tile_size.y), 0, BOTTOM_RIGHT)
 
-        bottom_right = Vector2i(20, 20) + 16 * tile_size
-        top_left = Vector2i(12, 12)
+		bottom_right = Vector2i(4, 4) + 16 * tile_size
+		top_left = Vector2i(-4, -4)
