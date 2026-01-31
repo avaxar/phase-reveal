@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cwj6565s7c1nq"]
+
+[ext_resource type="Texture2D" uid="uid://bk1ibb58hoh5r" path="res://intro/frame1.png" id="1_pxqmo"]
+[ext_resource type="Script" uid="uid://pdtk14kg7awu" path="res://intro/intro.gd" id="1_vyos2"]
+[ext_resource type="Texture2D" uid="uid://b4oriwcc04gis" path="res://intro/frame2.png" id="2_vyos2"]
+[ext_resource type="Texture2D" uid="uid://bry8b28acgt8g" path="res://intro/frame3.png" id="3_1q7h5"]
+[ext_resource type="Texture2D" uid="uid://3y77r45o7avi" path="res://intro/frame4.png" id="4_a5lnx"]
+
+[node name="intro" type="Control" unique_id=679458363 node_paths=PackedStringArray("frames")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vyos2")
+frames = [NodePath("Frame1"), NodePath("Frame2"), NodePath("Frame3"), NodePath("Frame4")]
+duration = 2.5
+
+[node name="bg" type="ColorRect" parent="." unique_id=780431101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Frame1" type="TextureRect" parent="." unique_id=1980410609]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_pxqmo")
+
+[node name="Frame2" type="TextureRect" parent="." unique_id=582051705]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 10.0
+offset_right = 453.0
+offset_bottom = 119.0
+texture = ExtResource("2_vyos2")
+
+[node name="Frame3" type="TextureRect" parent="." unique_id=465319690]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 131.0
+offset_right = 229.0
+offset_bottom = 254.0
+texture = ExtResource("3_1q7h5")
+
+[node name="Frame4" type="TextureRect" parent="." unique_id=1988274163]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 118.0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("4_a5lnx")

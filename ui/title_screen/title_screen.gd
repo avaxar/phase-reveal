@@ -12,6 +12,7 @@ extends Control
 @onready var credits_container: MarginContainer = $CreditsContainer
 @onready var back_container: MarginContainer = $BackContainer
 @onready var level_select_container: GridContainer = $LevelSelectContainer
+const INTRO = preload("uid://cwj6565s7c1nq")
 
 var count: int = 0
 var pitch: float = pitch_base
@@ -68,7 +69,7 @@ func on_button_pressed(action_id: String) -> void:
 			load_main()
 			
 func start_game() -> void:
-	print("Start")
+	get_tree().change_scene_to_packed(INTRO)
 
 func load_level_select() -> void:
 	splash_container.visible = false
