@@ -1,0 +1,29 @@
+[gd_scene format=4 uid="uid://cufhrm7smx58x"]
+
+[ext_resource type="PackedScene" uid="uid://dcufuj8huy3ib" path="res://entities/maskable/maskable.tscn" id="1_wocd5"]
+[ext_resource type="Script" uid="uid://do5lxelniq04w" path="res://entities/platform/platform.gd" id="2_lly8c"]
+[ext_resource type="TileSet" uid="uid://c6bve3aguyrjg" path="res://level/tileset.tres" id="3_8vvea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vvea"]
+resource_local_to_scene = true
+size = Vector2(40, 8)
+
+[node name="Platform" unique_id=1702604198 instance=ExtResource("1_wocd5")]
+script = ExtResource("2_lly8c")
+tile_size = Vector2i(2, 0)
+top_left = Vector2i(12, 12)
+bottom_right = Vector2i(52, 20)
+
+[node name="CollisionShape" parent="." index="0" unique_id=1415267103]
+position = Vector2(32, 16)
+shape = SubResource("RectangleShape2D_8vvea")
+
+[node name="MaskArea" parent="." index="1" unique_id=1766599155]
+position = Vector2(32, 16)
+
+[node name="CollisionShape" parent="MaskArea" index="0" unique_id=1575829748]
+shape = SubResource("RectangleShape2D_8vvea")
+
+[node name="TileMap" type="TileMapLayer" parent="." index="2" unique_id=1359034309]
+tile_map_data = PackedByteArray("AAAAAAAAAAAXAAIAAAABAAAAAAAYAAIAAAAAAAEAAAAXAAQAAAABAAEAAAAYAAQAAAACAAAAAAAYAAIAAAACAAEAAAAYAAQAAAADAAAAAAAZAAIAAAADAAEAAAAZAAQAAAA=")
+tile_set = ExtResource("3_8vvea")

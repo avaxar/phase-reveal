@@ -1,6 +1,6 @@
 @tool
 class_name Maskable
-extends Node2D
+extends StaticBody2D
 
 
 @export var red_mask := false
@@ -17,15 +17,11 @@ extends Node2D
 
 
 @export var disabled := false:
-	get:
-		return disabled
-
 	set(value):
 		if collision_shape == null:
 			return
 
 		collision_shape.set_deferred("disabled", value)
-		mask_area.set_deferred("disabled", value)
 
 var size: Vector2i:
 	get:

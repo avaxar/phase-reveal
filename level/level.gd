@@ -1,11 +1,25 @@
 extends Node2D
 
 
-@export var red_mask := true
-@export var green_mask := true
-@export var blue_mask := true
-
 @onready var collision_proxies := $CollisionProxies
+
+@export var red_mask := true:
+	set(value):
+		if red_mask != value:
+			red_mask = value
+			update_masks(true, false, false)
+
+@export var green_mask := true:
+	set(value):
+		if green_mask != value:
+			green_mask = value
+			update_masks(false, true, false)
+
+@export var blue_mask := true:
+	set(value):
+		if blue_mask != value:
+			blue_mask = value
+			update_masks(false, false, true)
 
 
 func _ready():
@@ -16,11 +30,12 @@ func _ready():
 
 func _process(_delta: float) -> void:
 	for maskable: Maskable in get_tree().get_nodes_in_group("maskables"):
-		if maskable_rects.has(maskable):
+		if maskable in maskable_rects:
 			continue
 
-		conform_mask(maskable)
+		maskable.disabled = not is_mask_included(maskable)
 
+	watch_masks()
 	regenerate_chunks()
 
 
@@ -30,29 +45,62 @@ var addition_chunks: Dictionary[Vector2i, PackedByteArray]
 var bitmask_chunks: Dictionary[Vector2i, BitMap]
 var chunk_bodies: Dictionary[Vector2i, StaticBody2D]
 var maskable_rects: Dictionary[Maskable, Rect2i]
+var maskable_drawn: Dictionary[Maskable, bool]
 
 
 func _on_mask_joined(maskable: Maskable) -> void:
 	print("Joined: ", maskable)
 	maskable.disabled = true
 	maskable_rects[maskable] = Rect2i(maskable.to_global(maskable.top_left), maskable.size)
-	mask_rect(maskable_rects[maskable], 1)
+	maskable_drawn[maskable] = false
+	update_mask(maskable)
 
 
 func _on_mask_freed(maskable: Maskable) -> void:
 	print("Left: ", maskable)
-	conform_mask(maskable)
+	maskable.disabled = not is_mask_included(maskable)
+	update_mask(maskable, true)
 	if maskable in maskable_rects:
-		mask_rect(maskable_rects[maskable], -1)
 		maskable_rects.erase(maskable)
 
 
-func conform_mask(maskable: Maskable) -> void:
-	maskable.disabled = not (
+func is_mask_included(maskable: Maskable) -> bool:
+	return (
 		(maskable.red_mask and red_mask)
 		or (maskable.green_mask and green_mask)
 		or (maskable.blue_mask and blue_mask)
 	)
+
+
+func watch_masks() -> void:
+	for maskable: Maskable in maskable_rects:
+		var old_rect := maskable_rects[maskable]
+		var rect := Rect2i(maskable.to_global(maskable.top_left), maskable.size)
+
+		if old_rect != rect:
+			if maskable_drawn[maskable]:
+				mask_rect(old_rect, -1)
+				mask_rect(rect, 1)
+			maskable_rects[maskable] = rect
+
+
+func update_masks(red_changed: bool, green_changed: bool, blue_changed: bool) -> void:
+	for maskable: Maskable in maskable_rects:
+		if ((red_changed and maskable.red_mask) 
+			or (green_changed and maskable.green_mask)
+			or (blue_changed and maskable.blue_mask)):
+			update_mask(maskable)
+
+
+func update_mask(maskable: Maskable, remove := false) -> void:
+	if (not is_mask_included(maskable) or remove) and maskable_drawn[maskable]:
+		if maskable in maskable_rects:
+			mask_rect(maskable_rects[maskable], -1)
+
+		maskable_drawn[maskable] = false
+	elif is_mask_included(maskable) and not maskable_drawn[maskable]:
+		mask_rect(maskable_rects[maskable], 1)
+		maskable_drawn[maskable] = true
 
 
 func mask_rect(rect: Rect2i, delta: int) -> void:
