@@ -13,12 +13,17 @@ extends CharacterBody2D
 @export var coyote_time: float = 0.1
 
 @export_category("Variable Jump Height")
-@export var gravity_modifier: float = 1.25
+@export var gravity_modifier: float = 1.2
+
+@export_category("Death")
+@export var knockback_velocity: Vector2 = Vector2(0, 300)
 
 @onready var buffer_timer: Timer = $BufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var debug_label: Label = $DebugLabel
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var hitbox: CollisionShape2D = $Hitbox/CollisionShape2D
 
 # Buffer Jump & Coyote Time
 var jump_available: bool = true
@@ -29,8 +34,9 @@ var current_gravity: float = 0
 
 var was_on_floor: bool = false
 
+var is_dead: bool = false
+
 func _ready() -> void:
-	Engine.time_scale = 0.3
 	buffer_timer.wait_time = jump_buffer_time
 	coyote_timer.wait_time = coyote_time
 	current_gravity = default_gravity
@@ -75,10 +81,16 @@ func handle_jump() -> void:
 			buffer_timer.start()
 
 func handle_movement() -> void:
+	if is_dead:
+		return
+	
 	var direction := Input.get_axis("left", "right")
 	velocity.x = direction * speed
 
 func handle_anim() -> void:
+	if is_dead:
+		return
+	
 	if !was_on_floor and is_on_floor():
 		sprite.play("land")
 	
@@ -125,4 +137,9 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	die()
 
 func die() -> void:
-	print("die")
+	hitbox.set_deferred("disabled", true)
+	await get_tree().create_timer(0.1).timeout
+	velocity = Vector2(knockback_velocity.x, -knockback_velocity.y)
+	is_dead = true
+	sprite.play("dead")
+	collision_shape_2d.set_deferred("disabled", true)

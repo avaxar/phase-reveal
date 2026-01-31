@@ -112,7 +112,8 @@ func mask_rect(rect: Rect2i, delta: int) -> void:
 
 	for chunk_y: int in range(tl_chunk.y, br_chunk.y):
 		var start_y := 0 if chunk_y != tl_chunk.y else posmod(rect.position.y, CHUNK_SIZE)
-		var end_y := CHUNK_SIZE if chunk_y != br_chunk.y - 1 else posmod(rect.end.y, CHUNK_SIZE)
+		var end_y := CHUNK_SIZE if chunk_y != br_chunk.y - 1 \
+			else (CHUNK_SIZE if posmod(rect.end.y, CHUNK_SIZE) == 0 else posmod(rect.end.y, CHUNK_SIZE))
 
 		for chunk_x: int in range(tl_chunk.x, br_chunk.x):
 			var chunk := Vector2i(chunk_x, chunk_y)
@@ -144,7 +145,8 @@ func mask_rect(rect: Rect2i, delta: int) -> void:
 				passthrough_chunks[chunk] = passthrough_chunk
 
 			var start_x := 0 if chunk_x != tl_chunk.x else posmod(rect.position.x, CHUNK_SIZE)
-			var end_x := CHUNK_SIZE if chunk_x != br_chunk.x - 1 else posmod(rect.end.x, CHUNK_SIZE)
+			var end_x := CHUNK_SIZE if chunk_x != br_chunk.x - 1 \
+				else (CHUNK_SIZE if posmod(rect.end.x, CHUNK_SIZE) == 0 else posmod(rect.end.x, CHUNK_SIZE))
 
 			for y in range(start_y, end_y):
 				for x in range(start_x, end_x):
