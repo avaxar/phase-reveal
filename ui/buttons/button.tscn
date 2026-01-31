@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhlfykxrhdtei"]
 
 [ext_resource type="Script" uid="uid://dklrieytpsupn" path="res://ui/buttons/button.gd" id="1_deflu"]
-[ext_resource type="Texture2D" uid="uid://cnnnwf83sv8sv" path="res://ui/buttons/button.png" id="2_sfsj8"]
+[ext_resource type="Texture2D" uid="uid://o2nxiqcc4lxm" path="res://ui/buttons/button1_1.png" id="2_x66oa"]
 [ext_resource type="FontFile" uid="uid://caod7um2jwkef" path="res://ui/buttons/button_font.ttf" id="3_x66oa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5gjou"]
@@ -35,7 +35,7 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(64, 16)
-texture_normal = ExtResource("2_sfsj8")
+texture_normal = ExtResource("2_x66oa")
 
 [node name="Label" type="Label" parent="TextureButton" unique_id=664656670]
 layout_mode = 1

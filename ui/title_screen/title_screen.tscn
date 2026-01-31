@@ -2,14 +2,22 @@
 
 [ext_resource type="Script" uid="uid://05qeltnb115i" path="res://ui/custom_containers/diagonal_containers.gd" id="1_ffat2"]
 [ext_resource type="Script" uid="uid://lgotqlu4jttw" path="res://ui/title_screen/title_screen.gd" id="1_rhiq2"]
-[ext_resource type="PackedScene" uid="uid://dhlfykxrhdtei" path="res://ui/buttons/button.tscn" id="2_72buf"]
 [ext_resource type="Texture2D" uid="uid://comq6mdhrmx77" path="res://ui/title_screen/splash.png" id="3_72buf"]
+[ext_resource type="Script" uid="uid://dklrieytpsupn" path="res://ui/buttons/button.gd" id="3_533ah"]
+[ext_resource type="Texture2D" uid="uid://o2nxiqcc4lxm" path="res://ui/buttons/button1_1.png" id="4_qua4x"]
 [ext_resource type="AudioStream" uid="uid://bdothn1fserm7" path="res://ui/buttons/hover.wav" id="5_2er51"]
+[ext_resource type="FontFile" uid="uid://caod7um2jwkef" path="res://ui/buttons/button_font.ttf" id="5_hhwne"]
 [ext_resource type="Script" uid="uid://bx1pbde6wnyr5" path="res://ui/custom_containers/circular_containers.gd" id="5_lgnx5"]
 [ext_resource type="PackedScene" uid="uid://ddfo6w7rqhvjv" path="res://ui/buttons/credits_button.tscn" id="6_1djn3"]
 [ext_resource type="AudioStream" uid="uid://b1wyi10l7kqo6" path="res://ui/buttons/click.wav" id="6_ca08b"]
+[ext_resource type="Texture2D" uid="uid://c37kpm0kvbcid" path="res://ui/buttons/button1_2.png" id="6_objlv"]
 [ext_resource type="PackedScene" uid="uid://bim5bk451w4jv" path="res://ui/buttons/back_button.tscn" id="7_1djn3"]
 [ext_resource type="PackedScene" uid="uid://cdhsom0l7780y" path="res://ui/level_select/level_button.tscn" id="8_gwpbi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5gjou"]
+font = ExtResource("5_hhwne")
+font_size = 17
+font_color = Color(0.3647059, 0.1254902, 0.2784314, 1)
 
 [node name="TitleScreen" type="Control" unique_id=1774836456]
 layout_mode = 3
@@ -32,29 +40,173 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_ffat2")
 y_dev = 30.0
-x_dev = 16.0
+x_dev = 12.0
 x_gap_dev = 0.0
 metadata/_custom_type_script = "uid://05qeltnb115i"
 
-[node name="Button" parent="ButtonsContainer/DiagonalContainer" unique_id=1490667886 instance=ExtResource("2_72buf")]
+[node name="Button" type="Control" parent="ButtonsContainer/DiagonalContainer" unique_id=1490667886]
+custom_minimum_size = Vector2(128, 30)
 layout_mode = 2
+script = ExtResource("3_533ah")
 action_id = "start"
 label_text = "Start Game"
 
-[node name="Button2" parent="ButtonsContainer/DiagonalContainer" unique_id=1126116840 instance=ExtResource("2_72buf")]
+[node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button" unique_id=2116613539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(64, 16)
+texture_normal = ExtResource("4_qua4x")
+
+[node name="Label" type="Label" parent="ButtonsContainer/DiagonalContainer/Button/TextureButton" unique_id=664656670]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_5gjou")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Control" parent="ButtonsContainer/DiagonalContainer" unique_id=1126116840]
+custom_minimum_size = Vector2(128, 30)
 layout_mode = 2
+script = ExtResource("3_533ah")
 action_id = "levels"
 label_text = "Level Select"
 
-[node name="Button3" parent="ButtonsContainer/DiagonalContainer" unique_id=1067849086 instance=ExtResource("2_72buf")]
+[node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button2" unique_id=345711332]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(64, 16)
+texture_normal = ExtResource("6_objlv")
+
+[node name="Label" type="Label" parent="ButtonsContainer/DiagonalContainer/Button2/TextureButton" unique_id=355007108]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_5gjou")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Control" parent="ButtonsContainer/DiagonalContainer" unique_id=1067849086]
+custom_minimum_size = Vector2(128, 30)
 layout_mode = 2
+script = ExtResource("3_533ah")
 action_id = "credits"
 label_text = "Credits"
 
-[node name="Button4" parent="ButtonsContainer/DiagonalContainer" unique_id=2070398701 instance=ExtResource("2_72buf")]
+[node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button3" unique_id=934115529]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(64, 16)
+texture_normal = ExtResource("4_qua4x")
+
+[node name="Label" type="Label" parent="ButtonsContainer/DiagonalContainer/Button3/TextureButton" unique_id=69376392]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_5gjou")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Control" parent="ButtonsContainer/DiagonalContainer" unique_id=2070398701]
+custom_minimum_size = Vector2(128, 30)
 layout_mode = 2
+script = ExtResource("3_533ah")
 action_id = "exit"
 label_text = "Exit Game"
+
+[node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button4" unique_id=1544165161]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(64, 16)
+texture_normal = ExtResource("6_objlv")
+
+[node name="Label" type="Label" parent="ButtonsContainer/DiagonalContainer/Button4/TextureButton" unique_id=487030180]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_5gjou")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SplashContainer" type="MarginContainer" parent="." unique_id=1341069424]
 layout_mode = 1
@@ -142,8 +294,8 @@ offset_right = 88.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 16
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
 columns = 3
 
 [node name="LevelButton" parent="LevelSelectContainer" unique_id=1341801437 instance=ExtResource("8_gwpbi")]
@@ -181,3 +333,24 @@ stream = ExtResource("5_2er51")
 
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="." unique_id=1711002644]
 stream = ExtResource("6_ca08b")
+
+[connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button/TextureButton" to="ButtonsContainer/DiagonalContainer/Button" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button/TextureButton" to="ButtonsContainer/DiagonalContainer/Button" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button/TextureButton" to="ButtonsContainer/DiagonalContainer/Button" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/DiagonalContainer/Button/TextureButton" to="ButtonsContainer/DiagonalContainer/Button" method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button/TextureButton" to="ButtonsContainer/DiagonalContainer/Button" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button4/TextureButton" to="ButtonsContainer/DiagonalContainer/Button4" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button4/TextureButton" to="ButtonsContainer/DiagonalContainer/Button4" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button4/TextureButton" to="ButtonsContainer/DiagonalContainer/Button4" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/DiagonalContainer/Button4/TextureButton" to="ButtonsContainer/DiagonalContainer/Button4" method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button4/TextureButton" to="ButtonsContainer/DiagonalContainer/Button4" method="_on_texture_button_pressed"]

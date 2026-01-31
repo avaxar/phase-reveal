@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://ddfo6w7rqhvjv"]
 
 [ext_resource type="PackedScene" uid="uid://dhlfykxrhdtei" path="res://ui/buttons/button.tscn" id="1_ql5r3"]
-[ext_resource type="Texture2D" uid="uid://dx327lkvikd1l" path="res://ui/buttons/button2.png" id="2_cfjy1"]
+[ext_resource type="Texture2D" uid="uid://cl1eg6bkoo5pe" path="res://ui/buttons/button2_1.png" id="2_ql5r3"]
+[ext_resource type="FontFile" uid="uid://caod7um2jwkef" path="res://ui/buttons/button_font.ttf" id="3_cfjy1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_poilt"]
+font = ExtResource("3_cfjy1")
+font_size = 17
+font_color = Color(0.3647059, 0.1254902, 0.2784314, 1)
 
 [node name="CreditsButton" unique_id=1490667886 instance=ExtResource("1_ql5r3")]
 
 [node name="TextureButton" parent="." index="0" unique_id=2116613539]
-texture_normal = ExtResource("2_cfjy1")
+texture_normal = ExtResource("2_ql5r3")
+
+[node name="Label" parent="TextureButton" index="0" unique_id=664656670]
+label_settings = SubResource("LabelSettings_poilt")
