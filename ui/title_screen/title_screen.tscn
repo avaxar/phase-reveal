@@ -5,10 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://blex0gh6ijbsw" path="res://backgrounds/back1.png" id="2_qua4x"]
 [ext_resource type="Texture2D" uid="uid://comq6mdhrmx77" path="res://ui/title_screen/splash.png" id="3_72buf"]
 [ext_resource type="Script" uid="uid://dklrieytpsupn" path="res://ui/buttons/button.gd" id="3_533ah"]
+[ext_resource type="Texture2D" uid="uid://cqcax806lv5mj" path="res://backgrounds/back2-export.png" id="3_h0jpi"]
+[ext_resource type="Texture2D" uid="uid://di7wsudx8ew55" path="res://backgrounds/back3-export.png" id="4_kkgxs"]
 [ext_resource type="Texture2D" uid="uid://o2nxiqcc4lxm" path="res://ui/buttons/button1_1.png" id="4_qua4x"]
 [ext_resource type="AudioStream" uid="uid://bdothn1fserm7" path="res://ui/buttons/hover.wav" id="5_2er51"]
 [ext_resource type="FontFile" uid="uid://caod7um2jwkef" path="res://ui/buttons/button_font.ttf" id="5_hhwne"]
 [ext_resource type="Script" uid="uid://bx1pbde6wnyr5" path="res://ui/custom_containers/circular_containers.gd" id="5_lgnx5"]
+[ext_resource type="Texture2D" uid="uid://b4pk8ycd00ipx" path="res://backgrounds/back4-export.png" id="5_qhokr"]
 [ext_resource type="PackedScene" uid="uid://ddfo6w7rqhvjv" path="res://ui/buttons/credits_button.tscn" id="6_1djn3"]
 [ext_resource type="AudioStream" uid="uid://b1wyi10l7kqo6" path="res://ui/buttons/click.wav" id="6_ca08b"]
 [ext_resource type="Texture2D" uid="uid://c37kpm0kvbcid" path="res://ui/buttons/button1_2.png" id="6_objlv"]
@@ -32,10 +35,40 @@ script = ExtResource("1_rhiq2")
 [node name="Background" type="Node2D" parent="." unique_id=1304480727]
 
 [node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1406185190]
+repeat_size = Vector2(1430, 0)
+autoscroll = Vector2(80, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1638935411]
-position = Vector2(85, 136)
+z_index = -1
+position = Vector2(81, 133)
 texture = ExtResource("2_qua4x")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=1206199774]
+repeat_size = Vector2(2300, 0)
+autoscroll = Vector2(60, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=395564520]
+z_index = -2
+position = Vector2(113, 147)
+texture = ExtResource("3_h0jpi")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=594480391]
+repeat_size = Vector2(2338, 0)
+autoscroll = Vector2(40, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=126730430]
+z_index = -3
+position = Vector2(101, 127)
+texture = ExtResource("4_kkgxs")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=797794260]
+z_index = -4
+repeat_size = Vector2(3840, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1653323484]
+position = Vector2(85, 136)
+texture = ExtResource("5_qhokr")
 
 [node name="ButtonsContainer" type="MarginContainer" parent="." unique_id=484583836]
 layout_mode = 0

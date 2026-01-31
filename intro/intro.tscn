@@ -15,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vyos2")
 frames = [NodePath("Frame1"), NodePath("Frame2"), NodePath("Frame3"), NodePath("Frame4")]
-duration = 2.5
+duration = 2.0
 
 [node name="bg" type="ColorRect" parent="." unique_id=780431101]
 layout_mode = 1

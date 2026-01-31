@@ -2,6 +2,7 @@ extends Control
 
 @export var frames: Array[TextureRect]
 @export var duration: float = 1.0
+@export var end_wait_time: float = 2.0
 
 var tween: Tween
 var current_index := 0
@@ -19,6 +20,7 @@ func _unhandled_input(event):
 
 func play_current_frame():
 	if current_index > frames.size() - 1:
+		await get_tree().create_timer(end_wait_time).timeout 
 		LevelManager.load_level(1)
 		LevelManager.unlock_level(1)
 		return
