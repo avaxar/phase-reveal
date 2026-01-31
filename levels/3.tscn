@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cvc0up6mbeer7"]
+
+[node name="3" type="Node2D" unique_id=331774983]
+
+[node name="3" type="Label" parent="." unique_id=576164050]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "3"

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d0pay5qc68fba"]
+
+[ext_resource type="Script" uid="uid://mgihodjwawoe" path="res://globals/level_manager.gd" id="1_m4udf"]
+[ext_resource type="PackedScene" uid="uid://dlsk5wjjbdl8p" path="res://levels/1.tscn" id="2_p325o"]
+[ext_resource type="PackedScene" uid="uid://dtvfi2o6bbkqr" path="res://levels/2.tscn" id="3_adej0"]
+[ext_resource type="PackedScene" uid="uid://cvc0up6mbeer7" path="res://levels/3.tscn" id="4_kkdxs"]
+[ext_resource type="PackedScene" uid="uid://r0v3nsqvwd4v" path="res://levels/4.tscn" id="5_qvx2k"]
+[ext_resource type="PackedScene" uid="uid://62x08xttyx87" path="res://levels/5.tscn" id="6_xqiqb"]
+[ext_resource type="PackedScene" uid="uid://daverttw0x364" path="res://levels/6.tscn" id="7_adej0"]
+
+[node name="LevelManager" type="Node" unique_id=1886356927]
+script = ExtResource("1_m4udf")
+levels = Dictionary[PackedScene, bool]({
+ExtResource("2_p325o"): true,
+ExtResource("3_adej0"): false,
+ExtResource("4_kkdxs"): false,
+ExtResource("5_qvx2k"): true,
+ExtResource("6_xqiqb"): false,
+ExtResource("7_adej0"): false
+})

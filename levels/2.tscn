@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dtvfi2o6bbkqr"]
+
+[node name="2" type="Node2D" unique_id=331774983]
+
+[node name="Label" type="Label" parent="." unique_id=2092109312]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "2"

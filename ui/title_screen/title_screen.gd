@@ -1,5 +1,4 @@
 extends Control
-const LEVEL_SELECT = preload("uid://bu6jy5mbuujwc")
 
 @export var pitch_step: float = 0.1
 @export var pitch_base: float = 1.0
@@ -32,9 +31,21 @@ func _ready() -> void:
 	back.on_button_hover.connect(on_button_hover)
 	back.on_button_pressed.connect(on_button_pressed)
 	
+	setup_levels()
+	
 	#if diagonal_container.get_child_count() > 0:
 		#diagonal_container.get_child(0).grab_button_focus()
 
+func setup_levels() -> void:
+	var level_buttons: Array[Node] = level_select_container.get_children()
+	if level_buttons.size() != LevelManager.get_level_total():
+		print("NUMBER OF LEVEL BUTTONS ARENT THE SAME AS LEVELS")
+	for num in range(LevelManager.get_level_total()):
+		if LevelManager.is_level_available(num + 1):
+			level_buttons[num].unlock()
+		else:
+			level_buttons[num].lock()
+		
 func on_button_hover() -> void:
 	pitch = min(pitch + pitch_step, pitch_max)
 	if hover_sound.playing == false:
@@ -43,7 +54,6 @@ func on_button_hover() -> void:
 	hover_sound.play()
 	
 func on_button_pressed(action_id: String) -> void:
-	print("PRESS")
 	click_sound.play()
 	match action_id:
 		"start":

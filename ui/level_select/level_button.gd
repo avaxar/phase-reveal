@@ -1,12 +1,24 @@
 extends Control
+class_name LevelButton
+
 @export var level_number: int
 @onready var level_label: Label = $TextureButton/LevelLabel
-@onready var lock: TextureRect = $TextureButton/Lock
+@onready var lock_sprite: TextureRect = $TextureButton/Lock
+var unlocked: bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	level_label.text = str(level_number)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func lock() -> void:
+	level_label.hide()
+	lock_sprite.show()
+	unlocked = false
+	
+func unlock() -> void:
+	level_label.show()
+	lock_sprite.hide()
+	unlocked = true
+
+func _on_texture_button_pressed() -> void:
+	if unlocked:
+		LevelManager.load_level(level_number)

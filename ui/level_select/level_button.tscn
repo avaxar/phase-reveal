@@ -73,3 +73,5 @@ grow_vertical = 2
 texture = ExtResource("4_sf8fc")
 expand_mode = 1
 stretch_mode = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
