@@ -93,7 +93,7 @@ metadata/_custom_type_script = "uid://bx1pbde6wnyr5"
 [node name="CreditsButton" parent="CreditsContainer/CircularContainer" unique_id=898324290 instance=ExtResource("6_1djn3")]
 layout_mode = 2
 scale_size = Vector2(1.25, 1.25)
-label_text = "Ryan Ethan Halim"
+label_text = "R. Ethan Halim"
 
 [node name="CreditsButton2" parent="CreditsContainer/CircularContainer" unique_id=2141593416 instance=ExtResource("6_1djn3")]
 layout_mode = 2
