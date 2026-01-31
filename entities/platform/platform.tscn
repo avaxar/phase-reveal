@@ -27,3 +27,4 @@ shape = SubResource("RectangleShape2D_8vvea")
 [node name="TileMap" type="TileMapLayer" parent="." index="2" unique_id=1359034309]
 tile_map_data = PackedByteArray("AAAAAAAAAAAXAAIAAAABAAAAAAAYAAIAAAAAAAEAAAAXAAQAAAABAAEAAAAYAAQAAAACAAAAAAAYAAIAAAACAAEAAAAYAAQAAAADAAAAAAAZAAIAAAADAAEAAAAZAAQAAAA=")
 tile_set = ExtResource("3_8vvea")
+metadata/_edit_lock_ = true

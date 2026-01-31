@@ -4,16 +4,15 @@
 [ext_resource type="TileSet" uid="uid://c6bve3aguyrjg" path="res://level/tileset.tres" id="2_vkbyq"]
 [ext_resource type="Texture2D" uid="uid://oqilmv7tf71j" path="res://icon.svg" id="3_qohg2"]
 [ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="3_vkbyq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qohg2"]
-size = Vector2(36, 34)
+[ext_resource type="Shader" uid="uid://4j5wbt6no0ji" path="res://level/passthrough_visualizer.gdshader" id="5_ivpvi"]
+[ext_resource type="PackedScene" uid="uid://b7sawdtg0b2mv" path="res://entities/player/player.tscn" id="5_ktfr2"]
 
 [sub_resource type="Animation" id="Animation_vkbyq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Platform2:position")
+tracks/0/path = NodePath("Objects/Platform2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +29,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Platform2:position")
+tracks/0/path = NodePath("Objects/Platform2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,16 +45,39 @@ _data = {
 &"green": SubResource("Animation_ktfr2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qohg2"]
+size = Vector2(36, 34)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gtgk"]
+shader = ExtResource("5_ivpvi")
+
 [node name="Level" type="Node2D" unique_id=1104770908]
 script = ExtResource("1_7lnir")
 blue_mask = false
 
-[node name="Map" type="TileMapLayer" parent="." unique_id=495730745]
-tile_set = ExtResource("2_vkbyq")
-
 [node name="CollisionProxies" type="Node2D" parent="." unique_id=1940272453]
+metadata/_edit_lock_ = true
 
 [node name="Objects" type="Node2D" parent="." unique_id=1284680800]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Objects" unique_id=1481030222]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_44x8d")
+autoplay = &"green"
+
+[node name="Platform2" parent="Objects" unique_id=673137716 instance=ExtResource("3_vkbyq")]
+modulate = Color(0, 1, 0, 0.5019608)
+position = Vector2(75, 49)
+tile_size = Vector2i(3, 1)
+green_mask = true
+bottom_right = Vector2i(68, 36)
+
+[node name="Platform" parent="Objects" unique_id=1702604198 instance=ExtResource("3_vkbyq")]
+modulate = Color(1, 0, 0, 0.5019608)
+position = Vector2(159, 49)
+tile_size = Vector2i(5, 1)
+red_mask = true
+bottom_right = Vector2i(100, 36)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Objects" unique_id=1830224091]
 position = Vector2(-20, 0)
@@ -70,20 +92,14 @@ position = Vector2(237.37502, 26.37501)
 scale = Vector2(0.27148452, 0.27148452)
 texture = ExtResource("3_qohg2")
 
-[node name="Platform" parent="." unique_id=1702604198 instance=ExtResource("3_vkbyq")]
-modulate = Color(1, 0, 0, 0.5019608)
-position = Vector2(159, 49)
-tile_size = Vector2i(5, 1)
-red_mask = true
-bottom_right = Vector2i(100, 36)
+[node name="PassthroughVisualizer" type="Node2D" parent="." unique_id=1087875782]
+material = SubResource("ShaderMaterial_6gtgk")
+metadata/_edit_lock_ = true
 
-[node name="Platform2" parent="." unique_id=673137716 instance=ExtResource("3_vkbyq")]
-modulate = Color(0, 1, 0, 0.5019608)
-position = Vector2(75, 49)
-tile_size = Vector2i(3, 1)
-green_mask = true
-bottom_right = Vector2i(68, 36)
+[node name="Player" parent="." unique_id=1531806938 instance=ExtResource("5_ktfr2")]
+position = Vector2(125, 27)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1481030222]
-libraries/ = SubResource("AnimationLibrary_44x8d")
-autoplay = &"green"
+[node name="Map" type="TileMapLayer" parent="." unique_id=495730745]
+tile_set = ExtResource("2_vkbyq")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=986724235]

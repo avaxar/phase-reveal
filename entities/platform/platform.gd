@@ -35,7 +35,7 @@ const BOTTOM_RIGHT = Vector2i(25, 4)
             for x in range(tile_size.x):
                 tile_map.set_cell(Vector2i(x + 1, y + 1), 0, MIDDLE)
             tile_map.set_cell(Vector2i(tile_size.x + 1, y + 1), 0, RIGHT)
-        
+
         tile_map.set_cell(Vector2i(0, tile_size.y + 1), 0, BOTTOM_LEFT)
         for x in range(tile_size.x):
             tile_map.set_cell(Vector2i(x + 1, tile_size.y + 1), 0, BOTTOM)

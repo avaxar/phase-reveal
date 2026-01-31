@@ -7,9 +7,6 @@ extends StaticBody2D
 @export var green_mask := false
 @export var blue_mask := false
 
-@export var solid := true
-@export var deadly := false
-
 
 @onready var collision_shape := $CollisionShape
 @onready var mask_area := $MaskArea
