@@ -30,6 +30,7 @@ var current_gravity: float = 0
 var was_on_floor: bool = false
 
 func _ready() -> void:
+	Engine.time_scale = 0.3
 	buffer_timer.wait_time = jump_buffer_time
 	coyote_timer.wait_time = coyote_time
 	current_gravity = default_gravity
@@ -119,3 +120,9 @@ func update_debug_label() -> void:
 
 func _on_buffer_timer_timeout() -> void:
 	jump_buffer = false
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	die()
+
+func die() -> void:
+	print("die")
