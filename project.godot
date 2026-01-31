@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Phase Reveal"
-run/main_scene="uid://bdbc3gppc7fta"
+run/main_scene="uid://wncglugrhywk"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
