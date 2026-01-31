@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dcufuj8huy3ib"]
+
+[ext_resource type="Script" uid="uid://bf2xkoob753i4" path="res://entities/maskable/maskable.gd" id="1_xaqss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xaqss"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="Maskable" type="StaticBody2D" unique_id=1702604198 groups=["maskables"]]
+script = ExtResource("1_xaqss")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1415267103]
+shape = SubResource("RectangleShape2D_xaqss")
+debug_color = Color(0.9975001, 0, 0.174537, 0.41960785)
+
+[node name="MaskArea" type="Area2D" parent="." unique_id=1766599155]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape2D" parent="MaskArea" unique_id=1575829748]
+shape = SubResource("RectangleShape2D_xaqss")
+debug_color = Color(0.99607843, 0, 0.1764706, 0.41960785)
+
+[connection signal="area_entered" from="MaskArea" to="." method="_on_mask_area_area_entered"]
+[connection signal="area_exited" from="MaskArea" to="." method="_on_mask_area_area_exited"]

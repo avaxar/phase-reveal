@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bdbc3gppc7fta"]
+
+[ext_resource type="Script" uid="uid://bgw7dvxkpdep7" path="res://level/level.gd" id="1_7lnir"]
+[ext_resource type="PackedScene" uid="uid://dcufuj8huy3ib" path="res://entities/maskable/maskable.tscn" id="2_qohg2"]
+[ext_resource type="Texture2D" uid="uid://oqilmv7tf71j" path="res://icon.svg" id="3_qohg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qohg2"]
+size = Vector2(36, 34)
+
+[node name="Level" type="Node2D" unique_id=1104770908]
+script = ExtResource("1_7lnir")
+
+[node name="Map" type="TileMapLayer" parent="." unique_id=495730745]
+
+[node name="CollisionProxies" type="Node2D" parent="." unique_id=1940272453]
+
+[node name="Objects" type="Node2D" parent="." unique_id=1284680800]
+
+[node name="Maskable" parent="Objects" unique_id=1702604198 instance=ExtResource("2_qohg2")]
+position = Vector2(218, 127)
+red_mask = true
+top_left = Vector2i(-32, -32)
+bottom_right = Vector2i(32, 32)
+
+[node name="Maskable2" parent="Objects" unique_id=247164808 instance=ExtResource("2_qohg2")]
+position = Vector2(240, 127)
+red_mask = true
+top_left = Vector2i(-32, -32)
+bottom_right = Vector2i(32, 32)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Objects" unique_id=1830224091]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/RigidBody2D" unique_id=1846405954]
+position = Vector2(237.37502, 26.37501)
+shape = SubResource("RectangleShape2D_qohg2")
+
+[node name="Icon" type="Sprite2D" parent="Objects/RigidBody2D" unique_id=2140551016]
+position = Vector2(237.37502, 26.37501)
+scale = Vector2(0.27148452, 0.27148452)
+texture = ExtResource("3_qohg2")
