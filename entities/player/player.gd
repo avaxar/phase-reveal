@@ -37,6 +37,8 @@ const LAND = preload("uid://ckx4byg0e8lwi")
 @onready var hitbox: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var box_detector: Area2D = $BoxDetector
 @onready var inside_cast: RayCast2D = $InsideCast
+@onready var walking_particles: Node2D = $WalkingParticles
+@onready var jumping_particles: Node2D = $JumpingParticles
 
 # Buffer Jump & Coyote Time
 var jump_available: bool = true
@@ -123,9 +125,11 @@ func handle_movement() -> void:
 	var direction := Input.get_axis("left", "right")
 	velocity.x = direction * speed
 	if !is_zero_approx(velocity.x) and is_on_floor():
+		walking_particles.get_child(0).emitting = true
 		if !walk_sound.playing:
 			walk_sound.play()
 	else:
+		walking_particles.get_child(0).emitting = false
 		walk_sound.stop()
 
 
@@ -167,9 +171,13 @@ func handle_flip() -> void:
 
 func jump() -> void:
 	change_sfx(JUMP)
+	create_jump_particles()
 	velocity.y = jump_velocity
 	jump_available = false
 
+func create_jump_particles() -> void:
+	for i in jumping_particles.get_children():
+		i.emitting = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):

@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bel6hxpi08vts" path="res://entities/player/monkey_hold_run_sheet.png" id="4_26q78"]
 [ext_resource type="AudioStream" uid="uid://ci6i5gbv6h07s" path="res://entities/player/sfx/walk.wav" id="9_bectd"]
 [ext_resource type="AudioStream" uid="uid://n0ux7lb83ufp" path="res://entities/player/sfx/death.wav" id="10_wvtmh"]
+[ext_resource type="PackedScene" uid="uid://cdif3wwfvrli6" path="res://entities/thomz_folder/walking particle.tscn" id="11_7thud"]
+[ext_resource type="PackedScene" uid="uid://ce1mybsj5w3ab" path="res://entities/thomz_folder/jumping particle.tscn" id="12_a1qjk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abrql"]
 radius = 7.0
@@ -333,5 +335,12 @@ pitch_scale = 1.3
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=772052218]
 stream = ExtResource("10_wvtmh")
+
+[node name="WalkingParticles" parent="." unique_id=1564369689 instance=ExtResource("11_7thud")]
+z_index = -1
+position = Vector2(0, 7)
+
+[node name="JumpingParticles" parent="." unique_id=1335473961 instance=ExtResource("12_a1qjk")]
+position = Vector2(0, 4)
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
