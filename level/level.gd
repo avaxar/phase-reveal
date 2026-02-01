@@ -4,7 +4,8 @@ extends Node2D
 @onready var collision_proxies := $CollisionProxies
 @onready var passthrough_visualizer := $PassthroughVisualizer
 @onready var player := $Player
-@onready var hud = $CanvasLayer/HUD
+@onready var hud := $CanvasLayer/HUD
+@onready var transition := $CanvasLayer/Transition
 
 
 func _ready():
@@ -23,6 +24,12 @@ func _process(_delta: float) -> void:
 
 	watch_masks()
 	regenerate_chunks()
+
+
+func _on_end_body_entered(body: Node2D) -> void:
+	if body is Player:
+		await transition.close()
+		Manager.load_next_level()
 
 
 const CHUNK_SIZE := 32

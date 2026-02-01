@@ -16,6 +16,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gtgk"]
 shader = ExtResource("5_ivpvi")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rhqlf"]
+normal = Vector2(-1, 0)
+
 [node name="Level" type="Node2D" unique_id=1104770908]
 script = ExtResource("1_7lnir")
 
@@ -68,6 +71,15 @@ tile_set = ExtResource("2_vkbyq")
 z_index = 1
 position = Vector2(234, 86)
 
+[node name="End" type="Area2D" parent="." unique_id=1391488673]
+position = Vector2(481, 1)
+collision_layer = 0
+collision_mask = 8
+
+[node name="WorldBoundary" type="CollisionShape2D" parent="End" unique_id=1443862518]
+shape = SubResource("WorldBoundaryShape2D_rhqlf")
+metadata/_edit_lock_ = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1298670889]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1694291700 instance=ExtResource("7_ivpvi")]
@@ -83,3 +95,5 @@ metadata/_edit_lock_ = true
 
 [node name="Transition" parent="CanvasLayer" unique_id=583275066 instance=ExtResource("12_rhqlf")]
 metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]

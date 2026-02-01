@@ -11,7 +11,7 @@
 [node name="Manager" type="Node" unique_id=1886356927]
 script = ExtResource("1_m4udf")
 levels = Dictionary[PackedScene, bool]({
-ExtResource("2_raga1"): true,
+ExtResource("2_raga1"): false,
 ExtResource("3_adej0"): false,
 ExtResource("4_kkdxs"): false,
 ExtResource("5_qvx2k"): false,

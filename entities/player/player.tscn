@@ -282,7 +282,8 @@ shape = SubResource("CapsuleShape2D_abrql")
 material = SubResource("ShaderMaterial_bectd")
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_26q78")
-animation = &"hold_jump"
+animation = &"jump"
+autoplay = "jump"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1603256221]
 collision_layer = 0
