@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c2xyo4rwn443e" path="res://ui/pause/pause_menu.tscn" id="10_cw150"]
 [ext_resource type="PackedScene" uid="uid://blvjh4n3vwdtk" path="res://ui/border/border.tscn" id="11_xii2b"]
 [ext_resource type="PackedScene" uid="uid://blkf66vfytgyj" path="res://ui/transition/transition.tscn" id="12_rhqlf"]
+[ext_resource type="PackedScene" uid="uid://cu23hb5thhblh" path="res://backgrounds/parallax.tscn" id="13_l5lfc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gtgk"]
 shader = ExtResource("5_ivpvi")
@@ -112,5 +113,7 @@ metadata/_edit_lock_ = true
 
 [node name="Transition" parent="CanvasLayer" unique_id=583275066 instance=ExtResource("12_rhqlf")]
 metadata/_edit_lock_ = true
+
+[node name="Parallax" parent="." unique_id=1614897716 instance=ExtResource("13_l5lfc")]
 
 [connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
