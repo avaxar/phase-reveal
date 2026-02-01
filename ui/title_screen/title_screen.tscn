@@ -298,22 +298,22 @@ label_text = "R. Ethan Halim"
 [node name="CreditsButton2" parent="CreditsContainer/CircularContainer" unique_id=2141593416 instance=ExtResource("6_1djn3")]
 layout_mode = 2
 scale_size = Vector2(1.25, 1.25)
-label_text = "Anders Emmanuel Tan"
+label_text = "Anders \"Plumz\" Tan"
 
 [node name="CreditsButton3" parent="CreditsContainer/CircularContainer" unique_id=125875596 instance=ExtResource("6_1djn3")]
 layout_mode = 2
 scale_size = Vector2(1.25, 1.25)
-label_text = "Thomas Nadandra Aryawida"
+label_text = "Thomas \"Troggz\" Nadandra"
 
 [node name="CreditsButton4" parent="CreditsContainer/CircularContainer" unique_id=1506954380 instance=ExtResource("6_1djn3")]
 layout_mode = 2
 scale_size = Vector2(1.25, 1.25)
-label_text = "Matthew Harry Indriadi"
+label_text = "Matthew \"picardia\" Harry"
 
 [node name="CreditsButton5" parent="CreditsContainer/CircularContainer" unique_id=1801968738 instance=ExtResource("6_1djn3")]
 layout_mode = 2
 scale_size = Vector2(1.25, 1.25)
-label_text = "Rafael Arthur Immanuel Hady"
+label_text = "rtzg"
 
 [node name="BackContainer" type="MarginContainer" parent="." unique_id=1208578692]
 visible = false
