@@ -9,6 +9,7 @@ size = Vector2(14, 14)
 
 [node name="Cube" type="RigidBody2D" unique_id=753110043]
 collision_layer = 8
+can_sleep = false
 script = ExtResource("1_nub1p")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=150811230]
