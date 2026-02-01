@@ -6,10 +6,12 @@
 [ext_resource type="TileSet" uid="uid://c6bve3aguyrjg" path="res://level/tileset.tres" id="2_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://dfe3nvn1lo8gt" path="res://entities/cube/cube.tscn" id="4_6gtgk"]
 [ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="5_cw150"]
-[ext_resource type="Shader" path="res://level/passthrough_visualizer.gdshader" id="5_ivpvi"]
+[ext_resource type="Shader" uid="uid://4j5wbt6no0ji" path="res://level/passthrough_visualizer.gdshader" id="5_ivpvi"]
 [ext_resource type="PackedScene" uid="uid://b7sawdtg0b2mv" path="res://entities/player/player.tscn" id="5_ktfr2"]
 [ext_resource type="PackedScene" uid="uid://bnnfsc0sh8514" path="res://ui/hud/hud.tscn" id="7_ivpvi"]
 [ext_resource type="PackedScene" uid="uid://c2xyo4rwn443e" path="res://ui/pause/pause_menu.tscn" id="10_cw150"]
+[ext_resource type="PackedScene" uid="uid://blvjh4n3vwdtk" path="res://ui/border/border.tscn" id="11_xii2b"]
+[ext_resource type="PackedScene" uid="uid://blkf66vfytgyj" path="res://ui/transition/transition.tscn" id="12_rhqlf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gtgk"]
 shader = ExtResource("5_ivpvi")
@@ -63,6 +65,7 @@ tile_map_data = PackedByteArray("AAABABAAAAAFAAgAAAACABAAAAAFAAgAAAADABAAAAAFAAg
 tile_set = ExtResource("2_vkbyq")
 
 [node name="Player" parent="." unique_id=1531806938 instance=ExtResource("5_ktfr2")]
+z_index = 1
 position = Vector2(234, 86)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1298670889]
@@ -73,3 +76,10 @@ metadata/_edit_lock_ = true
 [node name="PauseMenu" parent="CanvasLayer" unique_id=87079771 instance=ExtResource("10_cw150")]
 process_mode = 3
 visible = false
+metadata/_edit_lock_ = true
+
+[node name="Border" parent="CanvasLayer" unique_id=825236458 instance=ExtResource("11_xii2b")]
+metadata/_edit_lock_ = true
+
+[node name="Transition" parent="CanvasLayer" unique_id=583275066 instance=ExtResource("12_rhqlf")]
+metadata/_edit_lock_ = true

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://blvjh4n3vwdtk"]
+
+[ext_resource type="Shader" uid="uid://d3y6kkwfjbp5b" path="res://ui/border/border.gdshader" id="1_0quhq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7073"]
+shader = ExtResource("1_0quhq")
+shader_parameter/top_left = Vector2(20, 20)
+shader_parameter/bottom_right = Vector2(460, 250)
+shader_parameter/rounded = 14.0
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="Border" type="ColorRect" unique_id=825236458]
+material = SubResource("ShaderMaterial_o7073")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.18039216, 0.101960786, 1)
