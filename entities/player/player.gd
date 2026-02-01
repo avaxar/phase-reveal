@@ -21,14 +21,13 @@ extends CharacterBody2D
 
 
 # SFX
-const DEATH = preload("uid://n0ux7lb83ufp")
 const JUMP = preload("uid://q0ubgob4wj1d")
 const MASK = preload("uid://wel37ciib3k0")
-const WALK = preload("uid://ci6i5gbv6h07s")
 const LAND = preload("uid://ckx4byg0e8lwi")
 
 @onready var sound: AudioStreamPlayer2D = $Sound
 @onready var walk_sound: AudioStreamPlayer2D = $WalkSound
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound
 
 @onready var buffer_timer: Timer = $BufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -125,7 +124,6 @@ func handle_movement() -> void:
 	velocity.x = direction * speed
 	if !is_zero_approx(velocity.x) and is_on_floor():
 		if !walk_sound.playing:
-			
 			walk_sound.play()
 	else:
 		walk_sound.stop()
@@ -225,8 +223,8 @@ func _on_hitbox_body_entered(_body: Node2D) -> void:
 func die() -> void:
 	if is_dead:
 		return
-
-	change_sfx(DEATH)
+	
+	death_sound.play()
 	hitbox.set_deferred("disabled", true)
 	await get_tree().create_timer(0.1).timeout
 	velocity = Vector2(knockback_velocity.x, -knockback_velocity.y)
