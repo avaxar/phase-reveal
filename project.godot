@@ -82,6 +82,7 @@ pause={
 2d_physics/layer_2="Deadly"
 2d_physics/layer_3="MaskTrigger"
 2d_physics/layer_4="ButtonTrigger"
+2d_physics/layer_5="Player"
 
 [physics]
 
