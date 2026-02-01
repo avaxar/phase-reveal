@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://ci5cmglnd0f7w"]
 
 [ext_resource type="Script" uid="uid://cvidqm6n5jxf" path="res://intro/outro.gd" id="1_l72yh"]
-[ext_resource type="Texture2D" uid="uid://bk1ibb58hoh5r" path="res://intro/frame1.png" id="2_l4507"]
-[ext_resource type="Texture2D" uid="uid://b4oriwcc04gis" path="res://intro/frame2.png" id="3_02647"]
-[ext_resource type="Texture2D" uid="uid://bry8b28acgt8g" path="res://intro/frame3.png" id="4_vmmd2"]
-[ext_resource type="Texture2D" uid="uid://3y77r45o7avi" path="res://intro/frame4.png" id="5_y77ac"]
+[ext_resource type="Texture2D" uid="uid://dew3fvwhxp4n5" path="res://intro/outro_frames/frame 3.png" id="2_02647"]
+[ext_resource type="Texture2D" uid="uid://crrvlqgbay16a" path="res://intro/outro_frames/frame 1.png" id="3_vmmd2"]
+[ext_resource type="Texture2D" uid="uid://crnxcxok0fqtc" path="res://intro/outro_frames/frame 2.png" id="4_y77ac"]
+[ext_resource type="Texture2D" uid="uid://3fdscum2u817" path="res://intro/outro_frames/frame 4.png" id="5_5adb4"]
+[ext_resource type="Texture2D" uid="uid://crtjbronwrrk5" path="res://intro/outro_frames/frame 5.png" id="6_wte8d"]
+[ext_resource type="Texture2D" uid="uid://bmq6mfn2ntb22" path="res://intro/outro_frames/frame 6.png" id="7_phmfr"]
 
 [node name="outro" type="Control" unique_id=679458363 node_paths=PackedStringArray("frames")]
 layout_mode = 3
@@ -14,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l72yh")
-frames = [NodePath("Frame1"), NodePath("Frame2"), NodePath("Frame3"), NodePath("Frame4")]
+frames = [NodePath("Frame1"), NodePath("Frame2"), NodePath("Frame3"), NodePath("Frame4"), NodePath("Frame5"), NodePath("Frame6")]
 
 [node name="bg" type="ColorRect" parent="." unique_id=780431101]
 layout_mode = 1
@@ -25,32 +27,39 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.18039216, 0.101960786, 1)
 
+[node name="Frame3" type="TextureRect" parent="." unique_id=465319690]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 269.0
+texture = ExtResource("2_02647")
+
 [node name="Frame1" type="TextureRect" parent="." unique_id=1980410609]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_l4507")
+texture = ExtResource("3_vmmd2")
 
 [node name="Frame2" type="TextureRect" parent="." unique_id=582051705]
 layout_mode = 0
-offset_left = 191.0
-offset_top = 10.0
-offset_right = 453.0
-offset_bottom = 119.0
-texture = ExtResource("3_02647")
-
-[node name="Frame3" type="TextureRect" parent="." unique_id=465319690]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 131.0
-offset_right = 229.0
-offset_bottom = 254.0
-texture = ExtResource("4_vmmd2")
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("4_y77ac")
 
 [node name="Frame4" type="TextureRect" parent="." unique_id=1988274163]
 layout_mode = 0
-offset_left = 228.0
-offset_top = 118.0
 offset_right = 480.0
 offset_bottom = 270.0
-texture = ExtResource("5_y77ac")
+texture = ExtResource("5_5adb4")
+
+[node name="Frame5" type="TextureRect" parent="." unique_id=1760710273]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("6_wte8d")
+
+[node name="Frame6" type="TextureRect" parent="." unique_id=633972934]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("7_phmfr")
