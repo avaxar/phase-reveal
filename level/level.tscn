@@ -115,5 +115,6 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Parallax" parent="." unique_id=1614897716 instance=ExtResource("13_l5lfc")]
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]
