@@ -18,12 +18,16 @@ extends CharacterBody2D
 @export_category("Death")
 @export var knockback_velocity: Vector2 = Vector2(0, 300)
 
+
 # SFX
 const DEATH = preload("uid://n0ux7lb83ufp")
 const JUMP = preload("uid://q0ubgob4wj1d")
 const MASK = preload("uid://wel37ciib3k0")
 const WALK = preload("uid://ci6i5gbv6h07s")
+const LAND = preload("uid://ckx4byg0e8lwi")
+
 @onready var sound: AudioStreamPlayer2D = $Sound
+@onready var walk_sound: AudioStreamPlayer2D = $WalkSound
 
 @onready var buffer_timer: Timer = $BufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -61,8 +65,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if inside_cast.is_colliding():
-		die()
+	if !is_dead and inside_cast.is_colliding():
+		Manager.emit_on_player_death()
 
 
 func _physics_process(delta: float) -> void:
@@ -109,9 +113,15 @@ func handle_jump() -> void:
 func handle_movement() -> void:
 	if is_dead:
 		return
-
+	
 	var direction := Input.get_axis("left", "right")
 	velocity.x = direction * speed
+	if !is_zero_approx(velocity.x) and is_on_floor():
+		if !walk_sound.playing:
+			
+			walk_sound.play()
+	else:
+		walk_sound.stop()
 
 
 func handle_anim() -> void:
@@ -119,6 +129,7 @@ func handle_anim() -> void:
 		return
 
 	if !was_on_floor and is_on_floor() and !has_box:
+		change_sfx(LAND)
 		sprite.play("land")
 
 	if sprite.is_playing() and sprite.animation == "land":
@@ -150,6 +161,7 @@ func handle_flip() -> void:
 
 
 func jump() -> void:
+	change_sfx(JUMP)
 	velocity.y = jump_velocity
 	jump_available = false
 
@@ -207,9 +219,7 @@ func die() -> void:
 	if is_dead:
 		return
 
-	sound.stop()
-	sound.stream = DEATH
-	sound.play()
+	change_sfx(DEATH)
 	hitbox.set_deferred("disabled", true)
 	await get_tree().create_timer(0.1).timeout
 	velocity = Vector2(knockback_velocity.x, -knockback_velocity.y)
@@ -218,7 +228,13 @@ func die() -> void:
 	collision_shape_2d.set_deferred("disabled", true)
 
 
+func change_sfx(audio: AudioStream) -> void:
+	if sound.stream != audio:
+		sound.stream = audio
+	sound.play()
+
 func _on_mask_changed(_red_changed: bool, _green_changed: bool, _blue_changed: bool) -> void:
+	change_sfx(MASK)
 	sprite.material.set_shader_parameter(
 		"mask_color",
 		Color(

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bcjbgihg41kef" path="res://entities/player/monkey_run_sheet.png" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://caf1cx8yvyd5k" path="res://entities/player/monkey_hold_idle_sheet.png" id="3_qiwj3"]
 [ext_resource type="Texture2D" uid="uid://bel6hxpi08vts" path="res://entities/player/monkey_hold_run_sheet.png" id="4_26q78"]
+[ext_resource type="AudioStream" uid="uid://ci6i5gbv6h07s" path="res://entities/player/sfx/walk.wav" id="9_bectd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abrql"]
 radius = 7.0
@@ -321,5 +322,11 @@ target_position = Vector2(6, 0)
 hit_from_inside = true
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=1032654813]
+volume_db = -3.0
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="." unique_id=997946659]
+stream = ExtResource("9_bectd")
+volume_db = -9.0
+pitch_scale = 1.3
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
