@@ -2,6 +2,7 @@ extends Node
 
 var attempts: int = 0
 signal on_player_death
+const OUTRO = preload("uid://ci5cmglnd0f7w")
 
 @export var levels: Dictionary[PackedScene, bool] # locked = false, unlocked = true
 var current_level := 1
@@ -31,6 +32,10 @@ func load_level(level: int): # Uses level numbers 1-6
 
 
 func load_next_level() -> void: # Loads the next level
+	if current_level >= get_level_total():
+		play_outro()
+		return
+	
 	current_level += 1
 	unlock_level(current_level)
 	load_level(current_level)
@@ -44,6 +49,12 @@ func unlock_level(level: int):
 	levels[levels.keys()[level - 1]] = true
 	print(levels)
 
+func play_outro() -> void:
+	get_tree().paused = false
+	if current_scene:
+		current_scene.queue_free()
+
+	get_tree().change_scene_to_packed(OUTRO)
 
 # --- Persisting mechanics ---
 
