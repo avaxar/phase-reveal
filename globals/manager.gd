@@ -24,6 +24,7 @@ func get_level_total() -> int:
 
 var current_scene: Node
 func load_level(level: int): # Uses level numbers 1-6
+	Manager.music_playing = true
 	if get_tree().current_scene != null:
 		current_scene = get_tree().current_scene
 	#get_tree().change_scene_to_packed(levels.keys()[level - 1])
@@ -57,6 +58,7 @@ func play_outro() -> void:
 	if current_scene:
 		current_scene.queue_free()
 
+	Manager.music_playing = false
 	get_tree().change_scene_to_packed(OUTRO)
 
 # --- Persisting mechanics ---
@@ -80,3 +82,51 @@ signal mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool)
 		if blue_mask != value:
 			blue_mask = value
 			mask_changed.emit(false, false, true)
+
+
+# --- Music ---
+
+@onready var loop_music := $LoopMusic
+@onready var red_music := $RedMusic
+@onready var green_music := $GreenMusic
+@onready var blue_music := $BlueMusic
+
+const ON_DB = -10
+const OFF_DB = -30
+const MUSIC_TRANS = 0.5
+
+
+var music_playing := false:
+	set(value):
+		if loop_music == null:
+			set_deferred("music_playing", value)
+			return
+
+		if music_playing != value:
+			music_playing = value
+			loop_music.playing = value
+			red_music.playing = value
+			green_music.playing = value
+			blue_music.playing = value
+
+
+func _on_sync_music_timeout() -> void:
+	if music_playing:
+		var timestamp: float = loop_music.get_playback_position()
+		red_music.play(timestamp)
+		green_music.play(timestamp)
+		blue_music.play(timestamp)
+
+
+func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool) -> void:
+	if red_changed:
+		get_tree().create_tween().tween_property(red_music, "volume_db",
+			ON_DB if red_mask else OFF_DB, MUSIC_TRANS)
+
+	if green_changed:
+		get_tree().create_tween().tween_property(green_music, "volume_db",
+			ON_DB if green_mask else OFF_DB, MUSIC_TRANS)
+
+	if blue_changed:
+		get_tree().create_tween().tween_property(blue_music, "volume_db",
+			ON_DB if blue_mask else OFF_DB, MUSIC_TRANS)

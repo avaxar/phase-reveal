@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://62x08xttyx87" path="res://levels/5.tscn" id="6_xqiqb"]
 [ext_resource type="PackedScene" uid="uid://daverttw0x364" path="res://levels/6.tscn" id="7_nsp4e"]
 [ext_resource type="AudioStream" uid="uid://c4fk7ieln3s2r" path="res://globals/music/red.wav" id="8_bru8t"]
+[ext_resource type="AudioStream" uid="uid://jny7g23fis1f" path="res://globals/music/loop.wav" id="8_f8h86"]
 [ext_resource type="AudioStream" uid="uid://cmoy6tclevnla" path="res://globals/music/green.wav" id="9_f8h86"]
 [ext_resource type="AudioStream" uid="uid://kphpxypo1ldw" path="res://globals/music/blue.wav" id="10_cwg7d"]
 
@@ -22,14 +23,24 @@ ExtResource("6_xqiqb"): true,
 ExtResource("7_nsp4e"): true
 })
 
-[node name="Loop" type="AudioStreamPlayer" parent="." unique_id=612633030]
-stream = ExtResource("8_bru8t")
+[node name="LoopMusic" type="AudioStreamPlayer" parent="." unique_id=612633030]
+stream = ExtResource("8_f8h86")
+volume_db = -10.0
 
-[node name="Red" type="AudioStreamPlayer" parent="." unique_id=1394385296]
+[node name="RedMusic" type="AudioStreamPlayer" parent="." unique_id=1394385296]
 stream = ExtResource("8_bru8t")
+volume_db = -30.0
 
-[node name="Green" type="AudioStreamPlayer" parent="." unique_id=1023890272]
+[node name="GreenMusic" type="AudioStreamPlayer" parent="." unique_id=1023890272]
 stream = ExtResource("9_f8h86")
+volume_db = -30.0
 
-[node name="Blue" type="AudioStreamPlayer" parent="." unique_id=783782982]
+[node name="BlueMusic" type="AudioStreamPlayer" parent="." unique_id=783782982]
 stream = ExtResource("10_cwg7d")
+volume_db = -30.0
+
+[node name="SyncMusic" type="Timer" parent="." unique_id=1518126434]
+autostart = true
+
+[connection signal="mask_changed" from="." to="." method="_on_mask_changed"]
+[connection signal="timeout" from="SyncMusic" to="." method="_on_sync_music_timeout"]

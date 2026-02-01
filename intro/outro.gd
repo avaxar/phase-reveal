@@ -22,8 +22,6 @@ func _unhandled_input(event):
 
 func play_current_frame():
 	if current_index > frames.size() - 1:
-		await get_tree().create_timer(end_wait_time).timeout
-		get_tree().change_scene_to_packed(TITLE_SCREEN)
 		return
 
 	var frame := frames[current_index]
@@ -34,13 +32,14 @@ func play_current_frame():
 
 func skip_current_frame():
 	if current_index >= frames.size():
+		get_tree().change_scene_to_packed(TITLE_SCREEN)
 		return
 
-	if tween and tween.is_running():
-		tween.kill()
-		frames[current_index].modulate.a = 1.0
+	# if tween and tween.is_running():
+	# 	tween.kill()
+	# 	frames[current_index].modulate.a = 1.0
 
-	on_frame_finished()
+	# on_frame_finished()
 
 func on_frame_finished():
 	current_index += 1

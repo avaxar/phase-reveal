@@ -14,6 +14,7 @@ func _on_menu_button_pressed() -> void:
 	visible = false
 	if Manager.current_scene != null:
 		Manager.current_scene.queue_free()
+	Manager.music_playing = false
 	get_tree().change_scene_to_packed(TITLE_SCREEN)
 
 func _unhandled_input(event: InputEvent) -> void:

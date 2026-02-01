@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://05qeltnb115i" path="res://ui/custom_containers/diagonal_containers.gd" id="1_ffat2"]
 [ext_resource type="Script" uid="uid://lgotqlu4jttw" path="res://ui/title_screen/title_screen.gd" id="1_rhiq2"]
+[ext_resource type="AudioStream" uid="uid://bq5bt4effe3j" path="res://globals/music/menu.wav" id="2_qhokr"]
 [ext_resource type="Texture2D" uid="uid://blex0gh6ijbsw" path="res://backgrounds/back1.png" id="2_qua4x"]
 [ext_resource type="Texture2D" uid="uid://comq6mdhrmx77" path="res://ui/title_screen/splash.png" id="3_72buf"]
 [ext_resource type="Script" uid="uid://dklrieytpsupn" path="res://ui/buttons/button.gd" id="3_533ah"]
@@ -32,6 +33,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rhiq2")
+
+[node name="Menu" type="AudioStreamPlayer" parent="." unique_id=2134887908]
+stream = ExtResource("2_qhokr")
+autoplay = true
 
 [node name="Background" type="Node2D" parent="." unique_id=1304480727]
 
