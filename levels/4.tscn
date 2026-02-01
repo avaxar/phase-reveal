@@ -2,9 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bdbc3gppc7fta" path="res://level/level.tscn" id="1_ae2nu"]
 [ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="2_1cxa1"]
+[ext_resource type="PackedScene" uid="uid://dgtdex5wsl6ij" path="res://entities/fbutton/fbutton.tscn" id="2_ldnja"]
+[ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="3_uv2qy"]
+[ext_resource type="PackedScene" uid="uid://dfe3nvn1lo8gt" path="res://entities/cube/cube.tscn" id="4_qesyf"]
 
 [sub_resource type="Animation" id="Animation_ae2nu"]
-length = 0.001
+length = 1.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,12 +30,36 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(257, 220)]
+"values": [Vector2(414, 215)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlatformBlue4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(563, 186)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlatformGreen5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(829, 104)]
 }
 
 [sub_resource type="Animation" id="Animation_1cxa1"]
 resource_name = "movng"
-length = 4.4333334
+length = 5.0333333
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -41,10 +68,10 @@ tracks/0/path = NodePath("PlatformGreen:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.03, 4.4333334),
+"times": PackedFloat32Array(0.03, 5.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(114, 86), Vector2(385.285, 86)]
+"values": [Vector2(114, 86), Vector2(438.285, 86)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -53,10 +80,34 @@ tracks/1/path = NodePath("PlatformRed:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.6369873),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(257, 220)]
+"values": [Vector2(476, 186), Vector2(21, 186)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlatformBlue4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(563, 186), Vector2(830, 186)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlatformGreen5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.97),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(829, 128.395), Vector2(564, 128.395)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bgnt5"]
@@ -67,32 +118,153 @@ _data = {
 
 [node name="4" unique_id=1104770908 instance=ExtResource("1_ae2nu")]
 
-[node name="Cube" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="2" unique_id=753110043]
-position = Vector2(81, 39)
+[node name="FButton" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="0" unique_id=2123144035]
+position = Vector2(96, 235)
 
-[node name="PlatformGreen" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="4" unique_id=990362742]
+[node name="FButton2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="1" unique_id=1305993971 node_paths=PackedStringArray("triggered_doors") instance=ExtResource("2_ldnja")]
+position = Vector2(560, 80)
+triggered_doors = [NodePath("../Door2")]
+width = 2
+
+[node name="Door" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="2" unique_id=1756922949]
+position = Vector2(544, 176)
+
+[node name="Door2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="3" unique_id=87457516 instance=ExtResource("3_uv2qy")]
+position = Vector2(936, 80)
+
+[node name="Cube" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="4" unique_id=753110043]
+position = Vector2(507, 72)
+
+[node name="Cube2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="5" unique_id=682400226 instance=ExtResource("4_qesyf")]
+position = Vector2(896, 217)
+
+[node name="PlatformRed" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="6" unique_id=1702604198]
+position = Vector2(414, 215)
+tile_size = Vector2i(3, 0)
+bottom_right = Vector2i(52, 4)
+
+[node name="PlatformRed2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="7" unique_id=1166950583 instance=ExtResource("2_1cxa1")]
+modulate = Color(1, 0.5, 0.5, 1)
+position = Vector2(96, 231)
+tile_size = Vector2i(3, 0)
+red_mask = true
+bottom_right = Vector2i(52, 4)
+
+[node name="PlatformRed6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="8" unique_id=216362886 instance=ExtResource("2_1cxa1")]
+modulate = Color(1, 0.5, 0.5, 1)
+position = Vector2(695, 186)
+red_mask = true
+
+[node name="PlatformRed3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="9" unique_id=886592230 instance=ExtResource("2_1cxa1")]
+modulate = Color(1, 0.5, 0.5, 1)
+position = Vector2(304, 136)
+tile_size = Vector2i(0, 5)
+red_mask = true
+bottom_right = Vector2i(4, 84)
+
+[node name="PlatformRed5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="10" unique_id=1168884243 instance=ExtResource("2_1cxa1")]
+modulate = Color(1, 0.5, 0.5, 1)
+position = Vector2(747, 150)
+tile_size = Vector2i(1, 5)
+red_mask = true
+bottom_right = Vector2i(20, 84)
+
+[node name="PlatformRed4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="11" unique_id=198552915 instance=ExtResource("2_1cxa1")]
+modulate = Color(1, 0.5, 0.5, 1)
+position = Vector2(170, 136)
+tile_size = Vector2i(0, 5)
+red_mask = true
+bottom_right = Vector2i(4, 84)
+
+[node name="PlatformGreen" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="12" unique_id=990362742]
 position = Vector2(160, 153)
 tile_size = Vector2i(3, 0)
 bottom_right = Vector2i(52, 4)
 
-[node name="PlatformBlue" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="5" unique_id=1002163274]
-position = Vector2(243, 86)
+[node name="PlatformGreen5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="13" unique_id=1615432170 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 1, 0.5, 1)
+position = Vector2(829, 104)
 tile_size = Vector2i(3, 0)
+green_mask = true
 bottom_right = Vector2i(52, 4)
 
-[node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="6" unique_id=1702604198 instance=ExtResource("2_1cxa1")]
+[node name="PlatformGreen8" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="14" unique_id=131505802 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 1, 0.5, 1)
+position = Vector2(568, 79)
+tile_size = Vector2i(1, 0)
+green_mask = true
+bottom_right = Vector2i(20, 4)
+
+[node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="15" unique_id=1664177656 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 1, 0.5, 1)
+position = Vector2(310, 26)
+tile_size = Vector2i(0, 3)
+green_mask = true
+bottom_right = Vector2i(4, 52)
+
+[node name="PlatformGreen3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="16" unique_id=1220146420 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 1, 0.5, 1)
+position = Vector2(304, 136)
+tile_size = Vector2i(0, 5)
+green_mask = true
+bottom_right = Vector2i(4, 84)
+
+[node name="PlatformGreen7" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="17" unique_id=174689280 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 1, 0.5, 1)
+position = Vector2(747, 150)
+tile_size = Vector2i(1, 5)
+green_mask = true
+bottom_right = Vector2i(20, 84)
+
+[node name="PlatformGreen6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="18" unique_id=381485475 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 1, 0.5, 1)
+position = Vector2(170, 136)
+tile_size = Vector2i(0, 5)
+green_mask = true
+bottom_right = Vector2i(4, 84)
+
+[node name="PlatformGreen4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="19" unique_id=299146852 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 1, 0.5, 1)
+position = Vector2(323, 186)
+tile_size = Vector2i(1, 0)
+green_mask = true
+bottom_right = Vector2i(20, 4)
+
+[node name="PlatformBlue" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="20" unique_id=1002163274]
+position = Vector2(257, 86)
+tile_size = Vector2i(2, 0)
+bottom_right = Vector2i(36, 4)
+
+[node name="PlatformBlue4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="21" unique_id=240426464 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 0.5, 1, 1)
+position = Vector2(563, 186)
+tile_size = Vector2i(3, 0)
+blue_mask = true
+bottom_right = Vector2i(52, 4)
+
+[node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="22" unique_id=1305620774 instance=ExtResource("2_1cxa1")]
 modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(101, 16)
 tile_size = Vector2i(0, 4)
 blue_mask = true
 bottom_right = Vector2i(4, 68)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="7" unique_id=245519341]
+[node name="PlatformBlue3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="23" unique_id=587936715 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 0.5, 1, 1)
+position = Vector2(310, 26)
+tile_size = Vector2i(0, 3)
+blue_mask = true
+bottom_right = Vector2i(4, 52)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="24" unique_id=245519341]
 libraries/ = SubResource("AnimationLibrary_bgnt5")
 autoplay = &"movng"
 
 [node name="MapOver" parent="." index="4" unique_id=495730745]
-tile_map_data = PackedByteArray("AAABABAAAAAFAAgAAAACABAAAAAFAAgAAAADABAAAAAFAAgAAAAEABAAAAAFAAgAAAAFABAAAAAFAAgAAAAGABAAAAAFAAgAAAAHABAAAAAFAAgAAAAIABAAAAAFAAgAAAAJABAAAAAFAAgAAAAKABAAAAAFAAgAAAALABAAAAAFAAgAAAAMABAAAAAFAAgAAAANABAAAAAFAAgAAAAOABAAAAAFAAgAAAAPABAAAAAFAAgAAAAQABAAAAAFAAgAAAARABAAAAAFAAgAAAASABAAAAAFAAgAAAATABAAAAAFAAgAAAAUABAAAAAFAAgAAAAVABAAAAAFAAgAAAAWABAAAAAFAAgAAAAXABAAAAAFAAgAAAAYABAAAAAFAAgAAAAZABAAAAAFAAgAAAAaABAAAAAFAAgAAAAbABAAAAAFAAgAAAAcABAAAAAFAAgAAAAdABAAAAAGAAgAAAAdAAoAAAAGAAcAAAAdAAkAAAAGAAcAAAAdAAgAAAAGAAcAAAAdAAcAAAAGAAcAAAAdAAYAAAAGAAcAAAAdAAUAAAAGAAcAAAAdAAQAAAAGAAcAAAAdAAMAAAAGAAcAAAAdAAIAAAAGAAcAAAAdAAEAAAAGAAcAAAAdAAAAAAAGAAYAAAACAAAAAAAFAAYAAAADAAAAAAAFAAYAAAAEAAAAAAAFAAYAAAAFAAAAAAAFAAYAAAAGAAAAAAAFAAYAAAAHAAAAAAAFAAYAAAAIAAAAAAAFAAYAAAAJAAAAAAAFAAYAAAAKAAAAAAAFAAYAAAALAAAAAAAFAAYAAAAMAAAAAAAFAAYAAAANAAAAAAAFAAYAAAAOAAAAAAAFAAYAAAAPAAAAAAAFAAYAAAAQAAAAAAAFAAYAAAARAAAAAAAFAAYAAAASAAAAAAAFAAYAAAATAAAAAAAFAAYAAAAUAAAAAAAFAAYAAAAVAAAAAAAFAAYAAAAWAAAAAAAFAAYAAAAXAAAAAAAFAAYAAAAYAAAAAAAFAAYAAAAZAAAAAAAFAAYAAAAaAAAAAAAFAAYAAAAbAAAAAAAFAAYAAAAcAAAAAAAFAAYAAAAAABAAAAAEAAgAAAAAAA8AAAAEAAcAAAAAAA4AAAAEAAcAAAAAAA0AAAAEAAcAAAAAAAwAAAAEAAcAAAAAAAsAAAAEAAcAAAAAAAoAAAAEAAcAAAAAAAkAAAAEAAcAAAAAAAgAAAAEAAcAAAAAAAcAAAAEAAcAAAAAAAMAAAAEAAcAAAAAAAQAAAAEAAcAAAAAAAIAAAAEAAcAAAAAAAEAAAAEAAcAAAAMAA8AAAARAAEAAAAAAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAUAAAAFAAEAAAACAAUAAAAFAAEAAAADAAUAAAAFAAEAAAAEAAUAAAAFAAEAAAAFAAUAAAAFAAEAAAAFAAYAAAAFAAMAAAAEAAYAAAAFAAMAAAADAAYAAAAFAAMAAAACAAYAAAAFAAMAAAABAAYAAAAFAAMAAAAGAAUAAAAGAAEAAAAGAAYAAAAGAAMAAAAAAAUAAAAEAAgAAAAAAAYAAAAEAAYAAAAbAAYAAAAEAAMAAAAbAAUAAAAEAAEAAAAcAAUAAAAFAAEAAAAcAAYAAAAFAAMAAAA=")
+tile_map_data = PackedByteArray("AAABABAAAAAFAAgAAAACABAAAAAFAAgAAAADABAAAAAFAAgAAAAEABAAAAAFAAgAAAAFABAAAAAFAAgAAAAGABAAAAAFAAgAAAAHABAAAAAFAAgAAAAIABAAAAAFAAgAAAAJABAAAAAFAAgAAAAKABAAAAAFAAgAAAALABAAAAAFAAgAAAAMABAAAAAFAAgAAAANABAAAAAFAAgAAAAOABAAAAAFAAgAAAAPABAAAAAFAAgAAAAQABAAAAAFAAgAAAARABAAAAAFAAgAAAASABAAAAAFAAgAAAATABAAAAAFAAgAAAAUABAAAAAFAAgAAAAVABAAAAAFAAgAAAAWABAAAAAFAAgAAAAXABAAAAAFAAgAAAAYABAAAAAFAAgAAAAZABAAAAAFAAgAAAAaABAAAAAFAAgAAAAbABAAAAAFAAgAAAAcABAAAAAFAAgAAAAdABAAAAAFAAgAAAAdAAAAAAAFAAYAAAACAAAAAAAFAAYAAAADAAAAAAAFAAYAAAAEAAAAAAAFAAYAAAAFAAAAAAAFAAYAAAAGAAAAAAAFAAYAAAAHAAAAAAAFAAYAAAAIAAAAAAAFAAYAAAAJAAAAAAAFAAYAAAAKAAAAAAAFAAYAAAALAAAAAAAFAAYAAAAMAAAAAAAFAAYAAAANAAAAAAAFAAYAAAAOAAAAAAAFAAYAAAAPAAAAAAAFAAYAAAAQAAAAAAAFAAYAAAARAAAAAAAFAAYAAAASAAAAAAAFAAYAAAATAAAAAAAFAAYAAAAUAAAAAAAFAAYAAAAVAAAAAAAFAAYAAAAWAAAAAAAFAAYAAAAXAAAAAAAFAAYAAAAYAAAAAAAFAAYAAAAZAAAAAAAFAAYAAAAaAAAAAAAFAAYAAAAbAAAAAAAFAAYAAAAcAAAAAAAFAAYAAAAAABAAAAAEAAgAAAAAAA8AAAAEAAcAAAAAAA4AAAAEAAcAAAAAAA0AAAAEAAcAAAAAAAwAAAAEAAcAAAAAAAsAAAAEAAcAAAAAAAoAAAAEAAcAAAAAAAkAAAAEAAcAAAAAAAgAAAAEAAcAAAAAAAcAAAAEAAcAAAAAAAYAAAAEAAYAAAAAAAUAAAAEAAgAAAAAAAMAAAAEAAcAAAAAAAQAAAAEAAcAAAAAAAIAAAAEAAcAAAAAAAEAAAAEAAcAAAAMAA8AAAARAAEAAAAAAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAUAAAAFAAEAAAACAAUAAAAFAAEAAAADAAUAAAAFAAEAAAAEAAUAAAAFAAEAAAAFAAUAAAAFAAEAAAAFAAYAAAAFAAMAAAAEAAYAAAAFAAMAAAADAAYAAAAFAAMAAAACAAYAAAAFAAMAAAABAAYAAAAFAAMAAAAGAAUAAAAGAAEAAAAGAAYAAAAGAAMAAAANAA8AAAARAAEAAAAOAA8AAAARAAEAAAAPAA8AAAARAAEAAAAQAA8AAAARAAEAAAARAA8AAAARAAEAAAASAA8AAAARAAEAAAATAA8AAAARAAEAAAAUAA8AAAARAAEAAAAVAA8AAAARAAEAAAAWAA8AAAARAAEAAAAXAA8AAAARAAEAAAAYAA8AAAARAAEAAAAZAA8AAAARAAEAAAAaAA8AAAARAAEAAAAbAA8AAAARAAEAAAAcAA8AAAARAAEAAAALAA8AAAARAAEAAAAKAA8AAAARAAEAAAAJAA8AAAARAAEAAAAIAA8AAAARAAEAAAAHAA8AAAARAAEAAAAGAA8AAAARAAEAAAAFAA8AAAARAAEAAAAEAA8AAAARAAEAAAADAA8AAAARAAEAAAACAA8AAAARAAEAAAABAA8AAAARAAEAAAAhAAcAAAAEAAMAAAAhAAYAAAAGAAcAAAAhAAUAAAAGAAcAAAAhAAQAAAAGAAcAAAAhAAMAAAAGAAcAAAAhAAIAAAAGAAcAAAAhAAEAAAAGAAcAAAAeABAAAAAFAAgAAAAfABAAAAAFAAgAAAAgABAAAAAFAAgAAAAhABAAAAAFAAgAAAAdAA8AAAARAAEAAAAeAA8AAAARAAEAAAAfAA8AAAARAAEAAAAgAA8AAAARAAEAAAAfAAUAAAAEAAEAAAAfAAYAAAAEAAMAAAAgAAUAAAAFAAEAAAAgAAYAAAAFAAMAAAAeAAAAAAAFAAYAAAAfAAAAAAAFAAYAAAAgAAAAAAAFAAYAAAAhAAAAAAAFAAYAAAAOAAsAAAADAA0AAAAPAAsAAAAEAA0AAAAOAAwAAAADAA4AAAAPAAwAAAAEAA4AAAAjAA8AAAARAAEAAAAkAA8AAAARAAEAAAAlAA8AAAARAAEAAAAmAA8AAAARAAEAAAAnAA8AAAARAAEAAAAoAA8AAAARAAEAAAApAA8AAAARAAEAAAAqAA8AAAARAAEAAAArAA8AAAARAAEAAAAsAA8AAAARAAEAAAAtAA8AAAARAAEAAAAuAA8AAAARAAEAAAAvAA8AAAARAAEAAAAwAA8AAAARAAEAAAAxAA8AAAARAAEAAAAiABAAAAAFAAgAAAAjABAAAAAFAAgAAAAkABAAAAAFAAgAAAAlABAAAAAFAAgAAAAmABAAAAAFAAgAAAAnABAAAAAFAAgAAAAoABAAAAAFAAgAAAApABAAAAAFAAgAAAAqABAAAAAFAAgAAAArABAAAAAFAAgAAAAsABAAAAAFAAgAAAAtABAAAAAFAAgAAAAuABAAAAAFAAgAAAAvABAAAAAFAAgAAAAwABAAAAAFAAgAAAAxABAAAAAFAAgAAAAhAA8AAAAGAAcAAAAhAA4AAAAGAAcAAAAhAA0AAAAEAAEAAAAiAA0AAAAGAAEAAAAiAA4AAAAEAAcAAAAiAA8AAAAEAAcAAAAiAAcAAAAGAAMAAAAiAAUAAAAEAAcAAAAiAAYAAAAEAAcAAAAiAAQAAAAEAAcAAAAiAAMAAAAEAAcAAAAiAAIAAAAEAAcAAAAiAAEAAAAEAAcAAAAiAAAAAAAFAAYAAAAjAAAAAAAFAAYAAAAkAAAAAAAFAAYAAAAlAAAAAAAFAAYAAAAmAAAAAAAFAAYAAAAnAAAAAAAFAAYAAAAoAAAAAAAFAAYAAAApAAAAAAAFAAYAAAAqAAAAAAAFAAYAAAArAAAAAAAFAAYAAAAsAAAAAAAFAAYAAAAtAAAAAAAFAAYAAAAuAAAAAAAFAAYAAAAvAAAAAAAFAAYAAAAwAAAAAAAFAAYAAAAxAAAAAAAFAAYAAAAyAAAAAAAFAAYAAAAzAAAAAAAFAAYAAAA0AAAAAAAFAAYAAAA1AAAAAAAFAAYAAAA2AAAAAAAFAAYAAAA3AAAAAAAFAAYAAAAyABAAAAAFAAgAAAAzABAAAAAFAAgAAAA0ABAAAAAFAAgAAAA1ABAAAAAFAAgAAAA2ABAAAAAFAAgAAAA3ABAAAAAFAAgAAAA4ABAAAAAFAAgAAAA5ABAAAAAFAAgAAAA4AAAAAAAFAAYAAAA5AAAAAAAFAAYAAAAyAA8AAAARAAEAAAAzAA8AAAARAAEAAAA0AA8AAAARAAEAAAA1AA8AAAARAAEAAAA2AA8AAAARAAEAAAA5AA8AAAARAAEAAAA3AA4AAAAEAAEAAAA4AA4AAAAGAAEAAAA3AA8AAAAEAAIAAAA4AA8AAAAGAAIAAAA6AA8AAAAGAAcAAAA6AA4AAAAGAAcAAAA6AA0AAAAGAAcAAAA6AAwAAAAGAAcAAAA6AAsAAAAGAAcAAAA6AAoAAAAGAAcAAAA6AAkAAAAGAAcAAAA6AAgAAAAGAAcAAAA6AAAAAAAGAAYAAAA6AAEAAAAEAAMAAAAkAAYAAAAGAAEAAAAkAAcAAAAGAAMAAAAjAAcAAAAFAAMAAAAjAAYAAAAFAAEAAAA=")
 
 [node name="Player" parent="." index="5" unique_id=1531806938]
-position = Vector2(42, 44)
+position = Vector2(53, 40)
+
+[node name="End" parent="." index="6" unique_id=1391488673]
+position = Vector2(944, 2)
