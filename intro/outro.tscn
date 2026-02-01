@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ci5cmglnd0f7w"]
 
-[ext_resource type="Script" uid="uid://pdtk14kg7awu" path="res://intro/intro.gd" id="1_l72yh"]
+[ext_resource type="Script" uid="uid://cvidqm6n5jxf" path="res://intro/outro.gd" id="1_l72yh"]
 [ext_resource type="Texture2D" uid="uid://bk1ibb58hoh5r" path="res://intro/frame1.png" id="2_l4507"]
 [ext_resource type="Texture2D" uid="uid://b4oriwcc04gis" path="res://intro/frame2.png" id="3_02647"]
 [ext_resource type="Texture2D" uid="uid://bry8b28acgt8g" path="res://intro/frame3.png" id="4_vmmd2"]
@@ -15,7 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l72yh")
 frames = [NodePath("Frame1"), NodePath("Frame2"), NodePath("Frame3"), NodePath("Frame4")]
-duration = 2.0
 
 [node name="bg" type="ColorRect" parent="." unique_id=780431101]
 layout_mode = 1
