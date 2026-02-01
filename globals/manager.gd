@@ -22,7 +22,7 @@ var current_scene: Node
 func load_level(level: int): # Uses level numbers 1-6
 	if get_tree().current_scene != null:
 		current_scene = get_tree().current_scene
-	
+
 	print(levels.keys()[level - 1])
 	#get_tree().change_scene_to_packed(levels.keys()[level - 1])
 	var next_level = levels.keys()[level - 1].instantiate()

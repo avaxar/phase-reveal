@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0pay5qc68fba"]
 
 [ext_resource type="Script" uid="uid://mgihodjwawoe" path="res://globals/manager.gd" id="1_m4udf"]
-[ext_resource type="PackedScene" uid="uid://bdbc3gppc7fta" path="res://level/level.tscn" id="2_raga1"]
+[ext_resource type="PackedScene" uid="uid://dlsk5wjjbdl8p" path="res://levels/1.tscn" id="2_nsp4e"]
 [ext_resource type="PackedScene" uid="uid://dtvfi2o6bbkqr" path="res://levels/2.tscn" id="3_adej0"]
 [ext_resource type="PackedScene" uid="uid://cvc0up6mbeer7" path="res://levels/3.tscn" id="4_kkdxs"]
 [ext_resource type="PackedScene" uid="uid://r0v3nsqvwd4v" path="res://levels/4.tscn" id="5_qvx2k"]
@@ -11,7 +11,7 @@
 [node name="Manager" type="Node" unique_id=1886356927]
 script = ExtResource("1_m4udf")
 levels = Dictionary[PackedScene, bool]({
-ExtResource("2_raga1"): false,
+ExtResource("2_nsp4e"): false,
 ExtResource("3_adej0"): false,
 ExtResource("4_kkdxs"): false,
 ExtResource("5_qvx2k"): false,

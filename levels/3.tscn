@@ -1,8 +1,5 @@
 [gd_scene format=3 uid="uid://cvc0up6mbeer7"]
 
-[node name="3" type="Node2D" unique_id=331774983]
+[ext_resource type="PackedScene" uid="uid://bdbc3gppc7fta" path="res://level/level.tscn" id="1_bunus"]
 
-[node name="3" type="Label" parent="." unique_id=576164050]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "3"
+[node name="3" unique_id=1104770908 instance=ExtResource("1_bunus")]
