@@ -17,7 +17,7 @@ width = 4
 
 [node name="FButton3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="1" unique_id=53566470 node_paths=PackedStringArray("triggered_doors") instance=ExtResource("2_sh4cm")]
 position = Vector2(200, 236)
-triggered_doors = [NodePath("../Door")]
+triggered_doors = [NodePath("../Door"), NodePath("../Door3")]
 width = 4
 
 [node name="FButton2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="2" unique_id=1623043596 node_paths=PackedStringArray("triggered_doors") instance=ExtResource("2_sh4cm")]
