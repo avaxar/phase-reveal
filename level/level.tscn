@@ -76,13 +76,6 @@ tile_set = ExtResource("2_vkbyq")
 [node name="Player" parent="." unique_id=1531806938 instance=ExtResource("5_ktfr2")]
 z_index = 1
 position = Vector2(234, 86)
-speed = null
-terminal_velocity = null
-default_gravity = null
-jump_buffer_time = null
-coyote_time = null
-gravity_modifier = null
-knockback_velocity = null
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=2046478228]
 limit_left = 0

@@ -13,7 +13,7 @@ var is_dead := false
 
 
 func _process(_delta: float) -> void:
-	if not is_dead and (inside_cast.is_colliding() or position.y < 0 or position.y > 270):
+	if not Manager.loading and not is_dead and (inside_cast.is_colliding() or position.y < 0 or position.y > 270):
 		is_dead = true
 		sprite.visible = false
 		death_position = last_position

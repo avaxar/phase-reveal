@@ -1,6 +1,7 @@
 extends Node
 
 var attempts: int = 0
+var loading := false
 signal on_player_death
 const OUTRO = preload("uid://ci5cmglnd0f7w")
 
@@ -12,9 +13,11 @@ func reset_level() -> void:
 	load_level(current_level)
 
 func emit_on_player_death() -> void: #Play the transition here!
+	loading = true
 	on_player_death.emit()
 	await get_tree().create_timer(1.25).timeout
 	reset_level()
+	loading = false
 
 func get_level_total() -> int:
 	return levels.size()
@@ -35,7 +38,7 @@ func load_next_level() -> void: # Loads the next level
 	if current_level >= get_level_total():
 		play_outro()
 		return
-	
+
 	current_level += 1
 	unlock_level(current_level)
 	load_level(current_level)

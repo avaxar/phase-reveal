@@ -65,7 +65,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if !is_dead:
+	if not is_dead and not Manager.loading:
 		# Suffocation
 		if inside_cast.is_colliding():
 			Manager.emit_on_player_death()

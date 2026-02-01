@@ -31,7 +31,9 @@ func _process(_delta: float) -> void:
 
 func _on_end_body_entered(body: Node2D) -> void:
 	if body is Player:
+		Manager.loading = true
 		await transition.close()
+		Manager.loading = false
 		Manager.load_next_level()
 
 
@@ -85,7 +87,7 @@ func update_masks(red_changed: bool, green_changed: bool, blue_changed: bool) ->
 func update_mask(maskable: Maskable, remove := false) -> void:
 	if maskable not in maskable_drawn:
 		return
-	
+
 	if (not maskable.is_included() or remove) and maskable_drawn[maskable]:
 		if maskable in maskable_rects:
 			mask_rect(maskable_rects[maskable], -1)
