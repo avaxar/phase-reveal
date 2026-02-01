@@ -4,6 +4,7 @@ extends Control
 @onready var mask_red := $TopRight/Masks/MaskRed
 @onready var mask_green := $TopRight/Masks/MaskGreen
 @onready var mask_blue := $TopRight/Masks/MaskBlue
+@onready var label: Label = $TopLeft /Label
 
 
 func _ready():
@@ -19,6 +20,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("mask_blue"):
 		Manager.blue_mask = !Manager.blue_mask
 
+func _process(delta: float) -> void:
+	label.text = str(Manager.current_level)
 
 func _on_mask_red_pressed() -> void:
 	Manager.red_mask = !Manager.red_mask
