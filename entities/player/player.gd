@@ -195,7 +195,7 @@ func drop_box() -> void:
 	print("BOX DROP!")
 	var nc: Cube = CUBE.instantiate()
 	get_parent().add_child(nc)
-	nc.global_position = global_position + Vector2(0, -30)
+	nc.global_position = global_position + Vector2(0, -10)
 	has_box = false
 
 
