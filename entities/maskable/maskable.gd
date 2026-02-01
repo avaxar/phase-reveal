@@ -16,6 +16,7 @@ extends StaticBody2D
 @export var disabled := false:
 	set(value):
 		if collision_shape == null:
+			set_deferred("disabled", value)
 			return
 
 		collision_shape.set_deferred("disabled", value)

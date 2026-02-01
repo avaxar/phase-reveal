@@ -73,6 +73,9 @@ func update_masks(red_changed: bool, green_changed: bool, blue_changed: bool) ->
 
 
 func update_mask(maskable: Maskable, remove := false) -> void:
+	if maskable not in maskable_drawn:
+		return
+	
 	if (not maskable.is_included() or remove) and maskable_drawn[maskable]:
 		if maskable in maskable_rects:
 			mask_rect(maskable_rects[maskable], -1)

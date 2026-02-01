@@ -18,9 +18,18 @@ func emit_on_player_death() -> void:
 func get_level_total() -> int:
 	return levels.size()
 
+var current_scene: Node
 func load_level(level: int): # Uses level numbers 1-6
+	if get_tree().current_scene != null:
+		current_scene = get_tree().current_scene
+	
 	print(levels.keys()[level - 1])
-	get_tree().change_scene_to_packed(levels.keys()[level - 1])
+	#get_tree().change_scene_to_packed(levels.keys()[level - 1])
+	var next_level = levels.keys()[level - 1].instantiate()
+	var root_node = current_scene.get_parent()
+	current_scene.queue_free()
+	root_node.add_child(next_level)
+	current_scene = next_level
 
 
 func load_next_level() -> void: # Loads the next level
