@@ -13,6 +13,8 @@ extends Control
 @onready var back_container: MarginContainer = $BackContainer
 @onready var level_select_container: GridContainer = $LevelSelectContainer
 const INTRO = preload("uid://cwj6565s7c1nq")
+const LEVEL_BUTTON = preload("uid://cdhsom0l7780y")
+
 
 var count: int = 0
 var pitch: float = pitch_base
@@ -38,14 +40,15 @@ func _ready() -> void:
 		#diagonal_container.get_child(0).grab_button_focus()
 
 func setup_levels() -> void:
-	var level_buttons: Array[Node] = level_select_container.get_children()
-	if level_buttons.size() != Manager.get_level_total():
-		print("NUMBER OF LEVEL BUTTONS ARENT THE SAME AS LEVELS")
-	for num in range(Manager.get_level_total()):
-		if Manager.is_level_available(num + 1):
-			level_buttons[num].unlock()
+	for i in range(Manager.get_level_total()):
+		var nb: LevelButton = LEVEL_BUTTON.instantiate()
+		nb.level_number = i + 1
+		level_select_container.add_child(nb)
+
+		if Manager.is_level_available(i + 1):
+			nb.unlock()
 		else:
-			level_buttons[num].lock()
+			nb.lock()
 
 func on_button_hover() -> void:
 	pitch = min(pitch + pitch_step, pitch_max)

@@ -1,15 +1,25 @@
 extends Node
 
+var attempts: int = 0
+signal on_player_death
 
 @export var levels: Dictionary[PackedScene, bool] # locked = false, unlocked = true
 var current_level := 1
 
+func reset_level() -> void:
+	attempts += 1
+	load_level(current_level)
+
+func emit_on_player_death() -> void:
+	on_player_death.emit()
+	await get_tree().create_timer(1.0).timeout
+	reset_level()
 
 func get_level_total() -> int:
 	return levels.size()
 
-
 func load_level(level: int): # Uses level numbers 1-6
+	print(levels.keys()[level - 1])
 	get_tree().change_scene_to_packed(levels.keys()[level - 1])
 
 

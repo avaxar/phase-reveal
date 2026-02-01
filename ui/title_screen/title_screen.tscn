@@ -16,7 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://b1wyi10l7kqo6" path="res://ui/buttons/click.wav" id="6_ca08b"]
 [ext_resource type="Texture2D" uid="uid://c37kpm0kvbcid" path="res://ui/buttons/button1_2.png" id="6_objlv"]
 [ext_resource type="PackedScene" uid="uid://bim5bk451w4jv" path="res://ui/buttons/back_button.tscn" id="7_1djn3"]
-[ext_resource type="PackedScene" uid="uid://cdhsom0l7780y" path="res://ui/level_select/level_button.tscn" id="8_gwpbi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5gjou"]
 font = ExtResource("5_hhwne")
@@ -339,36 +338,6 @@ grow_vertical = 2
 theme_override_constants/h_separation = 24
 theme_override_constants/v_separation = 24
 columns = 3
-
-[node name="LevelButton" parent="LevelSelectContainer" unique_id=1341801437 instance=ExtResource("8_gwpbi")]
-layout_mode = 2
-size_flags_horizontal = 4
-level_number = 1
-
-[node name="LevelButton2" parent="LevelSelectContainer" unique_id=1334244949 instance=ExtResource("8_gwpbi")]
-layout_mode = 2
-size_flags_horizontal = 4
-level_number = 2
-
-[node name="LevelButton3" parent="LevelSelectContainer" unique_id=379488111 instance=ExtResource("8_gwpbi")]
-layout_mode = 2
-size_flags_horizontal = 4
-level_number = 3
-
-[node name="LevelButton4" parent="LevelSelectContainer" unique_id=814095987 instance=ExtResource("8_gwpbi")]
-layout_mode = 2
-size_flags_horizontal = 4
-level_number = 4
-
-[node name="LevelButton5" parent="LevelSelectContainer" unique_id=1146754675 instance=ExtResource("8_gwpbi")]
-layout_mode = 2
-size_flags_horizontal = 4
-level_number = 5
-
-[node name="LevelButton6" parent="LevelSelectContainer" unique_id=2136548942 instance=ExtResource("8_gwpbi")]
-layout_mode = 2
-size_flags_horizontal = 4
-level_number = 6
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=1252377248]
 stream = ExtResource("5_2er51")

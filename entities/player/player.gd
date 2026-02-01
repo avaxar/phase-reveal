@@ -41,6 +41,8 @@ const CUBE = preload("uid://dfe3nvn1lo8gt")
 
 var is_dead: bool = false
 
+func _enter_tree() -> void:
+	Manager.on_player_death.connect(die)
 
 func _ready() -> void:
 	Manager.mask_changed.connect(_on_mask_changed)

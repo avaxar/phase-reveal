@@ -67,11 +67,14 @@ var _bypass_setter := false # This is so inelegant
 
 
 func is_included() -> bool:
-	return (
-		(red_mask and Manager.red_mask)
-		or (green_mask and Manager.green_mask)
-		or (blue_mask and Manager.blue_mask)
-	)
+	if Engine.is_editor_hint():
+		return true
+	else:
+		return (
+			(red_mask and Manager.red_mask)
+			or (green_mask and Manager.green_mask)
+			or (blue_mask and Manager.blue_mask)
+		)
 
 
 var mask_intersection_count := 0
