@@ -214,6 +214,7 @@ size = Vector2(12, 96)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Door" type="StaticBody2D" unique_id=87457516]
+z_index = 2
 script = ExtResource("2_bfv6c")
 
 [node name="DoorUp" type="AnimatedSprite2D" parent="." unique_id=2048693583]
