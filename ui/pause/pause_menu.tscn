@@ -11,6 +11,7 @@ font_size = 17
 font_color = Color(0.3647059, 0.1254902, 0.2784314, 1)
 
 [node name="PauseMenu" type="Control" unique_id=87079771]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

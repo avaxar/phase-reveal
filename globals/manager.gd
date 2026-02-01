@@ -22,8 +22,6 @@ var current_scene: Node
 func load_level(level: int): # Uses level numbers 1-6
 	if get_tree().current_scene != null:
 		current_scene = get_tree().current_scene
-
-	print(levels.keys()[level - 1])
 	#get_tree().change_scene_to_packed(levels.keys()[level - 1])
 	var next_level = levels.keys()[level - 1].instantiate()
 	var root_node = current_scene.get_parent()
@@ -43,7 +41,8 @@ func is_level_available(level: int) -> bool:
 
 
 func unlock_level(level: int):
-	levels.values()[level - 1] = true
+	levels[levels.keys()[level - 1]] = true
+	print(levels)
 
 
 # --- Persisting mechanics ---

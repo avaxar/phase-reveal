@@ -44,7 +44,6 @@ func setup_levels() -> void:
 		var nb: LevelButton = LEVEL_BUTTON.instantiate()
 		nb.level_number = i + 1
 		level_select_container.add_child(nb)
-
 		if Manager.is_level_available(i + 1):
 			nb.unlock()
 		else:
