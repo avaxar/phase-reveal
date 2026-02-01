@@ -12,7 +12,7 @@ func reset_level() -> void:
 
 func emit_on_player_death() -> void: #Play the transition here!
 	on_player_death.emit()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.25).timeout
 	reset_level()
 
 func get_level_total() -> int:
