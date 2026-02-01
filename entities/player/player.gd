@@ -18,6 +18,13 @@ extends CharacterBody2D
 @export_category("Death")
 @export var knockback_velocity: Vector2 = Vector2(0, 300)
 
+# SFX
+const DEATH = preload("uid://n0ux7lb83ufp")
+const JUMP = preload("uid://q0ubgob4wj1d")
+const MASK = preload("uid://wel37ciib3k0")
+const WALK = preload("uid://ci6i5gbv6h07s")
+@onready var sound: AudioStreamPlayer2D = $Sound
+
 @onready var buffer_timer: Timer = $BufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -193,13 +200,16 @@ func _on_buffer_timer_timeout() -> void:
 
 
 func _on_hitbox_body_entered(_body: Node2D) -> void:
-	die()
+	Manager.emit_on_player_death()
 
 
 func die() -> void:
 	if is_dead:
 		return
 
+	sound.stop()
+	sound.stream = DEATH
+	sound.play()
 	hitbox.set_deferred("disabled", true)
 	await get_tree().create_timer(0.1).timeout
 	velocity = Vector2(knockback_velocity.x, -knockback_velocity.y)

@@ -320,4 +320,6 @@ shape = SubResource("RectangleShape2D_qiwj3")
 target_position = Vector2(6, 0)
 hit_from_inside = true
 
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=1032654813]
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
