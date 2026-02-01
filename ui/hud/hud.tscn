@@ -10,6 +10,7 @@
 font = ExtResource("5_imuuq")
 font_size = 17
 font_color = Color(0, 0.18039216, 0.101960786, 1)
+shadow_color = Color(0, 0.18039216, 0.101960786, 0.5019608)
 
 [node name="HUD" type="Control" unique_id=1694291700]
 layout_mode = 3
