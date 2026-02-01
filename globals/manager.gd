@@ -3,6 +3,7 @@ extends Node
 var attempts: int = 0
 var loading := false
 signal on_player_death
+const TITLE_SCREEN = preload("uid://wncglugrhywk")
 const OUTRO = preload("uid://ci5cmglnd0f7w")
 
 @export var levels: Dictionary[PackedScene, bool] # locked = false, unlocked = true
@@ -60,6 +61,13 @@ func play_outro() -> void:
 
 	Manager.music_playing = false
 	get_tree().change_scene_to_packed(OUTRO)
+
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("unlock_all"):
+		for level in levels:
+			levels[level] = true
+		get_tree().change_scene_to_packed(TITLE_SCREEN)
+
 
 # --- Persisting mechanics ---
 
