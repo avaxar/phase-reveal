@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck64da4a2rbqv" path="res://entities/cube/cube.gd" id="1_nub1p"]
 [ext_resource type="Texture2D" uid="uid://jloggkyyrogs" path="res://entities/cube/cube.png" id="2_nub1p"]
+[ext_resource type="AudioStream" uid="uid://bpvsndmf65m7b" path="res://entities/cube/crush.wav" id="3_vul6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2xqw"]
 size = Vector2(14, 14)
@@ -10,8 +11,28 @@ size = Vector2(14, 14)
 collision_layer = 8
 script = ExtResource("1_nub1p")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=150811230]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=150811230]
 texture = ExtResource("2_nub1p")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=96503316]
 shape = SubResource("RectangleShape2D_t2xqw")
+
+[node name="InsideCast" type="RayCast2D" parent="." unique_id=1852668682]
+target_position = Vector2(4, 0)
+hit_from_inside = true
+
+[node name="Particles" type="CPUParticles2D" parent="." unique_id=305829891]
+emitting = false
+amount = 128
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(7, 7)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+
+[node name="CrushSFX" type="AudioStreamPlayer2D" parent="." unique_id=828164520]
+stream = ExtResource("3_vul6u")

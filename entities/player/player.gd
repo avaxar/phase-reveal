@@ -69,7 +69,7 @@ func _process(_delta: float) -> void:
 		# Suffocation
 		if inside_cast.is_colliding():
 			Manager.emit_on_player_death()
-		
+
 		# Out-of-bounds
 		if position.y < 0 or position.y > 270:
 			Manager.emit_on_player_death()
@@ -119,7 +119,7 @@ func handle_jump() -> void:
 func handle_movement() -> void:
 	if is_dead:
 		return
-	
+
 	var direction := Input.get_axis("left", "right")
 	velocity.x = direction * speed
 	if !is_zero_approx(velocity.x) and is_on_floor():
@@ -185,7 +185,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func try_pickup_box() -> void:
 	var bodies: Array = box_detector.get_overlapping_bodies()
 	for body in bodies:
-		if body is cube:
+		if body is Cube:
 			has_box = true
 			body.queue_free()
 			return
@@ -193,7 +193,7 @@ func try_pickup_box() -> void:
 
 func drop_box() -> void:
 	print("BOX DROP!")
-	var nc: cube = CUBE.instantiate()
+	var nc: Cube = CUBE.instantiate()
 	get_parent().add_child(nc)
 	nc.global_position = global_position + Vector2(0, -30)
 	has_box = false
@@ -223,7 +223,7 @@ func _on_hitbox_body_entered(_body: Node2D) -> void:
 func die() -> void:
 	if is_dead:
 		return
-	
+
 	death_sound.play()
 	hitbox.set_deferred("disabled", true)
 	await get_tree().create_timer(0.1).timeout
