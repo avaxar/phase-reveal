@@ -14,12 +14,12 @@
 [node name="Manager" type="Node" unique_id=1886356927]
 script = ExtResource("1_m4udf")
 levels = Dictionary[PackedScene, bool]({
-ExtResource("2_nsp4e"): false,
-ExtResource("3_adej0"): false,
-ExtResource("4_kkdxs"): false,
-ExtResource("5_qvx2k"): false,
-ExtResource("6_xqiqb"): false,
-ExtResource("7_nsp4e"): false
+ExtResource("2_nsp4e"): true,
+ExtResource("3_adej0"): true,
+ExtResource("4_kkdxs"): true,
+ExtResource("5_qvx2k"): true,
+ExtResource("6_xqiqb"): true,
+ExtResource("7_nsp4e"): true
 })
 
 [node name="Loop" type="AudioStreamPlayer" parent="." unique_id=612633030]
