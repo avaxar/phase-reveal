@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://05qeltnb115i" path="res://ui/custom_containers/diagonal_containers.gd" id="1_ffat2"]
 [ext_resource type="Script" uid="uid://lgotqlu4jttw" path="res://ui/title_screen/title_screen.gd" id="1_rhiq2"]
 [ext_resource type="AudioStream" uid="uid://bq5bt4effe3j" path="res://globals/music/menu.wav" id="2_qhokr"]
-[ext_resource type="Texture2D" uid="uid://blex0gh6ijbsw" path="res://backgrounds/back1.png" id="2_qua4x"]
+[ext_resource type="Texture2D" uid="uid://d0dit0ckl4ouf" path="res://backgrounds/back1.png" id="2_qua4x"]
 [ext_resource type="Texture2D" uid="uid://comq6mdhrmx77" path="res://ui/title_screen/splash.png" id="3_72buf"]
 [ext_resource type="Script" uid="uid://dklrieytpsupn" path="res://ui/buttons/button.gd" id="3_533ah"]
 [ext_resource type="Texture2D" uid="uid://cqcax806lv5mj" path="res://backgrounds/back2-export.png" id="3_h0jpi"]
@@ -41,35 +41,35 @@ autoplay = true
 [node name="Background" type="Node2D" parent="." unique_id=1304480727]
 
 [node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1406185190]
-repeat_size = Vector2(1430, 0)
+repeat_size = Vector2(1153, 0)
 autoscroll = Vector2(90, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1638935411]
 z_index = -1
-position = Vector2(81, 133)
+position = Vector2(81, 135)
 texture = ExtResource("2_qua4x")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=1206199774]
-repeat_size = Vector2(2300, 0)
+repeat_size = Vector2(1296, 0)
 autoscroll = Vector2(60, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=395564520]
 z_index = -2
-position = Vector2(113, 147)
+position = Vector2(112, 135)
 texture = ExtResource("3_h0jpi")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=594480391]
-repeat_size = Vector2(2338, 0)
+repeat_size = Vector2(1219, 0)
 autoscroll = Vector2(40, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=126730430]
 z_index = -3
-position = Vector2(101, 127)
+position = Vector2(100, 135)
 texture = ExtResource("4_kkgxs")
 
 [node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=797794260]
 z_index = -4
-repeat_size = Vector2(3840, 0)
+repeat_size = Vector2(1920, 0)
 autoscroll = Vector2(20, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1653323484]
