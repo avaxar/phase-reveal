@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bel6hxpi08vts" path="res://entities/player/monkey_hold_run_sheet.png" id="4_26q78"]
 [ext_resource type="AudioStream" uid="uid://ci6i5gbv6h07s" path="res://entities/player/sfx/walk.wav" id="9_bectd"]
 [ext_resource type="AudioStream" uid="uid://n0ux7lb83ufp" path="res://entities/player/sfx/death.wav" id="10_wvtmh"]
-[ext_resource type="PackedScene" path="res://entities/thomz_folder/walking particle.tscn" id="11_7thud"]
+[ext_resource type="PackedScene" uid="uid://cdif3wwfvrli6" path="res://entities/thomz_folder/walking particle.tscn" id="11_7thud"]
 [ext_resource type="PackedScene" path="res://entities/thomz_folder/jumping particle.tscn" id="12_a1qjk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abrql"]
@@ -322,7 +322,7 @@ position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_qiwj3")
 
 [node name="InsideCast" type="RayCast2D" parent="." unique_id=179094371]
-target_position = Vector2(6, 0)
+target_position = Vector2(4, 0)
 hit_from_inside = true
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=1032654813]

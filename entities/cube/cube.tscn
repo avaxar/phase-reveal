@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://ck64da4a2rbqv" path="res://entities/cube/cube.gd" id="1_nub1p"]
 [ext_resource type="Texture2D" uid="uid://jloggkyyrogs" path="res://entities/cube/cube.png" id="2_nub1p"]
+[ext_resource type="Shader" uid="uid://21wl3seiu3vh" path="res://entities/cube/rotsprite.gdshader" id="2_sftye"]
 [ext_resource type="AudioStream" uid="uid://bpvsndmf65m7b" path="res://entities/cube/crush.wav" id="3_vul6u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2xqw"]
+shader = ExtResource("2_sftye")
+shader_parameter/pixel_scale = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2xqw"]
 size = Vector2(14, 14)
@@ -13,13 +18,14 @@ can_sleep = false
 script = ExtResource("1_nub1p")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=150811230]
+material = SubResource("ShaderMaterial_t2xqw")
 texture = ExtResource("2_nub1p")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=96503316]
 shape = SubResource("RectangleShape2D_t2xqw")
 
 [node name="InsideCast" type="RayCast2D" parent="." unique_id=1852668682]
-target_position = Vector2(4, 0)
+target_position = Vector2(2, 0)
 hit_from_inside = true
 
 [node name="Particles" type="CPUParticles2D" parent="." unique_id=305829891]
