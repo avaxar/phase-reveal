@@ -4,11 +4,14 @@ extends Node2D
 @onready var collision_proxies := $CollisionProxies
 @onready var passthrough_visualizer := $PassthroughVisualizer
 @onready var player := $Player
+@onready var camera := $Player/Camera
+@onready var end := $End
 @onready var hud := $CanvasLayer/HUD
 @onready var transition := $CanvasLayer/Transition
 
 
 func _ready():
+	camera.limit_right = end.position.x
 	Manager.mask_changed.connect(update_masks)
 	for maskable: Maskable in get_tree().get_nodes_in_group("maskables"):
 		maskable.mask_joined.connect(_on_mask_joined)

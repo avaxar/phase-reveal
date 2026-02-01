@@ -71,8 +71,15 @@ tile_set = ExtResource("2_vkbyq")
 z_index = 1
 position = Vector2(234, 86)
 
+[node name="Camera" type="Camera2D" parent="Player" unique_id=2046478228]
+limit_left = 0
+limit_top = 0
+limit_bottom = 270
+position_smoothing_enabled = true
+metadata/_edit_lock_ = true
+
 [node name="End" type="Area2D" parent="." unique_id=1391488673]
-position = Vector2(481, 1)
+position = Vector2(480, 0)
 collision_layer = 0
 collision_mask = 8
 
