@@ -66,8 +66,14 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if !is_dead and inside_cast.is_colliding():
-		Manager.emit_on_player_death()
+	if !is_dead:
+		# Suffocation
+		if inside_cast.is_colliding():
+			Manager.emit_on_player_death()
+		
+		# Out-of-bounds
+		if position.y < 0 or position.y > 270:
+			Manager.emit_on_player_death()
 
 
 func _physics_process(delta: float) -> void:
