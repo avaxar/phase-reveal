@@ -1,5 +1,98 @@
-[gd_scene format=3 uid="uid://r0v3nsqvwd4v"]
+[gd_scene format=4 uid="uid://r0v3nsqvwd4v"]
 
 [ext_resource type="PackedScene" uid="uid://bdbc3gppc7fta" path="res://level/level.tscn" id="1_ae2nu"]
+[ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="2_1cxa1"]
+
+[sub_resource type="Animation" id="Animation_ae2nu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlatformGreen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 153)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlatformRed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(257, 220)]
+}
+
+[sub_resource type="Animation" id="Animation_1cxa1"]
+resource_name = "movng"
+length = 4.4333334
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlatformGreen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03, 4.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(114, 86), Vector2(385.285, 86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlatformRed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6369873),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(257, 220)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgnt5"]
+_data = {
+&"RESET": SubResource("Animation_ae2nu"),
+&"movng": SubResource("Animation_1cxa1")
+}
 
 [node name="4" unique_id=1104770908 instance=ExtResource("1_ae2nu")]
+
+[node name="Cube" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="2" unique_id=753110043]
+position = Vector2(81, 39)
+
+[node name="PlatformGreen" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="4" unique_id=990362742]
+position = Vector2(160, 153)
+tile_size = Vector2i(3, 0)
+bottom_right = Vector2i(52, 4)
+
+[node name="PlatformBlue" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="5" unique_id=1002163274]
+position = Vector2(243, 86)
+tile_size = Vector2i(3, 0)
+bottom_right = Vector2i(52, 4)
+
+[node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="6" unique_id=1702604198 instance=ExtResource("2_1cxa1")]
+modulate = Color(0.5, 0.5, 1, 1)
+position = Vector2(101, 16)
+tile_size = Vector2i(0, 4)
+blue_mask = true
+bottom_right = Vector2i(4, 68)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="7" unique_id=245519341]
+libraries/ = SubResource("AnimationLibrary_bgnt5")
+autoplay = &"movng"
+
+[node name="MapOver" parent="." index="4" unique_id=495730745]
+tile_map_data = PackedByteArray("AAABABAAAAAFAAgAAAACABAAAAAFAAgAAAADABAAAAAFAAgAAAAEABAAAAAFAAgAAAAFABAAAAAFAAgAAAAGABAAAAAFAAgAAAAHABAAAAAFAAgAAAAIABAAAAAFAAgAAAAJABAAAAAFAAgAAAAKABAAAAAFAAgAAAALABAAAAAFAAgAAAAMABAAAAAFAAgAAAANABAAAAAFAAgAAAAOABAAAAAFAAgAAAAPABAAAAAFAAgAAAAQABAAAAAFAAgAAAARABAAAAAFAAgAAAASABAAAAAFAAgAAAATABAAAAAFAAgAAAAUABAAAAAFAAgAAAAVABAAAAAFAAgAAAAWABAAAAAFAAgAAAAXABAAAAAFAAgAAAAYABAAAAAFAAgAAAAZABAAAAAFAAgAAAAaABAAAAAFAAgAAAAbABAAAAAFAAgAAAAcABAAAAAFAAgAAAAdABAAAAAGAAgAAAAdAAoAAAAGAAcAAAAdAAkAAAAGAAcAAAAdAAgAAAAGAAcAAAAdAAcAAAAGAAcAAAAdAAYAAAAGAAcAAAAdAAUAAAAGAAcAAAAdAAQAAAAGAAcAAAAdAAMAAAAGAAcAAAAdAAIAAAAGAAcAAAAdAAEAAAAGAAcAAAAdAAAAAAAGAAYAAAACAAAAAAAFAAYAAAADAAAAAAAFAAYAAAAEAAAAAAAFAAYAAAAFAAAAAAAFAAYAAAAGAAAAAAAFAAYAAAAHAAAAAAAFAAYAAAAIAAAAAAAFAAYAAAAJAAAAAAAFAAYAAAAKAAAAAAAFAAYAAAALAAAAAAAFAAYAAAAMAAAAAAAFAAYAAAANAAAAAAAFAAYAAAAOAAAAAAAFAAYAAAAPAAAAAAAFAAYAAAAQAAAAAAAFAAYAAAARAAAAAAAFAAYAAAASAAAAAAAFAAYAAAATAAAAAAAFAAYAAAAUAAAAAAAFAAYAAAAVAAAAAAAFAAYAAAAWAAAAAAAFAAYAAAAXAAAAAAAFAAYAAAAYAAAAAAAFAAYAAAAZAAAAAAAFAAYAAAAaAAAAAAAFAAYAAAAbAAAAAAAFAAYAAAAcAAAAAAAFAAYAAAAAABAAAAAEAAgAAAAAAA8AAAAEAAcAAAAAAA4AAAAEAAcAAAAAAA0AAAAEAAcAAAAAAAwAAAAEAAcAAAAAAAsAAAAEAAcAAAAAAAoAAAAEAAcAAAAAAAkAAAAEAAcAAAAAAAgAAAAEAAcAAAAAAAcAAAAEAAcAAAAAAAMAAAAEAAcAAAAAAAQAAAAEAAcAAAAAAAIAAAAEAAcAAAAAAAEAAAAEAAcAAAAMAA8AAAARAAEAAAAAAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAUAAAAFAAEAAAACAAUAAAAFAAEAAAADAAUAAAAFAAEAAAAEAAUAAAAFAAEAAAAFAAUAAAAFAAEAAAAFAAYAAAAFAAMAAAAEAAYAAAAFAAMAAAADAAYAAAAFAAMAAAACAAYAAAAFAAMAAAABAAYAAAAFAAMAAAAGAAUAAAAGAAEAAAAGAAYAAAAGAAMAAAAAAAUAAAAEAAgAAAAAAAYAAAAEAAYAAAAbAAYAAAAEAAMAAAAbAAUAAAAEAAEAAAAcAAUAAAAFAAEAAAAcAAYAAAAFAAMAAAA=")
+
+[node name="Player" parent="." index="5" unique_id=1531806938]
+position = Vector2(42, 44)
