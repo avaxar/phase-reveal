@@ -4,6 +4,7 @@ extends Maskable
 
 
 @onready var tile_map := $TileMap
+@onready var borders := $Borders
 
 
 const TOP_LEFT := Vector2i(23, 2)
@@ -44,10 +45,32 @@ const BOTTOM_RIGHT = Vector2i(25, 4)
 		bottom_right = Vector2i(4, 4) + 16 * tile_size
 		top_left = Vector2i(-4, -4)
 
+		borders.points = PackedVector2Array([
+			Vector2(-0.5, -0.5),
+			Vector2(tile_size.x * 16 + 0.5, -0.5),
+			Vector2(tile_size.x * 16 + 0.5, tile_size.y * 16 + 0.5),
+			Vector2(-0.5, tile_size.y * 16 + 0.5)
+		])
+		borders.closed = true
+
 
 func _process(_delta: float) -> void:
 	var color := Color(1.0 if red_mask else 0.5, 1.0 if green_mask else 0.5, 1.0 if blue_mask else 0.5)
 	if is_included():
-		modulate = Color(color, 1.0)
+		tile_map.modulate = Color(color, 1.0)
 	else:
-		modulate = Color(color, 0.25)
+		tile_map.modulate = Color(color, 0.25)
+
+	if Engine.is_editor_hint():
+		return
+
+	var pulse := (1.0 - fmod(Manager.music_beat, 1.0)) ** 1.25
+	match int(Manager.music_beat) % 4:
+		0:
+			borders.modulate = Color(1.0, 0.25, 0.25, pulse if red_mask else 0.0)
+		1:
+			borders.modulate = Color(0.25, 1.0, 0.25, pulse if green_mask else 0.0)
+		2:
+			borders.modulate = Color(0.25, 0.25, 1.0, pulse if blue_mask else 0.0)
+		3:
+			pass

@@ -153,6 +153,18 @@ var blue_volume: float:
 		else:
 			music.stream.set_sync_stream_volume(3, value)
 
+var music_beat := 0.0
+
+
+func _process(_delta: float) -> void:
+	if music_playing:
+		var loop_music: AudioStreamOggVorbis = music.stream.get_sync_stream(0)
+		var timestamp: float = music.get_playback_position() + (
+			AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
+		)
+		timestamp = fmod(maxf(0.0, timestamp), loop_music.get_length())
+		music_beat = timestamp / 60.0 * loop_music.bpm
+
 
 func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool) -> void:
 	if red_changed:

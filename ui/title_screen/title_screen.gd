@@ -72,6 +72,7 @@ func on_button_pressed(action_id: String) -> void:
 
 func start_game() -> void:
 	get_tree().change_scene_to_packed(INTRO)
+	Manager.current_level = 1
 
 func load_level_select() -> void:
 	splash_container.visible = false

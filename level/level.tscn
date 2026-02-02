@@ -45,21 +45,18 @@ position = Vector2(472, 217)
 position = Vector2(91, 162)
 
 [node name="PlatformRed" parent="Objects" unique_id=1702604198 instance=ExtResource("5_cw150")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(257, 220)
 tile_size = Vector2i(5, 2)
 red_mask = true
 bottom_right = Vector2i(84, 36)
 
 [node name="PlatformGreen" parent="Objects" unique_id=990362742 instance=ExtResource("5_cw150")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(257, 220)
 tile_size = Vector2i(2, 2)
 green_mask = true
 bottom_right = Vector2i(36, 36)
 
 [node name="PlatformBlue" parent="Objects" unique_id=1002163274 instance=ExtResource("5_cw150")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(305, 220)
 tile_size = Vector2i(2, 2)
 blue_mask = true

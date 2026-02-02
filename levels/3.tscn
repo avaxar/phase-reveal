@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dfe3nvn1lo8gt" path="res://entities/cube/cube.tscn" id="4_qswil"]
 [ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="5_fh7dt"]
 
-[node name="5" unique_id=1104770908 instance=ExtResource("1_cp1kl")]
+[node name="3" unique_id=1104770908 instance=ExtResource("1_cp1kl")]
 default_red = true
 
 [node name="MapUnder" parent="." index="1" unique_id=1709558476]
@@ -80,77 +80,66 @@ tile_size = Vector2i(20, 0)
 bottom_right = Vector2i(324, 4)
 
 [node name="PlatformRed2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="19" unique_id=648048250 instance=ExtResource("5_fh7dt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(20, 238)
 tile_size = Vector2i(5, 0)
 red_mask = true
 bottom_right = Vector2i(84, 4)
 
 [node name="PlatformRed5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="20" unique_id=1299824473 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(160, 236)
 tile_size = Vector2i(3, 0)
 green_mask = true
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="21" unique_id=1319929656 instance=ExtResource("5_fh7dt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(221, 237)
 tile_size = Vector2i(3, 0)
 red_mask = true
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed7" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="22" unique_id=406686355 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(277, 237)
 tile_size = Vector2i(3, 0)
 green_mask = true
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed12" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="23" unique_id=1078622752 instance=ExtResource("5_fh7dt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(333, 237)
 tile_size = Vector2i(3, 0)
 red_mask = true
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed8" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="24" unique_id=1992660651 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(333, 237)
 tile_size = Vector2i(3, 0)
 blue_mask = true
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed9" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="25" unique_id=173113454 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(390, 237)
 tile_size = Vector2i(3, 0)
 green_mask = true
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed11" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="26" unique_id=682381569 instance=ExtResource("5_fh7dt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(390, 237)
 tile_size = Vector2i(3, 0)
 red_mask = true
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed10" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="27" unique_id=343231044 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(278, 237)
 tile_size = Vector2i(3, 0)
 blue_mask = true
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="28" unique_id=803835881 instance=ExtResource("5_fh7dt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(120, 187)
 tile_size = Vector2i(0, 4)
 red_mask = true
 bottom_right = Vector2i(4, 68)
 
 [node name="PlatformRed4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="29" unique_id=2111992907 instance=ExtResource("5_fh7dt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(130, 189)
 tile_size = Vector2i(0, 4)
 red_mask = true
@@ -162,14 +151,12 @@ tile_size = Vector2i(11, 0)
 bottom_right = Vector2i(180, 4)
 
 [node name="PlatformGreen3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="31" unique_id=95412137 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(120, 188)
 tile_size = Vector2i(0, 4)
 green_mask = true
 bottom_right = Vector2i(4, 68)
 
 [node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="32" unique_id=1372467296 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(267, 142)
 tile_size = Vector2i(11, 0)
 green_mask = true
@@ -181,14 +168,12 @@ tile_size = Vector2i(15, 0)
 bottom_right = Vector2i(244, 4)
 
 [node name="PlatformBlue3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="34" unique_id=629048825 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(130, 188)
 tile_size = Vector2i(0, 4)
 blue_mask = true
 bottom_right = Vector2i(4, 68)
 
 [node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="35" unique_id=1340008634 instance=ExtResource("5_fh7dt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(191, 133)
 tile_size = Vector2i(10, 0)
 blue_mask = true

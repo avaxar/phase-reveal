@@ -30,28 +30,24 @@ tile_size = Vector2i(3, 0)
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformRed4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="4" unique_id=334054434 instance=ExtResource("2_tlvj4")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(471, 133)
 tile_size = Vector2i(7, 0)
 red_mask = true
 bottom_right = Vector2i(116, 4)
 
 [node name="PlatformRed3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="5" unique_id=1261777339 instance=ExtResource("2_tlvj4")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(390, 18)
 tile_size = Vector2i(1, 7)
 red_mask = true
 bottom_right = Vector2i(20, 116)
 
 [node name="PlatformRed5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="6" unique_id=1119720736 instance=ExtResource("2_tlvj4")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(421, 61)
 tile_size = Vector2i(2, 4)
 red_mask = true
 bottom_right = Vector2i(36, 68)
 
 [node name="PlatformRed2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="7" unique_id=1706327249 instance=ExtResource("2_tlvj4")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(164, 25)
 tile_size = Vector2i(2, 2)
 red_mask = true
@@ -63,21 +59,18 @@ tile_size = Vector2i(3, 0)
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformGreen4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="9" unique_id=7877120 instance=ExtResource("2_tlvj4")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(471, 133)
 tile_size = Vector2i(7, 0)
 green_mask = true
 bottom_right = Vector2i(116, 4)
 
 [node name="PlatformGreen3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="10" unique_id=1413561945 instance=ExtResource("2_tlvj4")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(390, 17)
 tile_size = Vector2i(1, 7)
 green_mask = true
 bottom_right = Vector2i(20, 116)
 
 [node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="11" unique_id=564521429 instance=ExtResource("2_tlvj4")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(176, 44)
 tile_size = Vector2i(2, 2)
 green_mask = true
@@ -89,28 +82,24 @@ tile_size = Vector2i(3, 0)
 bottom_right = Vector2i(52, 4)
 
 [node name="PlatformBlue4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="13" unique_id=416082920 instance=ExtResource("2_tlvj4")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(471, 133)
 tile_size = Vector2i(7, 0)
 blue_mask = true
 bottom_right = Vector2i(116, 4)
 
 [node name="PlatformBlue3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="14" unique_id=1778380701 instance=ExtResource("2_tlvj4")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(390, 20)
 tile_size = Vector2i(1, 7)
 blue_mask = true
 bottom_right = Vector2i(20, 116)
 
 [node name="PlatformBlue5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="15" unique_id=82387667 instance=ExtResource("2_tlvj4")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(421, 61)
 tile_size = Vector2i(2, 4)
 blue_mask = true
 bottom_right = Vector2i(36, 68)
 
 [node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="16" unique_id=1998730658 instance=ExtResource("2_tlvj4")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(190, 25)
 tile_size = Vector2i(2, 2)
 blue_mask = true

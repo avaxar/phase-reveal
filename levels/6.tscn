@@ -50,35 +50,30 @@ tile_size = Vector2i(4, 0)
 bottom_right = Vector2i(68, 4)
 
 [node name="PlatformRed2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="9" unique_id=699464380 instance=ExtResource("2_wamqt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(273, 180)
 tile_size = Vector2i(1, 0)
 red_mask = true
 bottom_right = Vector2i(20, 4)
 
 [node name="PlatformRed3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="10" unique_id=1596260272 instance=ExtResource("2_wamqt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(270, 118)
 tile_size = Vector2i(2, 1)
 red_mask = true
 bottom_right = Vector2i(36, 20)
 
 [node name="PlatformRed5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="11" unique_id=1216473739 instance=ExtResource("2_wamqt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(554, 161)
 tile_size = Vector2i(1, 1)
 red_mask = true
 bottom_right = Vector2i(20, 20)
 
 [node name="PlatformRed7" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="12" unique_id=1283242897 instance=ExtResource("2_wamqt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(554, 192)
 tile_size = Vector2i(1, 1)
 red_mask = true
 bottom_right = Vector2i(20, 20)
 
 [node name="PlatformRed6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="13" unique_id=1062081751 instance=ExtResource("2_wamqt")]
-modulate = Color(1, 0.5, 0.5, 1)
 position = Vector2(679, 131)
 tile_size = Vector2i(1, 0)
 red_mask = true
@@ -90,35 +85,30 @@ tile_size = Vector2i(1, 1)
 bottom_right = Vector2i(20, 20)
 
 [node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="15" unique_id=164794446 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(470, 115)
 tile_size = Vector2i(1, 1)
 green_mask = true
 bottom_right = Vector2i(20, 20)
 
 [node name="PlatformGreen5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="16" unique_id=1156115867 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(515, 57)
 tile_size = Vector2i(0, 6)
 green_mask = true
 bottom_right = Vector2i(4, 100)
 
 [node name="PlatformGreen4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="17" unique_id=762248905 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(636, 131)
 tile_size = Vector2i(1, 0)
 green_mask = true
 bottom_right = Vector2i(20, 4)
 
 [node name="PlatformGreen3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="18" unique_id=390325984 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(554, 101)
 tile_size = Vector2i(1, 1)
 green_mask = true
 bottom_right = Vector2i(20, 20)
 
 [node name="PlatformGreen6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="19" unique_id=219985976 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 1, 0.5, 1)
 position = Vector2(554, 192)
 tile_size = Vector2i(1, 1)
 green_mask = true
@@ -130,49 +120,42 @@ tile_size = Vector2i(7, 0)
 bottom_right = Vector2i(116, 4)
 
 [node name="PlatformBlue4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="21" unique_id=1438794634 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(217, 76)
 tile_size = Vector2i(1, 0)
 blue_mask = true
 bottom_right = Vector2i(20, 4)
 
 [node name="PlatformBlue5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="22" unique_id=225024214 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(554, 132)
 tile_size = Vector2i(1, 1)
 blue_mask = true
 bottom_right = Vector2i(20, 20)
 
 [node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="23" unique_id=268025629 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(259, 180)
 tile_size = Vector2i(5, 0)
 blue_mask = true
 bottom_right = Vector2i(84, 4)
 
 [node name="PlatformBlue3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="24" unique_id=1266886149 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(259, 124)
 tile_size = Vector2i(0, 3)
 blue_mask = true
 bottom_right = Vector2i(4, 52)
 
 [node name="PlatformBlue6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="25" unique_id=762689302 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(608, 57)
 tile_size = Vector2i(0, 6)
 blue_mask = true
 bottom_right = Vector2i(4, 100)
 
 [node name="PlatformBlue8" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="26" unique_id=620430022 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(515, 57)
 tile_size = Vector2i(0, 6)
 blue_mask = true
 bottom_right = Vector2i(4, 100)
 
 [node name="PlatformBlue7" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="27" unique_id=164852260 instance=ExtResource("2_wamqt")]
-modulate = Color(0.5, 0.5, 1, 1)
 position = Vector2(617, 131)
 tile_size = Vector2i(5, 0)
 blue_mask = true
