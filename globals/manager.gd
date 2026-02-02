@@ -99,8 +99,8 @@ signal mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool)
 @onready var green_music := $GreenMusic
 @onready var blue_music := $BlueMusic
 
-const ON_DB = -10
-const OFF_DB = -30
+const ON_DB = -20.0
+const OFF_DB = -30.0
 const MUSIC_TRANS = 0.5
 
 

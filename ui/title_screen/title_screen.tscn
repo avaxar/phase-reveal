@@ -36,6 +36,7 @@ script = ExtResource("1_rhiq2")
 
 [node name="Menu" type="AudioStreamPlayer" parent="." unique_id=2134887908]
 stream = ExtResource("2_qhokr")
+volume_db = -10.0
 autoplay = true
 
 [node name="Background" type="Node2D" parent="." unique_id=1304480727]

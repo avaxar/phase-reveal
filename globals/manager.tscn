@@ -25,7 +25,7 @@ ExtResource("4_kkdxs"): false
 
 [node name="LoopMusic" type="AudioStreamPlayer" parent="." unique_id=612633030]
 stream = ExtResource("8_f8h86")
-volume_db = -10.0
+volume_db = -20.0
 
 [node name="RedMusic" type="AudioStreamPlayer" parent="." unique_id=1394385296]
 stream = ExtResource("8_bru8t")

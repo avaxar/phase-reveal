@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://ci5cmglnd0f7w"]
 
-[ext_resource type="Script" uid="uid://cvidqm6n5jxf" path="res://intro/outro.gd" id="1_l72yh"]
-[ext_resource type="Texture2D" uid="uid://dew3fvwhxp4n5" path="res://intro/outro_frames/frame 3.png" id="2_02647"]
-[ext_resource type="AudioStream" uid="uid://nkkomua8itvr" path="res://intro/outro.wav" id="2_vmmd2"]
-[ext_resource type="Texture2D" uid="uid://crrvlqgbay16a" path="res://intro/outro_frames/frame 1.png" id="3_vmmd2"]
-[ext_resource type="Texture2D" uid="uid://crnxcxok0fqtc" path="res://intro/outro_frames/frame 2.png" id="4_y77ac"]
-[ext_resource type="Texture2D" uid="uid://3fdscum2u817" path="res://intro/outro_frames/frame 4.png" id="5_5adb4"]
-[ext_resource type="Texture2D" uid="uid://crtjbronwrrk5" path="res://intro/outro_frames/frame 5.png" id="6_wte8d"]
-[ext_resource type="Texture2D" uid="uid://bmq6mfn2ntb22" path="res://intro/outro_frames/frame 6.png" id="7_phmfr"]
+[ext_resource type="Script" uid="uid://cvidqm6n5jxf" path="res://comic/outro.gd" id="1_l72yh"]
+[ext_resource type="Texture2D" uid="uid://dew3fvwhxp4n5" path="res://comic/outro/frame 3.png" id="2_02647"]
+[ext_resource type="AudioStream" uid="uid://nkkomua8itvr" path="res://comic/outro.wav" id="2_vmmd2"]
+[ext_resource type="Texture2D" uid="uid://crrvlqgbay16a" path="res://comic/outro/frame 1.png" id="3_vmmd2"]
+[ext_resource type="Texture2D" uid="uid://crnxcxok0fqtc" path="res://comic/outro/frame 2.png" id="4_y77ac"]
+[ext_resource type="Texture2D" uid="uid://3fdscum2u817" path="res://comic/outro/frame 4.png" id="5_5adb4"]
+[ext_resource type="Texture2D" uid="uid://crtjbronwrrk5" path="res://comic/outro/frame 5.png" id="6_wte8d"]
+[ext_resource type="Texture2D" uid="uid://bmq6mfn2ntb22" path="res://comic/outro/frame 6.png" id="7_phmfr"]
 
 [node name="Outro" type="Control" unique_id=679458363 node_paths=PackedStringArray("frames")]
 layout_mode = 3
@@ -21,6 +21,7 @@ frames = [NodePath("Frame1"), NodePath("Frame2"), NodePath("Frame3"), NodePath("
 
 [node name="Outro" type="AudioStreamPlayer" parent="." unique_id=2009932419]
 stream = ExtResource("2_vmmd2")
+volume_db = -10.0
 autoplay = true
 
 [node name="BG" type="ColorRect" parent="." unique_id=780431101]
