@@ -12,6 +12,17 @@
 [ext_resource type="AudioStream" uid="uid://buunebu31vr33" path="res://globals/music/green.ogg" id="10_cwg7d"]
 [ext_resource type="AudioStream" uid="uid://bdpitfvxpef6d" path="res://globals/music/blue.ogg" id="11_0uhbl"]
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_f8h86"]
+stream_count = 4
+stream_0/stream = ExtResource("8_f8h86")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("9_f8h86")
+stream_1/volume = -20.0
+stream_2/stream = ExtResource("10_cwg7d")
+stream_2/volume = -20.0
+stream_3/stream = ExtResource("11_0uhbl")
+stream_3/volume = -20.0
+
 [node name="Manager" type="Node" unique_id=1886356927]
 script = ExtResource("1_m4udf")
 levels = Dictionary[PackedScene, bool]({
@@ -23,24 +34,8 @@ ExtResource("5_qvx2k"): false,
 ExtResource("4_kkdxs"): false
 })
 
-[node name="LoopMusic" type="AudioStreamPlayer" parent="." unique_id=612633030]
-stream = ExtResource("8_f8h86")
-volume_db = -20.0
-
-[node name="RedMusic" type="AudioStreamPlayer" parent="." unique_id=1394385296]
-stream = ExtResource("9_f8h86")
-volume_db = -30.0
-
-[node name="GreenMusic" type="AudioStreamPlayer" parent="." unique_id=1023890272]
-stream = ExtResource("10_cwg7d")
-volume_db = -30.0
-
-[node name="BlueMusic" type="AudioStreamPlayer" parent="." unique_id=783782982]
-stream = ExtResource("11_0uhbl")
-volume_db = -30.0
-
-[node name="SyncMusic" type="Timer" parent="." unique_id=1518126434]
-autostart = true
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1380562907]
+stream = SubResource("AudioStreamSynchronized_f8h86")
+volume_db = -15.0
 
 [connection signal="mask_changed" from="." to="." method="_on_mask_changed"]
-[connection signal="timeout" from="SyncMusic" to="." method="_on_sync_music_timeout"]

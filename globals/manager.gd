@@ -94,47 +94,72 @@ signal mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool)
 
 # --- Music ---
 
-@onready var loop_music := $LoopMusic
-@onready var red_music := $RedMusic
-@onready var green_music := $GreenMusic
-@onready var blue_music := $BlueMusic
+@onready var music := $Music
 
-const ON_DB = -20.0
-const OFF_DB = -30.0
-const MUSIC_TRANS = 0.5
+const ON_DB = -0.0
+const OFF_DB = -20.0
+const MUSIC_TRANS = 0.25
 
 
 var music_playing := false:
 	set(value):
-		if loop_music == null:
+		if music == null:
 			set_deferred("music_playing", value)
 			return
 
 		if music_playing != value:
 			music_playing = value
-			loop_music.playing = value
-			red_music.playing = value
-			green_music.playing = value
-			blue_music.playing = value
+			music.playing = value
 
+var red_volume: float:
+	get:
+		if music == null:
+			return 0.0
 
-func _on_sync_music_timeout() -> void:
-	if music_playing:
-		var timestamp: float = loop_music.get_playback_position()
-		red_music.play(timestamp)
-		green_music.play(timestamp)
-		blue_music.play(timestamp)
+		return music.stream.get_sync_stream_volume(1)
+
+	set(value):
+		if music == null:
+			set_deferred("red_volume", value)
+		else:
+			music.stream.set_sync_stream_volume(1, value)
+
+var green_volume: float:
+	get:
+		if music == null:
+			return 0.0
+
+		return music.stream.get_sync_stream_volume(2)
+
+	set(value):
+		if music == null:
+			set_deferred("green_volume", value)
+		else:
+			music.stream.set_sync_stream_volume(2, value)
+
+var blue_volume: float:
+	get:
+		if music == null:
+			return 0.0
+
+		return music.stream.get_sync_stream_volume(3)
+
+	set(value):
+		if music == null:
+			set_deferred("blue_volume", value)
+		else:
+			music.stream.set_sync_stream_volume(3, value)
 
 
 func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool) -> void:
 	if red_changed:
-		get_tree().create_tween().tween_property(red_music, "volume_db",
+		get_tree().create_tween().tween_property(self, "red_volume",
 			ON_DB if red_mask else OFF_DB, MUSIC_TRANS)
 
 	if green_changed:
-		get_tree().create_tween().tween_property(green_music, "volume_db",
+		get_tree().create_tween().tween_property(self, "green_volume",
 			ON_DB if green_mask else OFF_DB, MUSIC_TRANS)
 
 	if blue_changed:
-		get_tree().create_tween().tween_property(blue_music, "volume_db",
+		get_tree().create_tween().tween_property(self, "blue_volume",
 			ON_DB if blue_mask else OFF_DB, MUSIC_TRANS)
