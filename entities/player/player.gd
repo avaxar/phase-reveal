@@ -196,7 +196,6 @@ func try_pickup_box() -> void:
 
 
 func drop_box() -> void:
-	print("BOX DROP!")
 	var nc: Cube = CUBE.instantiate()
 	get_parent().add_child(nc)
 	nc.global_position = global_position + Vector2(0, -10)
@@ -231,6 +230,8 @@ func die() -> void:
 
 	death_sound.play()
 	hitbox.set_deferred("disabled", true)
+	if has_box:
+		call_deferred("drop_box")
 	await get_tree().create_timer(0.1).timeout
 	velocity = Vector2(knockback_velocity.x, -knockback_velocity.y)
 	is_dead = true

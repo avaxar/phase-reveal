@@ -8,7 +8,6 @@ func _ready() -> void:
 	Manager.on_player_death.connect(_on_player_death)
 
 func _on_player_death() -> void:
-	print("FUCK")
 	can_pause = false
 
 func _on_resume_button_pressed() -> void:

@@ -13,7 +13,10 @@ func reset_level() -> void:
 	attempts += 1
 	load_level(current_level)
 
-func emit_on_player_death() -> void: #Play the transition here!
+func emit_on_player_death() -> void: # Play the transition here!
+	if loading:
+		return
+
 	loading = true
 	on_player_death.emit()
 	await get_tree().create_timer(1.25).timeout
