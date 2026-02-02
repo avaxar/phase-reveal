@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cwj6565s7c1nq"]
 
 [ext_resource type="Texture2D" uid="uid://bk1ibb58hoh5r" path="res://comic/intro/frame1.png" id="1_pxqmo"]
-[ext_resource type="Script" uid="uid://pdtk14kg7awu" path="res://comic/intro.gd" id="1_vyos2"]
-[ext_resource type="AudioStream" uid="uid://so5dyffwb3qc" path="res://comic/intro.wav" id="2_1q7h5"]
+[ext_resource type="Script" uid="uid://pdtk14kg7awu" path="res://comic/intro/intro.gd" id="1_vyos2"]
+[ext_resource type="AudioStream" uid="uid://b3fwo8qajsgi4" path="res://comic/intro/intro.ogg" id="2_oiicb"]
 [ext_resource type="Texture2D" uid="uid://b4oriwcc04gis" path="res://comic/intro/frame2.png" id="2_vyos2"]
 [ext_resource type="Texture2D" uid="uid://bry8b28acgt8g" path="res://comic/intro/frame3.png" id="3_1q7h5"]
 [ext_resource type="Texture2D" uid="uid://3y77r45o7avi" path="res://comic/intro/frame4.png" id="4_a5lnx"]
@@ -19,7 +19,7 @@ frames = [NodePath("Frame1"), NodePath("Frame2"), NodePath("Frame3"), NodePath("
 duration = 2.0
 
 [node name="Intro" type="AudioStreamPlayer" parent="." unique_id=683948359]
-stream = ExtResource("2_1q7h5")
+stream = ExtResource("2_oiicb")
 volume_db = -10.0
 autoplay = true
 

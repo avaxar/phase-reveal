@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ck64da4a2rbqv" path="res://entities/cube/cube.gd" id="1_nub1p"]
 [ext_resource type="Texture2D" uid="uid://jloggkyyrogs" path="res://entities/cube/cube.png" id="2_nub1p"]
 [ext_resource type="Shader" uid="uid://21wl3seiu3vh" path="res://entities/cube/rotsprite.gdshader" id="2_sftye"]
-[ext_resource type="AudioStream" uid="uid://bpvsndmf65m7b" path="res://entities/cube/crush.wav" id="3_vul6u"]
+[ext_resource type="AudioStream" uid="uid://cn0any51pnkna" path="res://entities/cube/crush.ogg" id="4_sftye"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t2xqw"]
 shader = ExtResource("2_sftye")
@@ -42,4 +42,4 @@ initial_velocity_min = 100.0
 initial_velocity_max = 100.0
 
 [node name="CrushSFX" type="AudioStreamPlayer2D" parent="." unique_id=828164520]
-stream = ExtResource("3_vul6u")
+stream = ExtResource("4_sftye")

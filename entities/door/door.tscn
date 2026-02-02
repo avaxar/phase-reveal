@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cilxaib8y71fq" path="res://entities/door/door.gd" id="2_bfv6c"]
 [ext_resource type="Texture2D" uid="uid://b765m6u4jqnr" path="res://entities/door/door.png" id="2_dsbe1"]
 [ext_resource type="Texture2D" uid="uid://c3g4ehy5nafdo" path="res://entities/door/smoke.png" id="3_uq1c4"]
-[ext_resource type="AudioStream" uid="uid://csxxecmfxib1u" path="res://entities/door/door_open.wav" id="4_uq1c4"]
-[ext_resource type="AudioStream" uid="uid://bf3yys8ipr5ud" path="res://entities/door/door_close.wav" id="5_r5xgf"]
+[ext_resource type="AudioStream" uid="uid://btw48qvc7efph" path="res://entities/door/door_open.ogg" id="4_uq1c4"]
+[ext_resource type="AudioStream" uid="uid://dakixukqntadc" path="res://entities/door/door_close.ogg" id="5_uq1c4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sqah"]
 atlas = ExtResource("2_dsbe1")
@@ -272,4 +272,4 @@ color_ramp = SubResource("Gradient_dsbe1")
 stream = ExtResource("4_uq1c4")
 
 [node name="DoorClose" type="AudioStreamPlayer2D" parent="." unique_id=277473190]
-stream = ExtResource("5_r5xgf")
+stream = ExtResource("5_uq1c4")
