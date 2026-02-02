@@ -3,7 +3,7 @@ class_name Platform
 extends Maskable
 
 
-@onready var tile_map = $TileMap
+@onready var tile_map := $TileMap
 
 
 const TOP_LEFT := Vector2i(23, 2)

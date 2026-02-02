@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cu23hb5thhblh"]
 
-[ext_resource type="Texture2D" uid="uid://d0dit0ckl4ouf" path="res://backgrounds/back1.png" id="1_xt7wt"]
-[ext_resource type="Texture2D" uid="uid://cqcax806lv5mj" path="res://backgrounds/back2-export.png" id="2_cb12t"]
-[ext_resource type="Texture2D" uid="uid://di7wsudx8ew55" path="res://backgrounds/back3-export.png" id="3_lpc38"]
-[ext_resource type="Texture2D" uid="uid://b4pk8ycd00ipx" path="res://backgrounds/back4-export.png" id="4_r2pce"]
+[ext_resource type="Texture2D" uid="uid://d0dit0ckl4ouf" path="res://ui/parallax/back1.png" id="1_xt7wt"]
+[ext_resource type="Texture2D" uid="uid://cqcax806lv5mj" path="res://ui/parallax/back2.png" id="2_cb12t"]
+[ext_resource type="Texture2D" uid="uid://di7wsudx8ew55" path="res://ui/parallax/back3.png" id="3_lpc38"]
+[ext_resource type="Texture2D" uid="uid://b4pk8ycd00ipx" path="res://ui/parallax/back4.png" id="4_r2pce"]
 
 [node name="Parallax" type="Node2D" unique_id=1614897716]
 
