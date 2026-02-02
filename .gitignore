@@ -1,3 +1,4 @@
+*.tmp
 exports/
 
 # Godot 4+ specific ignores

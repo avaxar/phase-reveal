@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Phase Reveal"
+config/description="A side-scrolling puzzle platformer with an exclusive-or twist. Various platforms exist in multiple additively-colorful planes of existence: red, green, and blue. You are a laboratory monkey whose bestowed mask enables you to selectively and intricately interact with them. Two platforms of contrasting hues mask each other out, becoming zilch in mutual intersection. Escape the facility, phasing your way out."
 run/main_scene="uid://wncglugrhywk"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0.18039216, 0.101960786, 1)
+config/icon="uid://comq6mdhrmx77"
 
 [autoload]
 

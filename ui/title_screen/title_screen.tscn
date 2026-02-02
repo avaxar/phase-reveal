@@ -261,9 +261,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_top = -1.0
-offset_bottom = 39.0
+offset_left = -325.0
+offset_top = -51.0
+offset_right = -1.0
+offset_bottom = 273.0
 grow_horizontal = 0
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -290,25 +291,25 @@ script = ExtResource("5_lgnx5")
 x_dev = 32.0
 metadata/_custom_type_script = "uid://bx1pbde6wnyr5"
 
-[node name="CreditsButton" parent="CreditsContainer/CircularContainer" unique_id=898324290 instance=ExtResource("6_1djn3")]
-layout_mode = 2
-scale_size = Vector2(1.25, 1.25)
-label_text = "R. Ethan Halim"
-
 [node name="CreditsButton2" parent="CreditsContainer/CircularContainer" unique_id=2141593416 instance=ExtResource("6_1djn3")]
 layout_mode = 2
 scale_size = Vector2(1.25, 1.25)
 label_text = "Anders \"Plumz\" Tan"
 
-[node name="CreditsButton3" parent="CreditsContainer/CircularContainer" unique_id=125875596 instance=ExtResource("6_1djn3")]
-layout_mode = 2
-scale_size = Vector2(1.25, 1.25)
-label_text = "Thomas \"Troggz\" Nadandra"
-
 [node name="CreditsButton4" parent="CreditsContainer/CircularContainer" unique_id=1506954380 instance=ExtResource("6_1djn3")]
 layout_mode = 2
 scale_size = Vector2(1.25, 1.25)
 label_text = "Matthew \"picardia\" Harry"
+
+[node name="CreditsButton" parent="CreditsContainer/CircularContainer" unique_id=898324290 instance=ExtResource("6_1djn3")]
+layout_mode = 2
+scale_size = Vector2(1.25, 1.25)
+label_text = "R. Ethan Halim (avaxar)"
+
+[node name="CreditsButton3" parent="CreditsContainer/CircularContainer" unique_id=125875596 instance=ExtResource("6_1djn3")]
+layout_mode = 2
+scale_size = Vector2(1.25, 1.25)
+label_text = "Thomas \"Troggz\" Nadandra"
 
 [node name="CreditsButton5" parent="CreditsContainer/CircularContainer" unique_id=1801968738 instance=ExtResource("6_1djn3")]
 layout_mode = 2
@@ -356,8 +357,10 @@ stream = ExtResource("6_ca08b")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=532339259]
 
 [node name="Border" parent="CanvasLayer" unique_id=825236458 instance=ExtResource("17_h0jpi")]
+metadata/_edit_lock_ = true
 
 [node name="Transition" parent="CanvasLayer" unique_id=583275066 instance=ExtResource("17_kkgxs")]
+metadata/_edit_lock_ = true
 
 [connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button/TextureButton" to="ButtonsContainer/DiagonalContainer/Button" method="_on_texture_button_focus_entered"]
 [connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button/TextureButton" to="ButtonsContainer/DiagonalContainer/Button" method="_on_texture_button_focus_exited"]
