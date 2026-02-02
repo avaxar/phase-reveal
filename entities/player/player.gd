@@ -186,10 +186,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			try_pickup_box()
 
-	if event.is_action_pressed("pause"):
-		get_tree().paused = !get_tree().paused
-
-
 func try_pickup_box() -> void:
 	var bodies: Array = box_detector.get_overlapping_bodies()
 	for body in bodies:

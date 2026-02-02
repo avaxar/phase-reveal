@@ -1,6 +1,16 @@
 extends Control
 const TITLE_SCREEN = preload("uid://wncglugrhywk")
 
+var can_pause := true
+
+
+func _ready() -> void:
+	Manager.on_player_death.connect(_on_player_death)
+
+func _on_player_death() -> void:
+	print("FUCK")
+	can_pause = false
+
 func _on_resume_button_pressed() -> void:
 	get_tree().paused = false
 	visible = false
@@ -19,6 +29,9 @@ func _on_menu_button_pressed() -> void:
 	get_tree().change_scene_to_packed(TITLE_SCREEN)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not can_pause:
+		return
+
 	if event.is_action_pressed("pause"):
 		visible = !visible
 		get_tree().set_deferred("paused", visible)

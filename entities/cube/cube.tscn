@@ -25,7 +25,7 @@ texture = ExtResource("2_nub1p")
 shape = SubResource("RectangleShape2D_t2xqw")
 
 [node name="InsideCast" type="RayCast2D" parent="." unique_id=1852668682]
-target_position = Vector2(2, 0)
+target_position = Vector2(4, -4)
 hit_from_inside = true
 
 [node name="Particles" type="CPUParticles2D" parent="." unique_id=305829891]

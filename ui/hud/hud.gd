@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("mask_blue"):
 		Manager.blue_mask = !Manager.blue_mask
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	label.text = str(Manager.current_level)
 
 func _on_mask_red_pressed() -> void:

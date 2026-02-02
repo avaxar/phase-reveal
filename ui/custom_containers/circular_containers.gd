@@ -24,7 +24,7 @@ func _notification(what):
 		if count == 0:
 			return
 
-		var mid: float = (count - 1) / 2
+		var mid: float = (count - 1) / 2.0
 
 		# Must re-sort the children
 		for i in count:
