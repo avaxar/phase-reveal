@@ -7,9 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://r0v3nsqvwd4v" path="res://levels/5.tscn" id="5_qvx2k"]
 [ext_resource type="PackedScene" uid="uid://62x08xttyx87" path="res://levels/3.tscn" id="6_xqiqb"]
 [ext_resource type="PackedScene" uid="uid://daverttw0x364" path="res://levels/4.tscn" id="7_nsp4e"]
+[ext_resource type="PackedScene" uid="uid://bavjpeocevult" path="res://levels/7.tscn" id="8_cwg7d"]
 [ext_resource type="AudioStream" uid="uid://bisxwkp7v4t3" path="res://globals/music/loop.ogg" id="8_f8h86"]
 [ext_resource type="AudioStream" uid="uid://ddtvg4oy4tjx0" path="res://globals/music/red.ogg" id="9_f8h86"]
+[ext_resource type="PackedScene" uid="uid://m5qsbgy3ii3w" path="res://levels/8.tscn" id="9_yw7ax"]
 [ext_resource type="AudioStream" uid="uid://buunebu31vr33" path="res://globals/music/green.ogg" id="10_cwg7d"]
+[ext_resource type="PackedScene" uid="uid://wuiuyp264p52" path="res://levels/9.tscn" id="10_trju5"]
 [ext_resource type="AudioStream" uid="uid://bdpitfvxpef6d" path="res://globals/music/blue.ogg" id="11_0uhbl"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_f8h86"]
@@ -31,7 +34,10 @@ ExtResource("3_adej0"): false,
 ExtResource("6_xqiqb"): false,
 ExtResource("7_nsp4e"): false,
 ExtResource("5_qvx2k"): false,
-ExtResource("4_kkdxs"): false
+ExtResource("4_kkdxs"): false,
+ExtResource("8_cwg7d"): false,
+ExtResource("9_yw7ax"): false,
+ExtResource("10_trju5"): false
 })
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1380562907]
