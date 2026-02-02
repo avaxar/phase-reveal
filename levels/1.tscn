@@ -60,7 +60,7 @@ offset_left = 336.0
 offset_top = 29.0
 offset_right = 448.0
 offset_bottom = 52.0
-text = "Press E to Pick up"
+text = "Press E to Pick Up"
 label_settings = SubResource("LabelSettings_a1scl")
 
 [node name="PassthroughVisualizer" parent="." index="3" unique_id=1087875782]

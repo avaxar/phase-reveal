@@ -1,6 +1,10 @@
 extends Node2D
 
 
+@export var default_red := false
+@export var default_green := false
+@export var default_blue := false
+
 @onready var collision_proxies := $CollisionProxies
 @onready var passthrough_visualizer := $PassthroughVisualizer
 @onready var player := $Player
@@ -11,6 +15,10 @@ extends Node2D
 
 
 func _ready():
+	Manager.red_mask = default_red
+	Manager.green_mask = default_green
+	Manager.blue_mask = default_blue
+
 	camera.limit_right = end.position.x
 	Manager.mask_changed.connect(update_masks)
 	for maskable: Maskable in get_tree().get_nodes_in_group("maskables"):

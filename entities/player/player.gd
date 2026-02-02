@@ -200,6 +200,7 @@ func drop_box() -> void:
 	var nc: Cube = CUBE.instantiate()
 	get_parent().add_child(nc)
 	nc.global_position = global_position + Vector2(0, -10)
+	nc.linear_velocity = velocity
 	has_box = false
 
 
