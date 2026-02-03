@@ -66,6 +66,7 @@ func on_button_pressed(action_id: String) -> void:
 		"credits":
 			load_credits()
 		"exit":
+			visible = false
 			get_tree().quit()
 		"back":
 			load_main()

@@ -26,17 +26,9 @@ func emit_on_player_death() -> void: # Play the transition here!
 func get_level_total() -> int:
 	return levels.size()
 
-var current_scene: Node
 func load_level(level: int): # Uses level numbers 1-6
 	Manager.music_playing = true
-	if get_tree().current_scene != null:
-		current_scene = get_tree().current_scene
-	#get_tree().change_scene_to_packed(levels.keys()[level - 1])
-	var next_level = levels.keys()[level - 1].instantiate()
-	var root_node = current_scene.get_parent()
-	current_scene.queue_free()
-	root_node.add_child(next_level)
-	current_scene = next_level
+	get_tree().change_scene_to_packed(levels.keys()[level - 1])
 
 
 func load_next_level() -> void: # Loads the next level
@@ -59,9 +51,6 @@ func unlock_level(level: int):
 
 func play_outro() -> void:
 	get_tree().paused = false
-	if current_scene:
-		current_scene.queue_free()
-
 	Manager.music_playing = false
 	get_tree().change_scene_to_packed(OUTRO)
 
@@ -106,10 +95,6 @@ const MUSIC_TRANS = 0.25
 
 var music_playing := false:
 	set(value):
-		if music == null:
-			set_deferred("music_playing", value)
-			return
-
 		if music_playing != value:
 			music_playing = value
 			music.playing = value
@@ -122,36 +107,21 @@ var red_volume: float:
 		return music.stream.get_sync_stream_volume(1)
 
 	set(value):
-		if music == null:
-			set_deferred("red_volume", value)
-		else:
-			music.stream.set_sync_stream_volume(1, value)
+		music.stream.set_sync_stream_volume(1, value)
 
 var green_volume: float:
 	get:
-		if music == null:
-			return 0.0
-
 		return music.stream.get_sync_stream_volume(2)
 
 	set(value):
-		if music == null:
-			set_deferred("green_volume", value)
-		else:
-			music.stream.set_sync_stream_volume(2, value)
+		music.stream.set_sync_stream_volume(2, value)
 
 var blue_volume: float:
 	get:
-		if music == null:
-			return 0.0
-
 		return music.stream.get_sync_stream_volume(3)
 
 	set(value):
-		if music == null:
-			set_deferred("blue_volume", value)
-		else:
-			music.stream.set_sync_stream_volume(3, value)
+		music.stream.set_sync_stream_volume(3, value)
 
 var music_beat := 0.0
 
@@ -162,8 +132,11 @@ func _process(_delta: float) -> void:
 		var timestamp: float = music.get_playback_position() + (
 			AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
 		)
-		timestamp = fmod(maxf(0.0, timestamp), loop_music.get_length())
-		music_beat = timestamp / 60.0 * loop_music.bpm
+		timestamp = fmod(timestamp, loop_music.get_length())
+		if timestamp < 0.0:
+			music_beat = -1.0
+		else:
+			music_beat = timestamp / 60.0 * loop_music.bpm
 
 
 func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool) -> void:

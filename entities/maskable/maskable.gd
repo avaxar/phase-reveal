@@ -15,9 +15,9 @@ extends AnimatableBody2D
 
 @export var disabled := false:
 	set(value):
-		if collision_shape == null:
-			set_deferred("disabled", value)
-			return
+		disabled = value
+		if not is_inside_tree():
+			await ready
 
 		collision_shape.set_deferred("disabled", value)
 
@@ -32,9 +32,9 @@ var _bypass_setter := false # This is so inelegant
 
 @export var top_left := Vector2i(-8, -8):
 	set(value):
-		if collision_shape == null:
-			set_deferred("top_left", value) # Lets the `collision_shape` be instantiated first
-			return
+		top_left = value
+		if not is_inside_tree():
+			await ready
 
 		if not _bypass_setter:
 			collision_shape.position = (value + bottom_right) / 2.0
@@ -42,17 +42,15 @@ var _bypass_setter := false # This is so inelegant
 			mask_area.position = collision_shape.position
 			mask_area_shape.shape = collision_shape.shape
 
-		top_left = value
-		if not _bypass_setter:
 			_bypass_setter = true
 			bottom_right = Vector2i(collision_shape.position + collision_shape.shape.size / 2)
 			_bypass_setter = false
 
 @export var bottom_right := Vector2i(8, 8):
 	set(value):
-		if collision_shape == null:
-			set_deferred("bottom_right", value) # Lets the `collision_shape` be instantiated first
-			return
+		bottom_right = value
+		if not is_inside_tree():
+			await ready
 
 		if not _bypass_setter:
 			collision_shape.position = (top_left + value) / 2.0
@@ -60,8 +58,6 @@ var _bypass_setter := false # This is so inelegant
 			mask_area.position = collision_shape.position
 			mask_area_shape.shape = collision_shape.shape
 
-		bottom_right = value
-		if not _bypass_setter:
 			_bypass_setter = true
 			top_left = Vector2i(collision_shape.position - collision_shape.shape.size / 2)
 			_bypass_setter = false

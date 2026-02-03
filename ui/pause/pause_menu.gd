@@ -22,8 +22,6 @@ func _on_restart_button_pressed() -> void:
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = false
 	visible = false
-	if Manager.current_scene != null:
-		Manager.current_scene.queue_free()
 	Manager.music_playing = false
 	get_tree().change_scene_to_packed(TITLE_SCREEN)
 

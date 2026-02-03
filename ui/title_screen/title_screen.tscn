@@ -310,7 +310,7 @@ label_text = "Matthew \"picardia\" Harry"
 [node name="CreditsButton4" parent="CreditsContainer/CircularContainer" unique_id=898324290 instance=ExtResource("6_1djn3")]
 layout_mode = 2
 scale_size = Vector2(1.25, 1.25)
-label_text = "R. Ethan Halim (avaxar)"
+label_text = "R. Ethan \"avaxar\" Halim"
 
 [node name="CreditsButton5" parent="CreditsContainer/CircularContainer" unique_id=125875596 instance=ExtResource("6_1djn3")]
 layout_mode = 2

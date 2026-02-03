@@ -17,13 +17,12 @@ const BOTTOM_LEFT = Vector2i(23, 4)
 const BOTTOM = Vector2i(24, 4)
 const BOTTOM_RIGHT = Vector2i(25, 4)
 
-@export var tile_size := Vector2i(2, 1):
+@export var tile_size := Vector2i(0, 0):
 	set(value):
-		if tile_map == null:
-			set_deferred("tile_size", value)
-			return
-
 		tile_size = value
+		if not is_inside_tree():
+			await ready
+
 		tile_map.clear()
 
 		tile_map.set_cell(Vector2i(-1, -1), 0, TOP_LEFT)
@@ -72,5 +71,5 @@ func _process(_delta: float) -> void:
 			borders.modulate = Color(0.25, 1.0, 0.25, pulse if green_mask else 0.0)
 		2:
 			borders.modulate = Color(0.25, 0.25, 1.0, pulse if blue_mask else 0.0)
-		3:
-			pass
+		_:
+			borders.modulate = Color(0.0, 0.0, 0.0, 0.0)

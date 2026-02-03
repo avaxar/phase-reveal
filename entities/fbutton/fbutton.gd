@@ -27,13 +27,11 @@ const RIGHT_STILL := Vector2i(21, 1)
 
 var pressed := false:
 	set(value):
-		if tile_map == null:
-			set_deferred("pressed", value)
-			return
-
 		pressed = value
-		tile_map.clear()
+		if not is_inside_tree():
+			await ready
 
+		tile_map.clear()
 		if width == 1:
 			tile_map.set_cell(Vector2i(0, 0), 0, SINGLE_PRESSED if pressed else SINGLE_STILL)
 		else:
