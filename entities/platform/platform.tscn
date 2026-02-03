@@ -25,13 +25,12 @@ position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_8vvea")
 
 [node name="TileMap" type="TileMapLayer" parent="." index="2" unique_id=1359034309]
-modulate = Color(0.5, 0.5, 0.5, 1)
 tile_map_data = PackedByteArray("AAAAAAAAAAAYAAQAAAABAAAAAAAYAAQAAAD/////AAAXAAIAAAAAAP//AAAYAAIAAAABAP//AAAYAAIAAAD//wAAAAAXAAQAAAACAP//AAAZAAIAAAACAAAAAAAZAAQAAAA=")
 tile_set = ExtResource("3_8vvea")
 collision_enabled = false
 metadata/_edit_lock_ = true
 
-[node name="Borders" type="Line2D" parent="." index="3" unique_id=634958038]
+[node name="Highlights" type="Line2D" parent="." index="3" unique_id=634958038]
 z_index = 1
 points = PackedVector2Array(-0.5, -0.5, 32.5, -0.5, 32.5, 0.5, -0.5, 0.5)
 closed = true

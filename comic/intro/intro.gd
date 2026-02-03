@@ -14,7 +14,7 @@ func _ready():
 
 	play_current_frame()
 
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_accept"):
 		skip_current_frame()
 
@@ -27,7 +27,7 @@ func play_current_frame():
 
 	var frame := frames[current_index]
 
-	tween = get_tree().create_tween()
+	tween = create_tween()
 	tween.tween_property(frame, "modulate:a", 1.0, duration)
 	tween.finished.connect(on_frame_finished)
 

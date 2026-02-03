@@ -14,25 +14,25 @@ func _ready():
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("mask_red"):
-		Manager.red_mask = !Manager.red_mask
+		Manager.red_mask = not Manager.red_mask
 	elif event.is_action_pressed("mask_green"):
-		Manager.green_mask = !Manager.green_mask
+		Manager.green_mask = not Manager.green_mask
 	elif event.is_action_pressed("mask_blue"):
-		Manager.blue_mask = !Manager.blue_mask
+		Manager.blue_mask = not Manager.blue_mask
 
 func _process(_delta: float) -> void:
 	label.text = str(Manager.current_level)
 
 func _on_mask_red_pressed() -> void:
-	Manager.red_mask = !Manager.red_mask
+	Manager.red_mask = not Manager.red_mask
 
 
 func _on_mask_green_pressed() -> void:
-	Manager.green_mask = !Manager.green_mask
+	Manager.green_mask = not Manager.green_mask
 
 
 func _on_mask_blue_pressed() -> void:
-	Manager.blue_mask = !Manager.blue_mask
+	Manager.blue_mask = not Manager.blue_mask
 
 
 func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool) -> void:

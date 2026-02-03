@@ -4,7 +4,7 @@ extends Maskable
 
 
 @onready var tile_map := $TileMap
-@onready var borders := $Borders
+@onready var highlights := $Highlights
 
 
 const TOP_LEFT := Vector2i(23, 2)
@@ -44,32 +44,44 @@ const BOTTOM_RIGHT = Vector2i(25, 4)
 		bottom_right = Vector2i(4, 4) + 16 * tile_size
 		top_left = Vector2i(-4, -4)
 
-		borders.points = PackedVector2Array([
+		highlights.points = PackedVector2Array([
 			Vector2(-0.5, -0.5),
 			Vector2(tile_size.x * 16 + 0.5, -0.5),
 			Vector2(tile_size.x * 16 + 0.5, tile_size.y * 16 + 0.5),
 			Vector2(-0.5, tile_size.y * 16 + 0.5)
 		])
-		borders.closed = true
+		highlights.closed = true
+
+var highlighted := false
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("highlight"):
+		highlighted = not highlighted
+		if highlighted:
+			create_tween().tween_property(tile_map, "self_modulate",
+				Color(0.5, 0.5, 0.5), 0.0625)
+		else:
+			create_tween().tween_property(tile_map, "self_modulate", Color(1.0, 1.0, 1.0), 0.0625)
 
 
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+
 	var color := Color(1.0 if red_mask else 0.5, 1.0 if green_mask else 0.5, 1.0 if blue_mask else 0.5)
 	if is_included():
 		tile_map.modulate = Color(color, 1.0)
 	else:
 		tile_map.modulate = Color(color, 0.25)
 
-	if Engine.is_editor_hint():
-		return
-
-	var pulse := (1.0 - fmod(Manager.music_beat, 1.0)) ** 1.25
+	var pulse := (1.0 - fmod(Manager.music_beat, 1.0)) ** 0.5 * float(highlighted)
 	match int(Manager.music_beat) % 4:
 		0:
-			borders.modulate = Color(1.0, 0.25, 0.25, pulse if red_mask else 0.0)
+			highlights.modulate = Color(1.0, 0.25, 0.25, pulse if red_mask else 0.0)
 		1:
-			borders.modulate = Color(0.25, 1.0, 0.25, pulse if green_mask else 0.0)
+			highlights.modulate = Color(0.0, 0.75, 0.25, pulse if green_mask else 0.0)
 		2:
-			borders.modulate = Color(0.25, 0.25, 1.0, pulse if blue_mask else 0.0)
+			highlights.modulate = Color(0.25, 0.25, 1.0, pulse if blue_mask else 0.0)
 		_:
-			borders.modulate = Color(0.0, 0.0, 0.0, 0.0)
+			highlights.modulate = Color(0.0, 0.0, 0.0, 0.0)

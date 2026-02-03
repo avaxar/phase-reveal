@@ -30,5 +30,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event.is_action_pressed("pause"):
-		visible = !visible
+		visible = not visible
 		get_tree().set_deferred("paused", visible)

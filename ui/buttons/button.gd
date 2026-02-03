@@ -42,17 +42,17 @@ func tween_button_entered() -> void:
 	if tween:
 		tween.kill()
 
-	tween = get_tree().create_tween()
+	tween = create_tween()
 	tween.tween_property(texture_button, "position", original_position + move_length, 0.1)
-	tween.tween_property(self, "scale", original_scale * scale_size, 0.1)
+	tween.tween_property(self , "scale", original_scale * scale_size, 0.1)
 	z_index += 1
 
 func tween_button_exitted() -> void:
 	if tween:
 		tween.kill()
-	tween = get_tree().create_tween()
+	tween = create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(self, "scale", original_scale, 0.1)
+	tween.tween_property(self , "scale", original_scale, 0.1)
 	tween.tween_property(texture_button, "position", original_position, 0.1)
 	tween.set_parallel(false)
 	z_index = 0
