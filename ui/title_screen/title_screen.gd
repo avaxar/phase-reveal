@@ -65,9 +65,8 @@ func on_button_pressed(action_id: String) -> void:
 			load_level_select()
 		"credits":
 			load_credits()
-		"exit":
-			visible = false
-			get_tree().quit()
+		"color_mode":
+			configure_color_mode()
 		"back":
 			load_main()
 
@@ -90,6 +89,9 @@ func load_credits() -> void:
 		#circular_container.get_child(0).grab_button_focus()
 	#if !b and diagonal_container.get_child_count() > 0:
 		#diagonal_container.get_child(0).grab_button_focus()
+
+func configure_color_mode():
+	ColorBlind.type = (ColorBlind.type + 1) % ColorBlind.types_n
 
 func load_main() -> void:
 	splash_container.visible = true

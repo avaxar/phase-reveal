@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://rkgydexnqdob"]
+
+[ext_resource type="Shader" uid="uid://dnfaghb8rrdbi" path="res://ui/color_blind/color_blind.gdshader" id="1_7imnh"]
+[ext_resource type="Script" uid="uid://bdadxlydj8mii" path="res://ui/color_blind/color_blind.gd" id="2_l42wf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l42wf"]
+shader = ExtResource("1_7imnh")
+shader_parameter/mode = -1
+shader_parameter/intensity = 1.0
+
+[node name="ColorBlind" type="ColorRect" unique_id=290998836]
+material = SubResource("ShaderMaterial_l42wf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("2_l42wf")

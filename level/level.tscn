@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bnnfsc0sh8514" path="res://ui/hud/hud.tscn" id="7_ivpvi"]
 [ext_resource type="PackedScene" uid="uid://c2xyo4rwn443e" path="res://ui/pause/pause_menu.tscn" id="10_cw150"]
 [ext_resource type="PackedScene" uid="uid://blvjh4n3vwdtk" path="res://ui/border/border.tscn" id="11_xii2b"]
+[ext_resource type="PackedScene" uid="uid://rkgydexnqdob" path="res://ui/color_blind/color_blind.tscn" id="12_m3nah"]
 [ext_resource type="PackedScene" uid="uid://blkf66vfytgyj" path="res://ui/transition/transition.tscn" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://cu23hb5thhblh" path="res://ui/parallax/parallax.tscn" id="13_l5lfc"]
 
@@ -22,6 +23,10 @@ normal = Vector2(-1, 0)
 
 [node name="Level" type="Node2D" unique_id=1104770908]
 script = ExtResource("1_7lnir")
+
+[node name="Parallax" parent="." unique_id=1614897716 instance=ExtResource("13_l5lfc")]
+z_index = -100
+metadata/_edit_lock_ = true
 
 [node name="CollisionProxies" type="Node2D" parent="." unique_id=1940272453]
 metadata/_edit_lock_ = true
@@ -99,14 +104,13 @@ metadata/_edit_lock_ = true
 visible = false
 metadata/_edit_lock_ = true
 
-[node name="Border" parent="CanvasLayer" unique_id=825236458 instance=ExtResource("11_xii2b")]
+[node name="ColorBlind" parent="CanvasLayer" unique_id=290998836 instance=ExtResource("12_m3nah")]
 metadata/_edit_lock_ = true
 
 [node name="Transition" parent="CanvasLayer" unique_id=583275066 instance=ExtResource("12_rhqlf")]
 metadata/_edit_lock_ = true
 
-[node name="Parallax" parent="." unique_id=1614897716 instance=ExtResource("13_l5lfc")]
-z_index = -100
+[node name="Border" parent="CanvasLayer" unique_id=825236458 instance=ExtResource("11_xii2b")]
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="End" to="." method="_on_end_body_entered"]

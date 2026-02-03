@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bim5bk451w4jv" path="res://ui/buttons/back_button.tscn" id="7_1djn3"]
 [ext_resource type="PackedScene" uid="uid://blvjh4n3vwdtk" path="res://ui/border/border.tscn" id="17_h0jpi"]
 [ext_resource type="PackedScene" uid="uid://blkf66vfytgyj" path="res://ui/transition/transition.tscn" id="17_kkgxs"]
+[ext_resource type="PackedScene" uid="uid://rkgydexnqdob" path="res://ui/color_blind/color_blind.tscn" id="18_8mof7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5gjou"]
 font = ExtResource("5_hhwne")
@@ -98,7 +99,7 @@ custom_minimum_size = Vector2(128, 30)
 layout_mode = 2
 script = ExtResource("3_533ah")
 action_id = "start"
-label_text = "Start Game"
+label_text = "Start"
 
 [node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button" unique_id=2116613539]
 layout_mode = 1
@@ -139,7 +140,7 @@ custom_minimum_size = Vector2(128, 30)
 layout_mode = 2
 script = ExtResource("3_533ah")
 action_id = "levels"
-label_text = "Level Select"
+label_text = "Levels"
 
 [node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button2" unique_id=345711332]
 layout_mode = 1
@@ -220,8 +221,8 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(128, 30)
 layout_mode = 2
 script = ExtResource("3_533ah")
-action_id = "exit"
-label_text = "Exit Game"
+action_id = "color_mode"
+label_text = "Color Mode"
 
 [node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button4" unique_id=1544165161]
 layout_mode = 1
@@ -362,10 +363,13 @@ stream = ExtResource("6_ca08b")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=532339259]
 
-[node name="Border" parent="CanvasLayer" unique_id=825236458 instance=ExtResource("17_h0jpi")]
+[node name="ColorBlind" parent="CanvasLayer" unique_id=290998836 instance=ExtResource("18_8mof7")]
 metadata/_edit_lock_ = true
 
 [node name="Transition" parent="CanvasLayer" unique_id=583275066 instance=ExtResource("17_kkgxs")]
+metadata/_edit_lock_ = true
+
+[node name="Border" parent="CanvasLayer" unique_id=825236458 instance=ExtResource("17_h0jpi")]
 metadata/_edit_lock_ = true
 
 [connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button/TextureButton" to="ButtonsContainer/DiagonalContainer/Button" method="_on_texture_button_focus_entered"]

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4oriwcc04gis" path="res://comic/intro/frame2.png" id="2_vyos2"]
 [ext_resource type="Texture2D" uid="uid://bry8b28acgt8g" path="res://comic/intro/frame3.png" id="3_1q7h5"]
 [ext_resource type="Texture2D" uid="uid://3y77r45o7avi" path="res://comic/intro/frame4.png" id="4_a5lnx"]
+[ext_resource type="PackedScene" uid="uid://rkgydexnqdob" path="res://ui/color_blind/color_blind.tscn" id="7_1ytym"]
 
 [node name="Intro" type="Control" unique_id=679458363 node_paths=PackedStringArray("frames")]
 layout_mode = 3
@@ -61,3 +62,8 @@ offset_top = 118.0
 offset_right = 480.0
 offset_bottom = 270.0
 texture = ExtResource("4_a5lnx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2037332505]
+
+[node name="ColorBlind" parent="CanvasLayer" unique_id=290998836 instance=ExtResource("7_1ytym")]
+metadata/_edit_lock_ = true

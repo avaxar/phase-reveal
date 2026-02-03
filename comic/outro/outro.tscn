@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://3fdscum2u817" path="res://comic/outro/frame4.png" id="5_5adb4"]
 [ext_resource type="Texture2D" uid="uid://crtjbronwrrk5" path="res://comic/outro/frame5.png" id="6_wte8d"]
 [ext_resource type="Texture2D" uid="uid://bmq6mfn2ntb22" path="res://comic/outro/frame6.png" id="7_phmfr"]
+[ext_resource type="PackedScene" uid="uid://rkgydexnqdob" path="res://ui/color_blind/color_blind.tscn" id="9_5p0so"]
 
 [node name="Outro" type="Control" unique_id=679458363 node_paths=PackedStringArray("frames")]
 layout_mode = 3
@@ -69,3 +70,8 @@ layout_mode = 0
 offset_right = 480.0
 offset_bottom = 270.0
 texture = ExtResource("7_phmfr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567540302]
+
+[node name="ColorBlind" parent="CanvasLayer" unique_id=290998836 instance=ExtResource("9_5p0so")]
+metadata/_edit_lock_ = true
