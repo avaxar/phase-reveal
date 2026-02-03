@@ -1,6 +1,6 @@
 @tool
 class_name Maskable
-extends StaticBody2D
+extends AnimatableBody2D
 
 
 @export var red_mask := false

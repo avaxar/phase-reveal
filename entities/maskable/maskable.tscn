@@ -6,7 +6,7 @@
 resource_local_to_scene = true
 size = Vector2(16, 16)
 
-[node name="Maskable" type="StaticBody2D" unique_id=1702604198 groups=["maskables"]]
+[node name="Maskable" type="AnimatableBody2D" unique_id=1230746648 groups=["maskables"]]
 script = ExtResource("1_xaqss")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1415267103]
