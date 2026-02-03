@@ -168,13 +168,13 @@ func _process(_delta: float) -> void:
 
 func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool) -> void:
 	if red_changed:
-		get_tree().create_tween().tween_property(self, "red_volume",
+		get_tree().create_tween().tween_property(self , "red_volume",
 			ON_DB if red_mask else OFF_DB, MUSIC_TRANS)
 
 	if green_changed:
-		get_tree().create_tween().tween_property(self, "green_volume",
+		get_tree().create_tween().tween_property(self , "green_volume",
 			ON_DB if green_mask else OFF_DB, MUSIC_TRANS)
 
 	if blue_changed:
-		get_tree().create_tween().tween_property(self, "blue_volume",
+		get_tree().create_tween().tween_property(self , "blue_volume",
 			ON_DB if blue_mask else OFF_DB, MUSIC_TRANS)

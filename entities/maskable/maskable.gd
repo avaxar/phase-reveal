@@ -89,7 +89,7 @@ func _on_mask_area_area_entered(area: Area2D) -> void:
 
 	mask_intersection_count += 1
 	if mask_intersection_count == 1:
-		mask_joined.emit(self)
+		mask_joined.emit(self )
 
 
 func _on_mask_area_area_exited(area: Area2D) -> void:
@@ -98,4 +98,4 @@ func _on_mask_area_area_exited(area: Area2D) -> void:
 
 	mask_intersection_count -= 1
 	if mask_intersection_count == 0:
-		mask_freed.emit(self)
+		mask_freed.emit(self )

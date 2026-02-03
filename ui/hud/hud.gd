@@ -4,7 +4,7 @@ extends Control
 @onready var mask_red := $TopRight/Masks/MaskRed
 @onready var mask_green := $TopRight/Masks/MaskGreen
 @onready var mask_blue := $TopRight/Masks/MaskBlue
-@onready var label: Label = $TopLeft /Label
+@onready var label: Label = $TopLeft/Label
 
 
 func _ready():

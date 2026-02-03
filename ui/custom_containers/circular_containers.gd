@@ -29,5 +29,5 @@ func _notification(what):
 		# Must re-sort the children
 		for i in count:
 			var c = children[i]
-			var dist = abs(mid - i) if flipped else -abs(mid-i)
-			c.position = Vector2(dist * x_dev ,i * y_dev)
+			var dist = abs(mid - i) if flipped else -abs(mid - i)
+			c.position = Vector2(dist * x_dev, i * y_dev)
