@@ -80,7 +80,7 @@ func _process(_delta: float) -> void:
 		0:
 			highlights.modulate = Color(1.0, 0.25, 0.25, pulse if red_mask else 0.0)
 		1:
-			highlights.modulate = Color(0.0, 0.75, 0.25, pulse if green_mask else 0.0)
+			highlights.modulate = Color(0.25, 1.0, 0.25, pulse if green_mask else 0.0)
 		2:
 			highlights.modulate = Color(0.25, 0.25, 1.0, pulse if blue_mask else 0.0)
 		_:
