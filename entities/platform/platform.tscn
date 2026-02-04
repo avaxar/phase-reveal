@@ -25,6 +25,7 @@ position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_8vvea")
 
 [node name="TileMap" type="TileMapLayer" parent="." index="2" unique_id=1359034309]
+modulate = Color(0.5, 0.5, 0.5, 1)
 tile_map_data = PackedByteArray("AAAAAAAAAAAYAAQAAAABAAAAAAAYAAQAAAD/////AAAXAAIAAAAAAP//AAAYAAIAAAABAP//AAAYAAIAAAD//wAAAAAXAAQAAAACAP//AAAZAAIAAAACAAAAAAAZAAQAAAA=")
 tile_set = ExtResource("3_8vvea")
 collision_enabled = false

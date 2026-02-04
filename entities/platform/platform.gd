@@ -66,14 +66,14 @@ func _input(event: InputEvent) -> void:
 
 
 func _process(_delta: float) -> void:
-	if Engine.is_editor_hint():
-		return
-
 	var color := Color(1.0 if red_mask else 0.5, 1.0 if green_mask else 0.5, 1.0 if blue_mask else 0.5)
 	if is_included():
 		tile_map.modulate = Color(color, 1.0)
 	else:
 		tile_map.modulate = Color(color, 0.25)
+
+	if Engine.is_editor_hint():
+		return
 
 	var pulse := (1.0 - fmod(Manager.music_beat, 1.0)) ** 0.5 * float(highlighted)
 	match int(Manager.music_beat) % 4:
