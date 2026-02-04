@@ -14,7 +14,7 @@ extends Area2D
 		if value != null:
 			_update_color()
 @export var triggered_animation_name: String
-
+@export var can_stop: bool = true
 
 
 const SINGLE_PRESSED := Vector2i(22, 0)
@@ -68,7 +68,7 @@ var body_count := 0:
 				pressed = false
 				for door: Door in triggered_doors:
 					door.close()
-				if animation_player != null:
+				if animation_player != null and can_stop:
 					animation_player.pause()
 				
 
