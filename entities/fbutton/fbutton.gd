@@ -8,7 +8,7 @@ extends Area2D
 
 
 @export var triggered_doors: Array[Door]
-
+@export var triggered_animation: Array[AnimationPlayer]
 
 const SINGLE_PRESSED := Vector2i(22, 0)
 const LEFT_PRESSED := Vector2i(19, 0)
@@ -50,11 +50,16 @@ var body_count := 0:
 				pressed = true
 				for door: Door in triggered_doors:
 					door.open()
-
+				for anim: AnimationPlayer in triggered_animation:
+					anim.play(anim.get_animation_list()[1])
+				
 			if body_count > 0 and value == 0:
 				pressed = false
 				for door: Door in triggered_doors:
 					door.close()
+				for anim: AnimationPlayer in triggered_animation:
+					anim.pause()
+				
 
 			body_count = value
 
