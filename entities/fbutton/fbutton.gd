@@ -8,7 +8,12 @@ extends Area2D
 
 
 @export var triggered_doors: Array[Door]
-@export var triggered_animation: Array[AnimationPlayer]
+@export var triggered_animation: Array[AnimationPlayer]:
+	set(value):
+		triggered_animation = value
+		_update_color()
+
+
 
 const SINGLE_PRESSED := Vector2i(22, 0)
 const LEFT_PRESSED := Vector2i(19, 0)
@@ -19,6 +24,9 @@ const SINGLE_STILL := Vector2i(22, 1)
 const LEFT_STILL := Vector2i(19, 1)
 const MIDDLE_STILL := Vector2i(20, 1)
 const RIGHT_STILL := Vector2i(21, 1)
+
+func _ready() -> void:
+	_update_color()
 
 @export var width := 2:
 	set(value):
@@ -70,3 +78,10 @@ func _on_body_entered(_body: Node2D) -> void:
 
 func _on_body_exited(_body: Node2D) -> void:
 	body_count -= 1
+
+func _update_color() -> void:
+	if not is_inside_tree():
+		await ready
+	if tile_map == null:
+		return
+	tile_map.modulate = Color("67ffff") if triggered_animation.size() > 0 else Color.WHITE

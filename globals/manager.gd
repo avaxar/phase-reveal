@@ -5,9 +5,13 @@ var loading := false
 signal on_player_death
 const TITLE_SCREEN = preload("uid://wncglugrhywk")
 const OUTRO = preload("uid://ci5cmglnd0f7w")
+const PROGRESS_PATH: String = "user://progressreveal.tres"
 
 @export var levels: Dictionary[PackedScene, bool] # locked = false, unlocked = true
 var current_level := 1
+
+func _ready() -> void:
+	load_progress()
 
 func reset_level() -> void:
 	attempts += 1
@@ -46,7 +50,7 @@ func is_level_available(level: int) -> bool:
 
 func unlock_level(level: int):
 	levels[levels.keys()[level - 1]] = true
-	print(levels)
+	save_progress()
 
 func play_outro() -> void:
 	get_tree().paused = false
@@ -146,3 +150,16 @@ func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool
 
 	if blue_changed:
 		create_tween().tween_property(self , "blue_volume", ON_DB if blue_mask else OFF_DB, MUSIC_TRANS)
+
+func load_progress() -> void:
+	if ResourceLoader.exists(PROGRESS_PATH):
+		var prr: ProgressRevealResource = load(PROGRESS_PATH)
+		if prr: 
+			levels = prr.levels
+			ColorBlind.type = prr.colorblind_type
+
+func save_progress() -> void:
+	var prr: ProgressRevealResource = ProgressRevealResource.new()
+	prr.levels = levels
+	prr.colorblind_type = ColorBlind.type
+	ResourceSaver.save(prr, PROGRESS_PATH)

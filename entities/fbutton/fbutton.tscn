@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://c6bve3aguyrjg" path="res://level/tileset.tres" id="2_3pg4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_motj7"]
-size = Vector2(32, 12)
+size = Vector2(48, 12)
 
 [node name="FButton" type="Area2D" unique_id=2123144035]
 collision_layer = 0

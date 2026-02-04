@@ -92,6 +92,7 @@ func load_credits() -> void:
 
 func configure_color_mode():
 	ColorBlind.type = (ColorBlind.type + 1) % ColorBlind.types_n
+	Manager.save_progress()
 
 func load_main() -> void:
 	splash_container.visible = true
