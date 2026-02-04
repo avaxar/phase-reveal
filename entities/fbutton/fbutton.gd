@@ -8,10 +8,11 @@ extends Area2D
 
 
 @export var triggered_doors: Array[Door]
-@export var triggered_animation: Array[AnimationPlayer]:
+@export var animation_player: AnimationPlayer:
 	set(value):
-		triggered_animation = value
+		animation_player = value
 		_update_color()
+@export var triggered_animation_name: String
 
 
 
@@ -58,15 +59,14 @@ var body_count := 0:
 				pressed = true
 				for door: Door in triggered_doors:
 					door.open()
-				for anim: AnimationPlayer in triggered_animation:
-					anim.play(anim.get_animation_list()[1])
-				
+				animation_player.play(triggered_animation_name)
+				animation_player.playback_active = true
+			
 			if body_count > 0 and value == 0:
 				pressed = false
 				for door: Door in triggered_doors:
 					door.close()
-				for anim: AnimationPlayer in triggered_animation:
-					anim.pause()
+				animation_player.pause()
 				
 
 			body_count = value
@@ -84,4 +84,4 @@ func _update_color() -> void:
 		await ready
 	if tile_map == null:
 		return
-	tile_map.modulate = Color("67ffff") if triggered_animation.size() > 0 else Color.WHITE
+	tile_map.modulate = Color("67ffff") if triggered_animation_name.is_empty() else Color.WHITE
