@@ -11,7 +11,8 @@ extends Area2D
 @export var animation_player: AnimationPlayer:
 	set(value):
 		animation_player = value
-		_update_color()
+		if value != null:
+			_update_color()
 @export var triggered_animation_name: String
 
 
@@ -48,7 +49,7 @@ var pressed := false:
 			for x in range(1, width - 1):
 				tile_map.set_cell(Vector2i(x, 0), 0, MIDDLE_PRESSED if pressed else MIDDLE_STILL)
 			tile_map.set_cell(Vector2i(width - 1, 0), 0, RIGHT_PRESSED if pressed else RIGHT_STILL)
-
+		
 		collision_shape.position = Vector2(width * 16.0 / 2.0, 10.0)
 		collision_shape.shape.size = Vector2(width * 16.0, 12.0)
 
@@ -59,14 +60,16 @@ var body_count := 0:
 				pressed = true
 				for door: Door in triggered_doors:
 					door.open()
-				animation_player.play(triggered_animation_name)
-				animation_player.playback_active = true
+				if animation_player != null:
+					animation_player.play(triggered_animation_name)
+					animation_player.playback_active = true
 			
 			if body_count > 0 and value == 0:
 				pressed = false
 				for door: Door in triggered_doors:
 					door.close()
-				animation_player.pause()
+				if animation_player != null:
+					animation_player.pause()
 				
 
 			body_count = value
@@ -84,4 +87,5 @@ func _update_color() -> void:
 		await ready
 	if tile_map == null:
 		return
-	tile_map.modulate = Color("67ffff") if triggered_animation_name.is_empty() else Color.WHITE
+	
+	tile_map.modulate = Color("67ffff") if animation_player != null else Color.WHITE
