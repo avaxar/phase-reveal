@@ -27,7 +27,6 @@ func get_level_total() -> int:
 	return levels.size()
 
 func load_level(level: int): # Uses level numbers 1-6
-	Manager.music_playing = true
 	get_tree().change_scene_to_packed(levels.keys()[level - 1])
 
 

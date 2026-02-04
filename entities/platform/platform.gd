@@ -59,8 +59,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("highlight"):
 		highlighted = not highlighted
 		if highlighted:
-			create_tween().tween_property(tile_map, "self_modulate",
-				Color(0.5, 0.5, 0.5), 0.0625)
+			create_tween().tween_property(tile_map, "self_modulate", Color(0.5, 0.5, 0.5), 0.0625)
 		else:
 			create_tween().tween_property(tile_map, "self_modulate", Color(1.0, 1.0, 1.0), 0.0625)
 

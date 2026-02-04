@@ -15,6 +15,7 @@ extends Node2D
 
 
 func _ready():
+	Manager.music_playing = true
 	Manager.red_mask = default_red
 	Manager.green_mask = default_green
 	Manager.blue_mask = default_blue
