@@ -12,6 +12,12 @@ shader_parameter/pixel_scale = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2xqw"]
 size = Vector2(14, 14)
 
+[sub_resource type="Gradient" id="Gradient_sftye"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_t2xqw"]
+colors = PackedColorArray(0.30588236, 0.32941177, 0.44705883, 1, 0.7529412, 0.79607844, 0.8627451, 1)
+
 [node name="Cube" type="RigidBody2D" unique_id=753110043]
 collision_layer = 8
 can_sleep = false
@@ -40,6 +46,10 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 100.0
 initial_velocity_max = 100.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_sftye")
+color_initial_ramp = SubResource("Gradient_t2xqw")
+hue_variation_max = 1.0
 
 [node name="CrushSFX" type="AudioStreamPlayer2D" parent="." unique_id=828164520]
 stream = ExtResource("4_sftye")
