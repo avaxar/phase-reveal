@@ -62,8 +62,6 @@ func _unhandled_input(event: InputEvent):
 		for level in levels:
 			levels[level] = true
 		get_tree().change_scene_to_packed(TITLE_SCREEN)
-	if event.is_action_pressed("win"):
-		load_next_level()
 
 # --- Persisting mechanics ---
 
