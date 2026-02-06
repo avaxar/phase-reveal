@@ -3,6 +3,7 @@ extends Node
 var attempts: int = 0
 var loading := false
 signal on_player_death
+signal on_level_start
 const TITLE_SCREEN = preload("uid://wncglugrhywk")
 const OUTRO = preload("uid://ci5cmglnd0f7w")
 const PROGRESS_PATH: String = "user://progressreveal.tres"
@@ -27,12 +28,15 @@ func emit_on_player_death() -> void: # Play the transition here!
 	reset_level()
 	loading = false
 
+func emit_on_level_start() -> void: 
+	on_level_start.emit(current_level)
+
+
 func get_level_total() -> int:
 	return levels.size()
 
 func load_level(level: int): # Uses level numbers 1-6
 	get_tree().change_scene_to_packed(levels.keys()[level - 1])
-
 
 func load_next_level() -> void: # Loads the next level
 	if current_level >= get_level_total():

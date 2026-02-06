@@ -14,6 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://buunebu31vr33" path="res://globals/music/green.ogg" id="10_cwg7d"]
 [ext_resource type="PackedScene" uid="uid://wuiuyp264p52" path="res://levels/9.tscn" id="10_trju5"]
 [ext_resource type="AudioStream" uid="uid://bdpitfvxpef6d" path="res://globals/music/blue.ogg" id="11_0uhbl"]
+[ext_resource type="PackedScene" uid="uid://dg55stwn0vy7s" path="res://levels/10.tscn" id="11_trju5"]
+[ext_resource type="PackedScene" uid="uid://c5ypen1um71dp" path="res://levels/11.tscn" id="12_f0hjv"]
+[ext_resource type="PackedScene" uid="uid://c3g3kaq2r4lxu" path="res://levels/12.tscn" id="13_sqnrc"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_f8h86"]
 stream_count = 4
@@ -37,7 +40,10 @@ ExtResource("5_qvx2k"): false,
 ExtResource("4_kkdxs"): false,
 ExtResource("8_cwg7d"): false,
 ExtResource("9_yw7ax"): false,
-ExtResource("10_trju5"): false
+ExtResource("10_trju5"): false,
+ExtResource("11_trju5"): false,
+ExtResource("12_f0hjv"): false,
+ExtResource("13_sqnrc"): false
 })
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1380562907]

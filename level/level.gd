@@ -20,6 +20,8 @@ func _ready():
 	Manager.blue_mask = default_blue
 
 	camera.limit_right = end.position.x
+	
+	Manager.emit_on_level_start()
 
 
 func _on_end_body_entered(body: Node2D) -> void:
