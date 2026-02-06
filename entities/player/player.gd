@@ -66,18 +66,17 @@ func _ready() -> void:
 	current_gravity = default_gravity
 
 
-func _process(_delta: float) -> void:
-	if not is_dead and not Manager.loading:
-		# Suffocation
-		if inside_cast.is_colliding():
-			Manager.emit_on_player_death()
-
-		# Out-of-bounds
-		if position.y < 0 or position.y > 270:
-			Manager.emit_on_player_death()
-
-
 func _physics_process(delta: float) -> void:
+	if not is_dead:
+		inside_cast.force_raycast_update()
+
+		# Suffocation                  # Out-of-bounds
+		if inside_cast.is_colliding() or position.y < 0 or position.y > 270:
+			# Force disables the collisions right in this instant
+			collision_layer = 0
+			collision_mask = 0
+			Manager.emit_on_player_death()
+
 	update_debug_label()
 	handle_fall(delta)
 	handle_jump()
