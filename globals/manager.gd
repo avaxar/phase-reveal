@@ -62,7 +62,8 @@ func _unhandled_input(event: InputEvent):
 		for level in levels:
 			levels[level] = true
 		get_tree().change_scene_to_packed(TITLE_SCREEN)
-
+	if event.is_action_pressed("win"):
+		load_next_level()
 
 # --- Persisting mechanics ---
 
@@ -151,11 +152,20 @@ func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool
 	if blue_changed:
 		create_tween().tween_property(self , "blue_volume", ON_DB if blue_mask else OFF_DB, MUSIC_TRANS)
 
+func load_levels(saved_levels: Dictionary) -> void:
+	var new_levels : Dictionary[PackedScene, bool] = {}
+	for scene in levels.keys():
+		if saved_levels.has(scene):
+			new_levels[scene] = saved_levels[scene]
+		else:
+			new_levels[scene] = false
+	levels = new_levels
+
 func load_progress() -> void:
 	if ResourceLoader.exists(PROGRESS_PATH):
 		var prr: ProgressRevealResource = load(PROGRESS_PATH)
 		if prr: 
-			levels = prr.levels
+			load_levels(prr.levels)
 			ColorBlind.type = prr.colorblind_type
 
 func save_progress() -> void:
