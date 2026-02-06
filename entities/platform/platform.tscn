@@ -11,7 +11,7 @@ radius = 0.01
 resource_local_to_scene = true
 size = Vector2(40, 8)
 
-[node name="Platform" unique_id=1702604198 instance=ExtResource("1_wocd5")]
+[node name="Platform" unique_id=1702604198 groups=["platforms"] instance=ExtResource("1_wocd5")]
 script = ExtResource("2_lly8c")
 tile_size = Vector2i(2, 0)
 top_left = Vector2i(-4, -4)

@@ -52,6 +52,7 @@ var was_on_floor: bool = false
 var has_box: bool = false
 const CUBE = preload("uid://dfe3nvn1lo8gt")
 
+var can_move: bool = true
 var is_dead: bool = false
 
 func _enter_tree() -> void:
@@ -79,8 +80,9 @@ func _physics_process(delta: float) -> void:
 
 	update_debug_label()
 	handle_fall(delta)
-	handle_jump()
-	handle_movement()
+	if can_move:
+		handle_jump()
+		handle_movement()
 	handle_flip()
 
 	if velocity.y > terminal_velocity:

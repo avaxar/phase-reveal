@@ -52,12 +52,15 @@ const BOTTOM_RIGHT = Vector2i(25, 4)
 		])
 		highlights.closed = true
 
-var highlighted := false
+var highlighted := false:
+	set(value):
+		if highlighted == value:
+			return
 
+		highlighted = value
+		if not is_inside_tree():
+			await ready
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("highlight"):
-		highlighted = not highlighted
 		if highlighted:
 			create_tween().tween_property(tile_map, "self_modulate", Color(0.5, 0.5, 0.5), 0.0625)
 		else:

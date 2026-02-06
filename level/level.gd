@@ -12,8 +12,6 @@ extends Node2D
 @onready var hud := $CanvasLayer/HUD
 @onready var transition := $CanvasLayer/Transition
 
-var passthrough_meshes: Array[MeshInstance2D]
-
 
 func _ready():
 	Manager.music_playing = true
@@ -37,10 +35,37 @@ func _physics_process(_delta: float) -> void:
 	Maskable.rect_to_speed = {}
 
 
-func _process(_delta: float) -> void:
+var highlighting := false
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("highlight"):
+		highlighting = not highlighting
+
+		player.can_move = not highlighting
+		for platform: Platform in get_tree().get_nodes_in_group("platforms"):
+			platform.highlighted = highlighting
+
+		camera.position_smoothing_enabled = not highlighting
+		if not highlighting:
+			camera.position = Vector2(0.0, 0.0)
+
+
+func _process(delta: float) -> void:
 	draw_visualizer()
+	if highlighting:
+		handle_camera_movement(delta)
 
 
+const CAMERA_SPEED := 250.0
+func handle_camera_movement(delta: float) -> void:
+	var direction := Input.get_axis("left", "right")
+	camera.position.x += direction * CAMERA_SPEED * delta
+
+	# Clamps from the sides
+	camera.global_position.x = max(camera.limit_left + 480.0 / 2.0, camera.global_position.x)
+	camera.global_position.x = min(camera.global_position.x, camera.limit_right - 480 / 2.0)
+
+
+var passthrough_meshes: Array[MeshInstance2D]
 func draw_visualizer() -> void:
 	# Uses a makeshift set to get rid of duplicates
 	var masked_rects: Dictionary[Rect2i, bool] = {}
