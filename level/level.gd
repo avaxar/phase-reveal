@@ -32,6 +32,11 @@ func _on_end_body_entered(body: Node2D) -> void:
 		Manager.load_next_level()
 
 
+func _physics_process(_delta: float) -> void:
+	Maskable.rect_to_collider = {}
+	Maskable.rect_to_speed = {}
+
+
 func _process(_delta: float) -> void:
 	draw_visualizer()
 

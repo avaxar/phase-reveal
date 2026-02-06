@@ -1035,30 +1035,37 @@ blue_mask = true
 bottom_right = Vector2i(4, 68)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="46" unique_id=1806322268]
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_5x0w2")
 autoplay = &"main move"
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="47" unique_id=1431389466]
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_5x0w2")
 autoplay = &"2"
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="48" unique_id=821545891]
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_5x0w2")
 autoplay = &"3"
 
 [node name="AnimationPlayer4" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="49" unique_id=2111385194]
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_5x0w2")
 autoplay = &"4"
 
 [node name="AnimationPlayer5" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="50" unique_id=1949670825]
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_5x0w2")
 autoplay = &"5"
 
 [node name="AnimationPlayer6" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="51" unique_id=473744103]
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_5x0w2")
 autoplay = &"6"
 
 [node name="AnimationPlayer7" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="52" unique_id=127626963]
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_5x0w2")
 autoplay = &"7"
 

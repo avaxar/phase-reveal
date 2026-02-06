@@ -74,6 +74,8 @@ func is_included() -> bool:
 var intersecting: Array[Maskable]
 var divisions: Dictionary[Rect2i, int]
 var colliders: Array[CollisionShape2D]
+static var rect_to_collider: Dictionary[Rect2i, CollisionShape2D]
+static var rect_to_speed: Dictionary[Rect2i, float]
 
 
 func _on_mask_area_area_entered(area: Area2D) -> void:
@@ -97,12 +99,18 @@ func _on_mask_area_area_exited(area: Area2D) -> void:
 
 
 var previous_rect := global_rect
-func _physics_process(_delta: float) -> void:
+var speed := 0.0
+func _physics_process(delta: float) -> void:
 	if global_rect == previous_rect:
 		return
+	else:
+		speed = ((global_rect.position - previous_rect.position)).length() / delta
+		previous_rect = global_rect
+
+	# if len(intersecting) == 0:
+	# 	return
 
 	reset_mask()
-	previous_rect = global_rect
 
 
 func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool) -> void:
@@ -114,6 +122,9 @@ func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool
 
 
 func reset_mask(chaining := true):
+	if Engine.is_editor_hint():
+		return
+
 	if chaining:
 		for maskable: Maskable in intersecting:
 			maskable.reset_mask(false)
@@ -166,6 +177,15 @@ func reset_mask(chaining := true):
 			collider.set_deferred("disabled", false)
 			collider.position = local_division.get_center()
 			collider.shape.size = local_division.size
+
+			var existing_speed := rect_to_speed[division] if division in rect_to_speed else 0.0
+			if speed >= existing_speed:
+				if (division in rect_to_collider and rect_to_collider[division] != null
+					and rect_to_collider[division] != collider):
+					rect_to_collider[division].set_deferred("disabled", true)
+
+				rect_to_collider[division] = collider
+				rect_to_speed[division] = speed
 		else:
 			collider.set_deferred("disabled", true)
 

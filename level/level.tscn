@@ -41,6 +41,8 @@ collision_enabled = false
 metadata/_edit_lock_ = true
 
 [node name="Objects" type="Node2D" parent="." unique_id=1284680800]
+process_priority = -1
+process_physics_priority = -1
 metadata/_edit_lock_ = true
 
 [node name="FButton" parent="Objects" unique_id=2123144035 node_paths=PackedStringArray("triggered_doors") instance=ExtResource("2_44x8d")]
