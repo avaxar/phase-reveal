@@ -19,8 +19,6 @@ const LEVEL_BUTTON = preload("uid://cdhsom0l7780y")
 var count: int = 0
 var pitch: float = pitch_base
 
-#func _enter_tree() -> void:
-	#SignalHub.on_button_hover.connect(on_button_hover)
 
 func _ready() -> void:
 	for c: GameButton in diagonal_container.get_children():
@@ -48,6 +46,9 @@ func setup_levels() -> void:
 			nb.unlock()
 		else:
 			nb.lock()
+	for c: GameButton in level_select_container.get_children():
+		c.on_button_hover.connect(on_button_hover)
+		c.on_button_pressed.connect(on_button_pressed)
 
 func on_button_hover() -> void:
 	pitch = min(pitch + pitch_step, pitch_max)

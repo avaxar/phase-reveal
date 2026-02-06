@@ -1,4 +1,4 @@
-extends Control
+extends GameButton
 class_name LevelButton
 
 @export var level_number: int
@@ -7,6 +7,7 @@ class_name LevelButton
 var unlocked: bool = false
 
 func _ready() -> void:
+	super._ready()
 	level_label.text = str(level_number)
 
 func lock() -> void:
@@ -19,7 +20,20 @@ func unlock() -> void:
 	lock_sprite.hide()
 	unlocked = true
 
+func _on_texture_button_mouse_entered() -> void:
+	activate()
+
+func _on_texture_button_mouse_exited() -> void:
+	deactivate()
+
+func _on_texture_button_focus_entered() -> void:
+	activate()
+
+func _on_texture_button_focus_exited() -> void:
+	deactivate()
+
 func _on_texture_button_pressed() -> void:
 	if unlocked:
+		super._on_texture_button_pressed()
 		Manager.current_level = level_number
 		Manager.load_level(level_number)

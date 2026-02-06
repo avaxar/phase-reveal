@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cbnd652clcwp3" path="res://ui/pause/pause_menu.gd" id="1_3na8v"]
 [ext_resource type="Texture2D" uid="uid://dy17ofws0p67s" path="res://ui/pause/pause_button.png" id="2_3na8v"]
 [ext_resource type="FontFile" uid="uid://caod7um2jwkef" path="res://ui/buttons/button_font.ttf" id="3_gdxq3"]
+[ext_resource type="AudioStream" uid="uid://b1wyi10l7kqo6" path="res://ui/buttons/click.wav" id="5_ro2xu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_obs3c"]
 font = ExtResource("3_gdxq3")
@@ -115,6 +116,10 @@ text = "Back to Menu"
 label_settings = SubResource("LabelSettings_obs3c")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=956233171]
+process_mode = 3
+stream = ExtResource("5_ro2xu")
 
 [connection signal="pressed" from="TextureRect/MarginContainer/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

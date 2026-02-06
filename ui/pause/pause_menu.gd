@@ -2,7 +2,7 @@ extends Control
 const TITLE_SCREEN = preload("uid://wncglugrhywk")
 
 var can_pause := true
-
+@onready var sound: AudioStreamPlayer2D = $Sound
 
 func _ready() -> void:
 	Manager.on_player_death.connect(_on_player_death)
@@ -11,15 +11,18 @@ func _on_player_death() -> void:
 	can_pause = false
 
 func _on_resume_button_pressed() -> void:
+	sound.play()
 	get_tree().paused = false
 	visible = false
 
 func _on_restart_button_pressed() -> void:
+	sound.play()
 	get_tree().paused = false
 	visible = false
 	Manager.emit_on_player_death()
 
 func _on_menu_button_pressed() -> void:
+	sound.play()
 	get_tree().paused = false
 	visible = false
 	Manager.music_playing = false
