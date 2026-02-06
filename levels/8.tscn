@@ -794,7 +794,7 @@ triggered_doors = [NodePath("../Door2")]
 width = 4
 
 [node name="FButton3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="2" unique_id=842263618 node_paths=PackedStringArray("triggered_doors") instance=ExtResource("2_abkmy")]
-position = Vector2(1230, 238)
+position = Vector2(1230, 236)
 triggered_doors = [NodePath("../Door3")]
 width = 4
 
@@ -880,11 +880,13 @@ bottom_right = Vector2i(20, 20)
 position = Vector2(1400, 210)
 tile_size = Vector2i(1, 1)
 red_mask = true
+green_mask = true
 bottom_right = Vector2i(20, 20)
 
 [node name="PlatformRed12" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="20" unique_id=603222707 instance=ExtResource("5_4822w")]
 position = Vector2(1400, 70)
 tile_size = Vector2i(1, 1)
+green_mask = true
 blue_mask = true
 bottom_right = Vector2i(20, 20)
 

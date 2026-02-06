@@ -1,5 +1,729 @@
-[gd_scene format=3 uid="uid://c5ypen1um71dp"]
+[gd_scene format=4 uid="uid://r51xtesoa4fi"]
 
 [ext_resource type="PackedScene" uid="uid://bdbc3gppc7fta" path="res://level/level.tscn" id="1_c0wxj"]
+[ext_resource type="PackedScene" uid="uid://dgtdex5wsl6ij" path="res://entities/fbutton/fbutton.tscn" id="2_6ook0"]
+[ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="2_kv8a0"]
+[ext_resource type="FontFile" uid="uid://ccja50bxa8nae" path="res://ui/buttons/gnu-unifont.otf" id="4_usm4o"]
+
+[sub_resource type="Animation" id="Animation_kv8a0"]
+resource_name = "1"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformWhite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(124, 400), Vector2(124, 124), Vector2(124, 400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PlatformWhite2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(124, 400), Vector2(124, 114), Vector2(124, 400)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(124, 400), Vector2(124, 104), Vector2(124, 400)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PlatformGreen:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(132, 132), Vector2(1000, 132), Vector2(1000, 132)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PlatformGreen2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(132, 172), Vector2(1000, 172), Vector2(1000, 172)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../PlatformGreen3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(132, 212), Vector2(1000, 212), Vector2(1000, 212)]
+}
+
+[sub_resource type="Animation" id="Animation_6ook0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformWhite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(124, 400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PlatformWhite2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(124, 400)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(124, 400)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PlatformGreen:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(132, 132)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PlatformGreen2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(132, 172)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../PlatformGreen3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(132, 212)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_usm4o"]
+_data = {
+&"1": SubResource("Animation_kv8a0"),
+&"RESET": SubResource("Animation_6ook0")
+}
+
+[sub_resource type="Animation" id="Animation_usm4o"]
+resource_name = "2"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformRed:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.15, 1.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(318, 132), Vector2(389, 132)]
+}
+
+[sub_resource type="Animation" id="Animation_fioke"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformRed:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(318, 132)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqdum"]
+_data = {
+&"2": SubResource("Animation_usm4o"),
+&"RESET": SubResource("Animation_fioke")
+}
+
+[sub_resource type="Animation" id="Animation_cqdum"]
+resource_name = "3"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformRed2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 6, 8, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(570, -5), Vector2(570, 85), Vector2(390, 85), Vector2(390, -5), Vector2(570, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PlatformRed3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(570, 85), Vector2(480, 85), Vector2(390, 85), Vector2(390, -5), Vector2(480, -5), Vector2(570, -5), Vector2(570, 85)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PlatformRed4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4, 7.9739695, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(480, 85), Vector2(390, 85), Vector2(390, -5), Vector2(570, -5), Vector2(570, 85), Vector2(480, 85)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PlatformRed5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 6, 8, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(390, 85), Vector2(390, -5), Vector2(570, -5), Vector2(570, 85), Vector2(390, 85)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PlatformRed6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4, 6, 8, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(390, -5), Vector2(570, -5), Vector2(570, 85), Vector2(480, 85), Vector2(390, 85), Vector2(390, -5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../PlatformRed7:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 4, 8, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(480, -5), Vector2(570, -5), Vector2(570, 85), Vector2(390, 85), Vector2(390, -5), Vector2(480, -5)]
+}
+
+[sub_resource type="Animation" id="Animation_hu8mo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformRed2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(570, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PlatformRed3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 85)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PlatformRed4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 85)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PlatformRed5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 85)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PlatformRed6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(390, 85)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../PlatformRed7:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ifid"]
+_data = {
+&"3": SubResource("Animation_cqdum"),
+&"RESET": SubResource("Animation_hu8mo")
+}
+
+[sub_resource type="Animation" id="Animation_2ifid"]
+resource_name = "4"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformBlue4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(757, 235), Vector2(757, 20)]
+}
+
+[sub_resource type="Animation" id="Animation_k44u7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformBlue4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(757, 235)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gw7p6"]
+_data = {
+&"4": SubResource("Animation_2ifid"),
+&"RESET": SubResource("Animation_k44u7")
+}
+
+[sub_resource type="Animation" id="Animation_pliti"]
+resource_name = "5"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformBlue3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(799, 235), Vector2(799, 20)]
+}
+
+[sub_resource type="Animation" id="Animation_nqti8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformBlue3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(799, 235)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cuqb5"]
+_data = {
+&"5": SubResource("Animation_pliti"),
+&"RESET": SubResource("Animation_nqti8")
+}
+
+[sub_resource type="Animation" id="Animation_gw7p6"]
+resource_name = "6"
+length = 2.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformGreen4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.63, 1.8, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(850, 235), Vector2(850, 235), Vector2(850, 175), Vector2(850, 235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PlatformWhite4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(840, 400), Vector2(840, 226)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PlatformWhite5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(840, 400), Vector2(840, 210)]
+}
+
+[sub_resource type="Animation" id="Animation_cuqb5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlatformGreen4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(850, 235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PlatformWhite4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(840, 400)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../PlatformWhite5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(840, 400)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gjs8x"]
+_data = {
+&"6": SubResource("Animation_gw7p6"),
+&"RESET": SubResource("Animation_cuqb5")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjs8x"]
+font = ExtResource("4_usm4o")
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Level" unique_id=1104770908 instance=ExtResource("1_c0wxj")]
+default_red = true
+default_green = true
+default_blue = true
+
+[node name="FButton" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="0" unique_id=2123144035 node_paths=PackedStringArray("animation_player")]
+position = Vector2(81, 193)
+animation_player = NodePath("../AnimationPlayer")
+triggered_animation_name = "1"
+can_stop = false
+width = 2
+
+[node name="FButton2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="1" unique_id=228356177 node_paths=PackedStringArray("triggered_doors", "animation_player") instance=ExtResource("2_6ook0")]
+position = Vector2(639, 145)
+triggered_doors = [NodePath("../Door")]
+animation_player = NodePath("../AnimationPlayer4")
+triggered_animation_name = "4"
+width = 2
+
+[node name="FButton3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="2" unique_id=1513489722 node_paths=PackedStringArray("triggered_doors", "animation_player") instance=ExtResource("2_6ook0")]
+position = Vector2(689, 145)
+triggered_doors = [NodePath("../Door")]
+animation_player = NodePath("../AnimationPlayer5")
+triggered_animation_name = "5"
+width = 2
+
+[node name="FButton4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="3" unique_id=126745660 node_paths=PackedStringArray("triggered_doors", "animation_player") instance=ExtResource("2_6ook0")]
+position = Vector2(672, 49)
+triggered_doors = [NodePath("../Door")]
+animation_player = NodePath("../AnimationPlayer6")
+triggered_animation_name = "6"
+can_stop = false
+
+[node name="Door" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="4" unique_id=1756922949]
+position = Vector2(928, 63)
+
+[node name="Cube" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="5" unique_id=753110043]
+position = Vector2(62, 198)
+
+[node name="PlatformRed" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="6" unique_id=1702604198]
+position = Vector2(318, 132)
+tile_size = Vector2i(2, 0)
+bottom_right = Vector2i(36, 4)
+
+[node name="PlatformRed2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="7" unique_id=1028145925 instance=ExtResource("2_kv8a0")]
+position = Vector2(570, -5)
+tile_size = Vector2i(1, 1)
+red_mask = true
+bottom_right = Vector2i(20, 20)
+
+[node name="PlatformRed3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="8" unique_id=1878825100 instance=ExtResource("2_kv8a0")]
+position = Vector2(480, 85)
+tile_size = Vector2i(1, 1)
+red_mask = true
+bottom_right = Vector2i(20, 20)
+
+[node name="PlatformRed4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="9" unique_id=824514457 instance=ExtResource("2_kv8a0")]
+position = Vector2(480, 85)
+tile_size = Vector2i(1, 1)
+red_mask = true
+bottom_right = Vector2i(20, 20)
+
+[node name="PlatformRed5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="10" unique_id=378247638 instance=ExtResource("2_kv8a0")]
+position = Vector2(480, 85)
+tile_size = Vector2i(1, 1)
+red_mask = true
+bottom_right = Vector2i(20, 20)
+
+[node name="PlatformRed6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="11" unique_id=1485265536 instance=ExtResource("2_kv8a0")]
+position = Vector2(390, 85)
+tile_size = Vector2i(1, 1)
+red_mask = true
+bottom_right = Vector2i(20, 20)
+
+[node name="PlatformRed7" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="12" unique_id=670043727 instance=ExtResource("2_kv8a0")]
+position = Vector2(480, -5)
+tile_size = Vector2i(1, 1)
+red_mask = true
+bottom_right = Vector2i(20, 20)
+
+[node name="PlatformGreen" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="13" unique_id=990362742]
+position = Vector2(132, 132)
+tile_size = Vector2i(3, 0)
+bottom_right = Vector2i(52, 4)
+
+[node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="14" unique_id=1628588796 instance=ExtResource("2_kv8a0")]
+position = Vector2(132, 172)
+tile_size = Vector2i(3, 0)
+green_mask = true
+bottom_right = Vector2i(52, 4)
+
+[node name="PlatformGreen3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="15" unique_id=669284559 instance=ExtResource("2_kv8a0")]
+position = Vector2(132, 212)
+tile_size = Vector2i(3, 0)
+green_mask = true
+bottom_right = Vector2i(52, 4)
+
+[node name="PlatformGreen4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="16" unique_id=681924706 instance=ExtResource("2_kv8a0")]
+position = Vector2(850, 235)
+tile_size = Vector2i(2, 6)
+green_mask = true
+bottom_right = Vector2i(36, 100)
+
+[node name="PlatformBlue" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="17" unique_id=1002163274]
+position = Vector2(253, 212)
+tile_size = Vector2i(2, 0)
+bottom_right = Vector2i(36, 4)
+
+[node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="18" unique_id=1365691432 instance=ExtResource("2_kv8a0")]
+position = Vector2(503, 188)
+tile_size = Vector2i(2, 1)
+green_mask = true
+blue_mask = true
+bottom_right = Vector2i(36, 20)
+
+[node name="PlatformBlue3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="19" unique_id=1733882408 instance=ExtResource("2_kv8a0")]
+position = Vector2(799, 235)
+tile_size = Vector2i(1, 1)
+red_mask = true
+green_mask = true
+bottom_right = Vector2i(20, 20)
+
+[node name="PlatformBlue4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="20" unique_id=1890140371 instance=ExtResource("2_kv8a0")]
+position = Vector2(757, 235)
+tile_size = Vector2i(1, 1)
+green_mask = true
+blue_mask = true
+bottom_right = Vector2i(20, 20)
+
+[node name="PlatformWhite" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="21" unique_id=404798498 instance=ExtResource("2_kv8a0")]
+position = Vector2(124, 400)
+tile_size = Vector2i(0, 0)
+bottom_right = Vector2i(4, 4)
+
+[node name="PlatformWhite2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="22" unique_id=1407602676 instance=ExtResource("2_kv8a0")]
+position = Vector2(124, 400)
+tile_size = Vector2i(0, 0)
+bottom_right = Vector2i(4, 4)
+
+[node name="PlatformWhite3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="23" unique_id=1572232054 instance=ExtResource("2_kv8a0")]
+position = Vector2(124, 400)
+tile_size = Vector2i(0, 0)
+bottom_right = Vector2i(4, 4)
+
+[node name="PlatformWhite4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="24" unique_id=1516109781 instance=ExtResource("2_kv8a0")]
+position = Vector2(840, 400)
+tile_size = Vector2i(0, 0)
+bottom_right = Vector2i(4, 4)
+
+[node name="PlatformWhite5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="25" unique_id=1984291395 instance=ExtResource("2_kv8a0")]
+position = Vector2(840, 400)
+tile_size = Vector2i(0, 0)
+bottom_right = Vector2i(4, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="26" unique_id=152861969]
+root_node = NodePath("../PlatformWhite3")
+libraries/ = SubResource("AnimationLibrary_usm4o")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="27" unique_id=1841806918]
+root_node = NodePath("../AnimationPlayer")
+libraries/ = SubResource("AnimationLibrary_cqdum")
+autoplay = &"2"
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="28" unique_id=1959791689]
+root_node = NodePath("../AnimationPlayer2")
+libraries/ = SubResource("AnimationLibrary_2ifid")
+autoplay = &"3"
+
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="29" unique_id=888675605]
+root_node = NodePath("../AnimationPlayer3")
+libraries/ = SubResource("AnimationLibrary_gw7p6")
+
+[node name="AnimationPlayer5" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="30" unique_id=2040262480]
+root_node = NodePath("../AnimationPlayer4")
+libraries/ = SubResource("AnimationLibrary_cuqb5")
+
+[node name="AnimationPlayer6" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="31" unique_id=131893848]
+root_node = NodePath("../AnimationPlayer5")
+libraries/ = SubResource("AnimationLibrary_gjs8x")
+
+[node name="Labels5" type="Label" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="32" unique_id=1966663267]
+offset_left = 647.0
+offset_top = 129.0
+offset_right = 670.0
+offset_bottom = 150.0
+text = "C ↑"
+label_settings = SubResource("LabelSettings_gjs8x")
+
+[node name="Labels6" type="Label" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="33" unique_id=583283719]
+offset_left = 697.0
+offset_top = 129.0
+offset_right = 720.0
+offset_bottom = 150.0
+text = "Y ↑"
+label_settings = SubResource("LabelSettings_gjs8x")
+
+[node name="MapOver" parent="." index="5" unique_id=495730745]
+tile_map_data = PackedByteArray("AAABABAAAAAFAAIAAAACABAAAAAFAAIAAAADABAAAAAFAAIAAAAEABAAAAAFAAIAAAAFABAAAAAFAAIAAAAGABAAAAAFAAIAAAAHABAAAAAEAAgAAAAIABAAAAAFAAgAAAAJABAAAAAFAAgAAAAKABAAAAAFAAgAAAALABAAAAAFAAgAAAAMABAAAAAFAAgAAAANABAAAAAFAAgAAAAOABAAAAAFAAgAAAAPABAAAAAFAAgAAAAQABAAAAAFAAgAAAARABAAAAAFAAgAAAASABAAAAAFAAgAAAATABAAAAAFAAgAAAAUABAAAAAFAAgAAAAVABAAAAAFAAgAAAAWABAAAAAFAAgAAAAXABAAAAAFAAgAAAAYABAAAAAFAAgAAAAZABAAAAAFAAgAAAAaABAAAAAFAAgAAAAbABAAAAAFAAgAAAAcABAAAAAFAAgAAAAdABAAAAAFAAgAAAAdAAkAAAARAAIAAAAdAAgAAAAFAAYAAAAdAAcAAAAFAAgAAAAdAAYAAAARAAEAAAAdAAAAAAAFAAYAAAACAAAAAAAFAAYAAAADAAAAAAAFAAYAAAAEAAAAAAAFAAYAAAAFAAAAAAAFAAYAAAAGAAAAAAAFAAYAAAAHAAAAAAAFAAYAAAAIAAAAAAAFAAYAAAAJAAAAAAAFAAYAAAAKAAAAAAAFAAYAAAALAAAAAAAFAAYAAAAMAAAAAAAFAAYAAAANAAAAAAAFAAYAAAAOAAAAAAAFAAYAAAAPAAAAAAAFAAYAAAAQAAAAAAAFAAYAAAARAAAAAAAFAAYAAAASAAAAAAAFAAYAAAATAAAAAAAFAAYAAAAUAAAAAAAFAAYAAAAVAAAAAAAFAAYAAAAWAAAAAAAFAAYAAAAXAAAAAAAFAAYAAAAYAAAAAAAFAAYAAAAZAAAAAAAFAAYAAAAaAAAAAAAFAAYAAAAbAAAAAAAFAAYAAAAcAAAAAAAFAAYAAAAAABAAAAAFAAIAAAAAAA8AAAAFAAIAAAAAAA4AAAAFAAIAAAAAAA0AAAAEAAgAAAAAAAwAAAAEAAcAAAAAAAsAAAAEAAcAAAAAAAoAAAAEAAcAAAAAAAkAAAAEAAcAAAAAAAgAAAAEAAcAAAAAAAcAAAAEAAcAAAAAAAYAAAAEAAcAAAAAAAUAAAAEAAcAAAAAAAMAAAAEAAcAAAAAAAQAAAAEAAcA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AAAvAA8AAAARAAEAAAAwAA8AAAARAAEAAAAxAA8AAAARAAEAAAAyAA8AAAARAAEAAAAzAA8AAAARAAEAAAA0AA8AAAARAAEAAAA1AA8AAAARAAEAAAA2AA8AAAARAAEAAAA3AA8AAAARAAEAAAA4AA8AAAAQAAMAAAA9AA8AAAARAAEAAAA+AA8AAAARAAEAAAA/AA8AAAARAAEAAABAAA8AAAARAAEAAABBAA8AAAARAAEAAABCAA8AAAARAAEAAABDAA8AAAARAAEAAABEAA8AAAARAAEAAABFAA8AAAARAAEAAABGAA8AAAARAAEAAABHAA8AAAARAAEAAAAaAAcAAAAQAAIAAAAaAAgAAAAQAAIAAAAbAAcAAAAEAAEAAAAcAAcAAAAFAAgAAAAeAAcAAAAFAAgAAAAfAAcAAAAFAAgAAAAgAAcAAAAFAAgAAAAjAAcAAAAGAAEAAAAhAAcAAAAFAAgAAAAiAAcAAAAFAAgAAAAcAAgAAAAFAAYAAAAeAAgAAAAFAAYAAAAfAAgAAAAGAAYAAAAiAAgAAAAFAAYAAAAjAAgAAAAGAAMAAAAbAAgAAAAEAAMAAAAbAAkAAAARAAIAAAAcAAkAAAARAAIAAAAeAAkAAAAQAAQAAAAiAAkAAAARAAQAAAAjAAkAAAARAAIAAAAkAAcAAAAQAAEAAAAkAAgAAAAQAAEAAAAbAAYAAAARAAEAAAAcAAYAAAARAAEAAAAeAAYAAAARAAEAAAAfAAYAAAARAAEAAAAgAAYAAAARAAEAAAAhAAYAAAARAAEAAAAiAAYAAAARAAEAAAAjAAYAAAARAAEAAAAaAAsAAAAQAAIAAAAaAAwAAAAQAAIAAAAbAAoAAAARAAEAAAAbAAsAAAAEAAEAAAAbAAwAAAAEAAMAAAAbAA0AAAARAAIAAAAcAAoAAAARAAEAAAAcAAsAAAAGAAEAAAAcAAwAAAAGAAMAAAAcAA0AAAARAAIAAAAYAA8AAAARAAEAAAAZAA8AAAARAAEAAAAcAA8AAAARAAEAAAAdAA8AAAARAAEAAAAfAA8AAAARAAEAAAAgAA8AAAARAAEAAAAiAA8AAAARAAEAAAAjAA8AAAARAAEAAAAdAAsAAAAQAAEAAAAdAAwAAAAQAAEAAAAeAAoAAAAQAAIAAAAeAAsAAAAQAAIAAAAfAAsAAAAEAAMAAAAgAAsAAAAFAAYAAAAhAAsAAAAGAAMAAAAfAAoAAAAGAAcAAAAfAAkAAAAGAAcAAAAgAAgAAAAFAAIAAAAhAAgAAAAEAAYAAAAhAAkAAAAEAAcAAAAhAAoAAAAEAAcAAAAgAAoAAAAFAAIAAAAgAAkAAAAFAAIAAAAiAAoAAAAQAAEAAAAiAAsAAAAQAAEAAAAnAAQAAAAGAAcAAAAnAAMAAAAGAAcAAAAnAAIAAAAGAAcAAAAnAAEAAAAGAAcAAAAmAAEAAAAQAAIAAAAmAAIAAAAQAAIAAAAmAAMAAAAQAAIAAAAmAAQAAAAQAAIAAAAoAAEAAAAEAAcAAAAoAAIAAAAEAAcAAAAoAAMAAAAEAAcAAAAoAAQAAAAEAAgAAAApAAQAAAAFAAgAAAAqAAQAAAAFAAgAAAArAAQAAAAFAAgAAAAsAAQAAAAFAAgAAAAtAAQAAAAGAAEAAAAtAAUAAAAGAAMAAAAsAAUAAAAFAAYAAAArAAUAAAAFAAYAAAAqAAUAAAAFAAYAAAApAAUAAAAFAAYAAAAoAAUAAAAFAAYAAAAnAAUAAAAEAAMAAAAmAAUAAAAQAAIAAAAnAAYAAAARAAIAAAAoAAYAAAARAAIAAAApAAYAAAARAAIAAAAqAAYAAAARAAIAAAArAAYAAAARAAIAAAAsAAYAAAARAAIAAAAtAAYAAAARAAIAAAAnAAoAAAAEAAEAAAAoAAoAAAAFAAgAAAApAAoAAAAFAAgAAAAqAAoAAAAFAAgAAAArAAoAAAAFAAgAAAAsAAoAAAAFAAgAAAAtAAoAAAAGAAEAAAAnAAsAAAAEAAMAAAAoAAsAAAAFAAMAAAApAAsAAAAFAAMAAAAqAAsAAAAFAAMAAAArAAsAAAAFAAMAAAAsAAsAAAAFAAMAAAAtAAsAAAAGAAMAAAA5AAcAAAAEAAEAAAA5AAgAAAAGAAcAAAA5AAkAAAAGAAcAAAA5AAoAAAAGAAcAAAA5AAsAAAAGAAcAAAA5AAwAAAAGAAcAAAA5AA0AAAAGAAcAAAA5AA4AAAAGAAcAAAA5AA8AAAAGAAcAAAA5ABAAAAAGAAgAAAA6AAYAAAARAAEAAAA6AAcAAAAGAAEAAAA6AAgAAAAEAAcAAAA6AAkAAAAEAAcAAAA6AAoAAAAEAAcAAAA6AAsAAAAEAAcAAAA6AAwAAAAEAAcAAAA6AA0AAAAEAAcAAAA6AA4AAAAEAAcAAAA6AA8AAAAEAAcAAAA6ABAAAAAEAAgAAAA7AAcAAAAQAAEAAAA7AAgAAAAQAAEAAAA7AAkAAAAQAAEAAAA7AAoAAAAQAAEAAAA7AAsAAAAQAAEAAAA7AAwAAAAQAAEAAAA7AA0AAAAQAAEAAAA7AA4AAAAQAAEAAAA7AA8AAAARAAMAAAA7ABAAAAAFAAgAAAA4AAcAAAAQAAIAAAA4AAgAAAAQAAIAAAA4AAkAAAAQAAIAAAA4AAoAAAAQAAIAAAA4AAsAAAAQAAIAAAA4AAwAAAAQAAIAAAA4AA0AAAAQAAIAAAA4AA4AAAAQAAIAAAA5AAYAAAARAAEAAAA8AA8AAAARAAEAAAA8ABAAAAAFAAgAAAA=")
+
+[node name="Player" parent="." index="6" unique_id=1531806938]
+position = Vector2(36, 187)
+
+[node name="End" parent="." index="7" unique_id=1391488673]
+position = Vector2(1153, -1)
