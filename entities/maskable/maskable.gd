@@ -2,7 +2,7 @@ class_name Maskable
 extends AnimatableBody2D
 
 
-@export var unmaskable := false
+@export var inverse_mask := false
 @export var red_mask := false
 @export var green_mask := false
 @export var blue_mask := false
@@ -59,15 +59,20 @@ func _ready() -> void:
 	_on_mask_changed(true, true, true)
 
 
+func get_mask_count() -> int:
+	return (
+		int(inverse_mask)
+		+ int(red_mask and Manager.red_mask)
+		+ int(green_mask and Manager.green_mask)
+		+ int(blue_mask and Manager.blue_mask)
+	)
+
+
 func is_included() -> bool:
 	if Engine.is_editor_hint():
 		return true
 	else:
-		return unmaskable or bool(
-			int(red_mask and Manager.red_mask)
-			^ int(green_mask and Manager.green_mask)
-			^ int(blue_mask and Manager.blue_mask)
-		)
+		return get_mask_count() % 2 == 1
 
 
 # -- Masking logic! --
@@ -130,13 +135,13 @@ func reset_mask(chaining := true):
 		for maskable: Maskable in intersecting:
 			maskable.reset_mask(false)
 
-	if not is_included():
+	if get_mask_count() == 0:
 		divisions = {}
 		for collider: CollisionShape2D in colliders:
 			collider.set_deferred("disabled", true)
 		return
 
-	divisions = {global_rect: 1}
+	divisions = {global_rect: get_mask_count()}
 	for maskable: Maskable in intersecting:
 		if not maskable.is_included():
 			continue
