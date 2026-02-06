@@ -2,6 +2,7 @@ class_name Maskable
 extends AnimatableBody2D
 
 
+@export var unmaskable := false
 @export var red_mask := false
 @export var green_mask := false
 @export var blue_mask := false
@@ -62,10 +63,10 @@ func is_included() -> bool:
 	if Engine.is_editor_hint():
 		return true
 	else:
-		return (
-			(red_mask and Manager.red_mask)
-			or (green_mask and Manager.green_mask)
-			or (blue_mask and Manager.blue_mask)
+		return unmaskable or bool(
+			int(red_mask and Manager.red_mask)
+			^ int(green_mask and Manager.green_mask)
+			^ int(blue_mask and Manager.blue_mask)
 		)
 
 

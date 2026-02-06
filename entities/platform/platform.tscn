@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8vvea"]
 radius = 0.01
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_te5fq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vvea"]
 resource_local_to_scene = true
 size = Vector2(40, 8)
 
@@ -25,7 +25,7 @@ disabled = true
 position = Vector2(16, 0)
 
 [node name="CollisionShape" parent="MaskArea" index="0" unique_id=1575829748]
-shape = SubResource("RectangleShape2D_te5fq")
+shape = SubResource("RectangleShape2D_8vvea")
 
 [node name="TileMap" type="TileMapLayer" parent="." index="2" unique_id=1359034309]
 modulate = Color(0.5, 0.5, 0.5, 1)
