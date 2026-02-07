@@ -45,16 +45,16 @@ position = Vector2(491, 218)
 position = Vector2(528, 218)
 
 [node name="Cube" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="8" unique_id=753110043]
-position = Vector2(152, 12)
+position = Vector2(152, 20)
 
 [node name="Cube2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="9" unique_id=1165295968 instance=ExtResource("4_qswil")]
-position = Vector2(392, 13)
+position = Vector2(392, 20)
 
 [node name="Cube3" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="10" unique_id=1049064767 instance=ExtResource("4_qswil")]
-position = Vector2(312, 12)
+position = Vector2(312, 20)
 
 [node name="Cube4" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="11" unique_id=564126512 instance=ExtResource("4_qswil")]
-position = Vector2(235, 14)
+position = Vector2(232, 20)
 
 [node name="PlatformRed" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="12" unique_id=1702604198]
 position = Vector2(112, 48)

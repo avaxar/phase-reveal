@@ -5,6 +5,9 @@
 [ext_resource type="Shader" uid="uid://21wl3seiu3vh" path="res://entities/cube/rotsprite.gdshader" id="2_sftye"]
 [ext_resource type="AudioStream" uid="uid://cn0any51pnkna" path="res://entities/cube/crush.ogg" id="4_sftye"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sftye"]
+rough = true
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t2xqw"]
 shader = ExtResource("2_sftye")
 shader_parameter/pixel_scale = 1.0
@@ -18,9 +21,14 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="Gradient" id="Gradient_t2xqw"]
 colors = PackedColorArray(0.30588236, 0.32941177, 0.44705883, 1, 0.7529412, 0.79607844, 0.8627451, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sftye"]
+size = Vector2(4, 4)
+
 [node name="Cube" type="RigidBody2D" unique_id=753110043]
 collision_layer = 8
+physics_material_override = SubResource("PhysicsMaterial_sftye")
 can_sleep = false
+continuous_cd = 2
 script = ExtResource("1_nub1p")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=150811230]
@@ -30,11 +38,8 @@ texture = ExtResource("2_nub1p")
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=96503316]
 shape = SubResource("RectangleShape2D_t2xqw")
 
-[node name="InsideCast" type="RayCast2D" parent="." unique_id=1852668682]
-target_position = Vector2(4, -4)
-hit_from_inside = true
-
 [node name="Particles" type="CPUParticles2D" parent="." unique_id=305829891]
+z_index = 2
 emitting = false
 amount = 128
 lifetime = 0.25
@@ -53,3 +58,11 @@ hue_variation_max = 1.0
 
 [node name="CrushSFX" type="AudioStreamPlayer2D" parent="." unique_id=828164520]
 stream = ExtResource("4_sftye")
+
+[node name="SuffocationThreshold" type="Area2D" parent="." unique_id=1800929038]
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="SuffocationThreshold" unique_id=1113207280]
+shape = SubResource("RectangleShape2D_sftye")
+
+[connection signal="body_entered" from="SuffocationThreshold" to="." method="_on_suffocation_threshold_body_entered"]

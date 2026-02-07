@@ -36,7 +36,6 @@ const LAND = preload("uid://ckx4byg0e8lwi")
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var hitbox: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var box_detector: Area2D = $BoxDetector
-@onready var inside_cast: RayCast2D = $InsideCast
 @onready var walking_particles: Node2D = $WalkingParticles
 @onready var jumping_particles: Node2D = $JumpingParticles
 
@@ -69,13 +68,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not is_dead:
-		inside_cast.force_raycast_update()
-
-		# Suffocation                  # Out-of-bounds
-		if inside_cast.is_colliding() or position.y < 0 or position.y > 270:
-			# Force disables the collisions right in this instant
-			collision_layer = 0
-			collision_mask = 0
+		# Out-of-bounds
+		if global_position.y < 0 or global_position.y > 270:
+			is_dead = true
 			Manager.emit_on_player_death()
 
 	update_debug_label()
@@ -91,6 +86,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	handle_anim()
 	was_on_floor = is_on_floor()
+
+
+func _on_suffocation_threshold_body_entered(_body: Node2D) -> void:
+	if not is_dead:
+		collision_mask = 0
+		collision_layer = 0
+		Manager.emit_on_player_death()
 
 
 func handle_fall(delta: float) -> void:

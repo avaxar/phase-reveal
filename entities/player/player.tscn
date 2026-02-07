@@ -261,6 +261,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1qjk"]
+radius = 4.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qiwj3"]
 radius = 8.0
 height = 18.0
@@ -287,6 +290,12 @@ position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_26q78")
 animation = &"jump"
 autoplay = "jump"
+
+[node name="SuffocationThreshold" type="Area2D" parent="." unique_id=1631727826]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuffocationThreshold" unique_id=1632051528]
+shape = SubResource("CircleShape2D_a1qjk")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1603256221]
 collision_layer = 0
@@ -321,10 +330,6 @@ collision_mask = 8
 position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_qiwj3")
 
-[node name="InsideCast" type="RayCast2D" parent="." unique_id=179094371]
-target_position = Vector2(4, -4)
-hit_from_inside = true
-
 [node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=1032654813]
 volume_db = -3.0
 
@@ -343,4 +348,5 @@ position = Vector2(0, 7)
 [node name="JumpingParticles" parent="." unique_id=1335473961 instance=ExtResource("12_a1qjk")]
 position = Vector2(0, 4)
 
+[connection signal="body_entered" from="SuffocationThreshold" to="." method="_on_suffocation_threshold_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
