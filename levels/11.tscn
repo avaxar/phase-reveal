@@ -787,7 +787,7 @@ triggered_animation_name = "6"
 can_stop = false
 
 [node name="FButton5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="4" unique_id=972851228 node_paths=PackedStringArray("triggered_doors", "animation_player") instance=ExtResource("2_6ook0")]
-position = Vector2(1392, 64)
+position = Vector2(1398, 64)
 triggered_doors = [NodePath("../Door")]
 animation_player = NodePath("../AnimationPlayer7")
 triggered_animation_name = "7"
@@ -829,7 +829,7 @@ position = Vector2(1778, 63)
 position = Vector2(67, 201)
 
 [node name="Cube2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="13" unique_id=959049210 instance=ExtResource("4_cqdum")]
-position = Vector2(1475, 81)
+position = Vector2(1387, 73)
 
 [node name="PlatformRed" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="14" unique_id=1702604198]
 position = Vector2(318, 132)
