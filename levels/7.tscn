@@ -914,19 +914,19 @@ bottom_right = Vector2i(36, 116)
 [node name="PlatformBlue5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="40" unique_id=1403296475 instance=ExtResource("5_ap5sr")]
 position = Vector2(24, 115)
 tile_size = Vector2i(1, 0)
-red_mask = true
+green_mask = true
 bottom_right = Vector2i(20, 4)
 
 [node name="PlatformBlue7" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="41" unique_id=457789864 instance=ExtResource("5_ap5sr")]
 position = Vector2(1017, 226)
 tile_size = Vector2i(1, 0)
-green_mask = true
+blue_mask = true
 bottom_right = Vector2i(20, 4)
 
 [node name="PlatformBlue6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="42" unique_id=372785310 instance=ExtResource("5_ap5sr")]
 position = Vector2(22, 227)
 tile_size = Vector2i(1, 0)
-blue_mask = true
+red_mask = true
 bottom_right = Vector2i(20, 4)
 
 [node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="43" unique_id=653193485 instance=ExtResource("5_ap5sr")]
