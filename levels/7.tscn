@@ -904,32 +904,50 @@ red_mask = true
 blue_mask = true
 bottom_right = Vector2i(4, 68)
 
-[node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="39" unique_id=1068155548 instance=ExtResource("5_ap5sr")]
+[node name="PlatformBlue8" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="39" unique_id=516786492 instance=ExtResource("5_ap5sr")]
+position = Vector2(51, 15)
+tile_size = Vector2i(0, 7)
+green_mask = true
+bottom_right = Vector2i(4, 116)
+
+[node name="PlatformBlue9" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="40" unique_id=1837810173 instance=ExtResource("5_ap5sr")]
+position = Vector2(51, 148)
+tile_size = Vector2i(0, 7)
+red_mask = true
+bottom_right = Vector2i(4, 116)
+
+[node name="PlatformBlue10" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="41" unique_id=1158009023 instance=ExtResource("5_ap5sr")]
+position = Vector2(1005, 143)
+tile_size = Vector2i(0, 7)
+blue_mask = true
+bottom_right = Vector2i(4, 116)
+
+[node name="PlatformBlue2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="42" unique_id=1068155548 instance=ExtResource("5_ap5sr")]
 position = Vector2(273, 14)
 tile_size = Vector2i(2, 7)
 red_mask = true
 green_mask = true
 bottom_right = Vector2i(36, 116)
 
-[node name="PlatformBlue5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="40" unique_id=1403296475 instance=ExtResource("5_ap5sr")]
+[node name="PlatformBlue5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="43" unique_id=1403296475 instance=ExtResource("5_ap5sr")]
 position = Vector2(24, 115)
 tile_size = Vector2i(1, 0)
 green_mask = true
 bottom_right = Vector2i(20, 4)
 
-[node name="PlatformBlue7" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="41" unique_id=457789864 instance=ExtResource("5_ap5sr")]
+[node name="PlatformBlue7" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="44" unique_id=457789864 instance=ExtResource("5_ap5sr")]
 position = Vector2(1017, 226)
 tile_size = Vector2i(1, 0)
 blue_mask = true
 bottom_right = Vector2i(20, 4)
 
-[node name="PlatformBlue6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="42" unique_id=372785310 instance=ExtResource("5_ap5sr")]
+[node name="PlatformBlue6" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="45" unique_id=372785310 instance=ExtResource("5_ap5sr")]
 position = Vector2(22, 227)
 tile_size = Vector2i(1, 0)
 red_mask = true
 bottom_right = Vector2i(20, 4)
 
-[node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="43" unique_id=653193485 instance=ExtResource("5_ap5sr")]
+[node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="46" unique_id=653193485 instance=ExtResource("5_ap5sr")]
 position = Vector2(273, -5)
 tile_size = Vector2i(2, 1)
 red_mask = true
@@ -937,44 +955,44 @@ green_mask = true
 blue_mask = true
 bottom_right = Vector2i(36, 20)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="44" unique_id=37292866]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="47" unique_id=37292866]
 root_node = NodePath("../PlatformBlue")
 libraries/ = SubResource("AnimationLibrary_680f1")
 autoplay = &"1"
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="45" unique_id=182421336]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="48" unique_id=182421336]
 root_node = NodePath("../AnimationPlayer")
 libraries/ = SubResource("AnimationLibrary_ap5sr")
 autoplay = &"2"
 
-[node name="AnimationPlayer3" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="46" unique_id=873891864]
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="49" unique_id=873891864]
 root_node = NodePath("../AnimationPlayer2")
 libraries/ = SubResource("AnimationLibrary_ig6bu")
 autoplay = &"3"
 
-[node name="AnimationPlayer4" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="47" unique_id=1984073638]
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="50" unique_id=1984073638]
 root_node = NodePath("../AnimationPlayer3")
 libraries/ = SubResource("AnimationLibrary_hr737")
 autoplay = &"4"
 
-[node name="AnimationPlayer5" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="48" unique_id=1456117034]
+[node name="AnimationPlayer5" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="51" unique_id=1456117034]
 root_node = NodePath("../AnimationPlayer4")
 libraries/ = SubResource("AnimationLibrary_b7gcx")
 
-[node name="AnimationPlayer6" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="49" unique_id=1437793903]
+[node name="AnimationPlayer6" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="52" unique_id=1437793903]
 root_node = NodePath("../AnimationPlayer5")
 libraries/ = SubResource("AnimationLibrary_ry1c8")
 
-[node name="AnimationPlayer7" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="50" unique_id=1316723890]
+[node name="AnimationPlayer7" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="53" unique_id=1316723890]
 root_node = NodePath("../AnimationPlayer6")
 libraries/ = SubResource("AnimationLibrary_68xvo")
 
-[node name="AnimationPlayer8" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="51" unique_id=1715310247]
+[node name="AnimationPlayer8" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="54" unique_id=1715310247]
 root_node = NodePath("../AnimationPlayer7")
 libraries/ = SubResource("AnimationLibrary_xmk87")
 autoplay = &"8"
 
-[node name="AnimationPlayer9" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="52" unique_id=1833169774]
+[node name="AnimationPlayer9" type="AnimationPlayer" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="55" unique_id=1833169774]
 root_node = NodePath("../AnimationPlayer8")
 libraries/ = SubResource("AnimationLibrary_7bdkx")
 autoplay = &"9"
