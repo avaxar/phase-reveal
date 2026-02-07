@@ -88,10 +88,10 @@ tile_size = Vector2i(1, 1)
 bottom_right = Vector2i(20, 20)
 
 [node name="PlatformGreen2" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="15" unique_id=164794446 instance=ExtResource("2_wamqt")]
-position = Vector2(470, 115)
-tile_size = Vector2i(1, 1)
+position = Vector2(447, 115)
+tile_size = Vector2i(2, 1)
 green_mask = true
-bottom_right = Vector2i(20, 20)
+bottom_right = Vector2i(36, 20)
 
 [node name="PlatformGreen5" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="16" unique_id=1156115867 instance=ExtResource("2_wamqt")]
 position = Vector2(515, 57)
