@@ -28,7 +28,7 @@ func emit_on_player_death() -> void: # Play the transition here!
 	reset_level()
 	loading = false
 
-func emit_on_level_start() -> void: 
+func emit_on_level_start() -> void:
 	on_level_start.emit(current_level)
 
 
@@ -155,7 +155,7 @@ func _on_mask_changed(red_changed: bool, green_changed: bool, blue_changed: bool
 		create_tween().tween_property(self , "blue_volume", ON_DB if blue_mask else OFF_DB, MUSIC_TRANS)
 
 func load_levels(saved_levels: Dictionary) -> void:
-	var new_levels : Dictionary[PackedScene, bool] = {}
+	var new_levels: Dictionary[PackedScene, bool] = {}
 	for scene in levels.keys():
 		if saved_levels.has(scene):
 			new_levels[scene] = saved_levels[scene]
@@ -166,7 +166,7 @@ func load_levels(saved_levels: Dictionary) -> void:
 func load_progress() -> void:
 	if ResourceLoader.exists(PROGRESS_PATH):
 		var prr: ProgressRevealResource = load(PROGRESS_PATH)
-		if prr: 
+		if prr:
 			load_levels(prr.levels)
 			ColorBlind.type = prr.colorblind_type
 

@@ -75,9 +75,8 @@ func _physics_process(delta: float) -> void:
 
 	update_debug_label()
 	handle_fall(delta)
-	if can_move:
-		handle_jump()
-		handle_movement()
+	handle_jump()
+	handle_movement()
 	handle_flip()
 
 	if velocity.y > terminal_velocity:
@@ -113,6 +112,9 @@ func handle_fall(delta: float) -> void:
 
 
 func handle_jump() -> void:
+	if is_dead or not can_move:
+		return
+
 	if Input.is_action_just_pressed("jump"):
 		if jump_available:
 			jump()
@@ -122,10 +124,12 @@ func handle_jump() -> void:
 
 
 func handle_movement() -> void:
-	if is_dead:
-		return
+	var direction: float
+	if is_dead or not can_move:
+		direction = 0.0
+	else:
+		direction = Input.get_axis("left", "right")
 
-	var direction := Input.get_axis("left", "right")
 	velocity.x = direction * speed
 	if !is_zero_approx(velocity.x) and is_on_floor():
 		walking_particles.get_child(0).emitting = true
