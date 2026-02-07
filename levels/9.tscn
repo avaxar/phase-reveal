@@ -89,7 +89,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_3culr"]
 resource_name = "3"
-length = 3.25
+length = 2.75
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -98,7 +98,7 @@ tracks/0/path = NodePath("PlatformWhite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.999, 1),
+"times": PackedFloat32Array(0, 0.749, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(188, 400), Vector2(188, 400), Vector2(188, 246)]
@@ -110,7 +110,7 @@ tracks/1/path = NodePath("PlatformWhite2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.999, 2),
+"times": PackedFloat32Array(0, 1.499, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(188, 400), Vector2(188, 400), Vector2(188, 230)]
@@ -122,7 +122,7 @@ tracks/2/path = NodePath("PlatformGreen:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.75, 3, 3.25),
+"times": PackedFloat32Array(0, 2.1499999, 2.25, 2.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(198, 242), Vector2(198, 242), Vector2(198, 200), Vector2(198, 242)]

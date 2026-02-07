@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck64da4a2rbqv" path="res://entities/cube/cube.gd" id="1_nub1p"]
 [ext_resource type="Texture2D" uid="uid://jloggkyyrogs" path="res://entities/cube/cube.png" id="2_nub1p"]
-[ext_resource type="Shader" uid="uid://21wl3seiu3vh" path="res://entities/cube/rotsprite.gdshader" id="2_sftye"]
+[ext_resource type="Shader" path="res://entities/cube/rotsprite.gdshader" id="2_sftye"]
 [ext_resource type="AudioStream" uid="uid://cn0any51pnkna" path="res://entities/cube/crush.ogg" id="4_sftye"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sftye"]
