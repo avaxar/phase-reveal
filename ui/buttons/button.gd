@@ -6,7 +6,7 @@ class_name GameButton
 @export var scale_size: Vector2 = Vector2(1.5, 1.5)
 @export var label_text: String = ""
 
-@onready var label: Label = $TextureButton/Label
+@onready var label: Label = get_node_or_null("TextureButton/Label")
 @onready var texture_button: TextureButton = $TextureButton
 
 signal on_button_hover
@@ -19,7 +19,7 @@ var tween: Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if !label_text.is_empty():
+	if label != null and !label_text.is_empty():
 		label.text = label_text
 	original_scale = texture_button.scale
 	original_position = texture_button.position
