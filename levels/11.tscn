@@ -1044,19 +1044,19 @@ root_node = NodePath("../AnimationPlayer6")
 libraries/ = SubResource("AnimationLibrary_eoaf7")
 
 [node name="Labels5" type="Label" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="53" unique_id=1966663267]
-offset_left = 647.0
-offset_top = 129.0
-offset_right = 670.0
-offset_bottom = 150.0
-text = "C ↑"
+offset_left = 652.0
+offset_top = 132.0
+offset_right = 675.0
+offset_bottom = 153.0
+text = "C ↕"
 label_settings = SubResource("LabelSettings_gjs8x")
 
 [node name="Labels6" type="Label" parent="Objects" parent_id_path=PackedInt32Array(1284680800) index="54" unique_id=583283719]
 offset_left = 696.0
-offset_top = 132.0
+offset_top = 131.0
 offset_right = 719.0
-offset_bottom = 153.0
-text = "Y ↑"
+offset_bottom = 152.0
+text = "Y ↕"
 label_settings = SubResource("LabelSettings_gjs8x")
 
 [node name="MapOver" parent="." index="5" unique_id=495730745]
