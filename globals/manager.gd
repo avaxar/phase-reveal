@@ -14,9 +14,7 @@ var current_level := 1
 func _ready() -> void:
 	load_progress()
 
-func reset_level() -> void:
-	attempts += 1
-	load_level(current_level)
+# Signal Emits
 
 func emit_on_player_death() -> void: # Play the transition here!
 	if loading:
@@ -31,6 +29,11 @@ func emit_on_player_death() -> void: # Play the transition here!
 func emit_on_level_start() -> void:
 	on_level_start.emit(current_level)
 
+
+# --- Level Manager ---
+func reset_level() -> void:
+	attempts += 1
+	load_level(current_level)
 
 func get_level_total() -> int:
 	return levels.size()
@@ -51,6 +54,13 @@ func load_next_level() -> void: # Loads the next level
 func is_level_available(level: int) -> bool:
 	return levels.values()[level - 1]
 
+func is_all_complete() -> bool:
+	for level in levels:
+		if levels[level] == true:
+			continue
+		else:
+			return false
+	return true
 
 func unlock_level(level: int):
 	levels[levels.keys()[level - 1]] = true
@@ -66,6 +76,8 @@ func _unhandled_input(event: InputEvent):
 		for level in levels:
 			levels[level] = true
 		get_tree().change_scene_to_packed(TITLE_SCREEN)
+	if event.is_action_pressed("play_outro") and is_all_complete():
+		play_outro()
 
 # --- Persisting mechanics ---
 
