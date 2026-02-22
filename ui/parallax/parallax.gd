@@ -6,5 +6,6 @@ func _enter_tree() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func setup_parallax(level_number: int) -> void:
-	for parallax: Parallax2D in get_children():
-		parallax.scroll_offset.x += offset_amount * level_number
+	for child: Node2D in get_children():
+		if child is Parallax2D:
+			child.scroll_offset.x += offset_amount * level_number

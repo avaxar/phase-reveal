@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3fqkueu71rf2" path="res://entities/door/door.tscn" id="3_680f1"]
 [ext_resource type="PackedScene" uid="uid://dfe3nvn1lo8gt" path="res://entities/cube/cube.tscn" id="4_1x3l0"]
 [ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="5_ap5sr"]
+[ext_resource type="PackedScene" uid="uid://1n25hj14qhsf" path="res://ambients/monkey_pop_up.tscn" id="6_kudwh"]
 
 [sub_resource type="Animation" id="Animation_kfrw4"]
 resource_name = "1"
@@ -1005,3 +1006,22 @@ position = Vector2(575, 19)
 
 [node name="End" parent="." index="7" unique_id=1391488673]
 position = Vector2(1057, 3)
+
+[node name="MonkeyPopUp" parent="." index="9" unique_id=1278913399 instance=ExtResource("6_kudwh")]
+position = Vector2(201, 68)
+
+[node name="MonkeyPopUp2" parent="." index="10" unique_id=1361114496 instance=ExtResource("6_kudwh")]
+position = Vector2(84, 181)
+rotation = -1.5707964
+
+[node name="MonkeyPopUp3" parent="." index="11" unique_id=873997361 instance=ExtResource("6_kudwh")]
+position = Vector2(216, 204)
+rotation = 3.1415927
+
+[node name="MonkeyPopUp4" parent="." index="12" unique_id=706645251 instance=ExtResource("6_kudwh")]
+position = Vector2(592, 76)
+rotation = 3.1415927
+
+[node name="MonkeyPopUp5" parent="." index="13" unique_id=407764157 instance=ExtResource("6_kudwh")]
+position = Vector2(660, 183)
+rotation = -1.5707964

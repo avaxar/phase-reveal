@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://de3blgwwsaqma"]
+
+[ext_resource type="Script" uid="uid://cnxbs6c70c1xo" path="res://ambients/monkey_swing.gd" id="1_ww4fe"]
+[ext_resource type="Texture2D" uid="uid://bqxbhsj0n8p46" path="res://ambients/ambient_monkey_swing_sheet.png" id="1_xcqwa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m18jp"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(0, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tf5m"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(272, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu1xy"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(544, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2u3t"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(816, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofjkp"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(1088, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhn52"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(1360, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqwur"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(1632, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nobvb"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(1904, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awvib"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(2176, 0, 272, 222)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdxeg"]
+atlas = ExtResource("1_xcqwa")
+region = Rect2(2448, 0, 272, 222)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xd8b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m18jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tf5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu1xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2u3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofjkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhn52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqwur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nobvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awvib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdxeg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MonkeySwing" type="Node2D" unique_id=1702440024]
+script = ExtResource("1_ww4fe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=205610329]
+visible = false
+position = Vector2(1, 61)
+sprite_frames = SubResource("SpriteFrames_7xd8b")
+frame = 9
+frame_progress = 1.0
+
+[node name="Timer" type="Timer" parent="." unique_id=790253106]
+one_shot = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

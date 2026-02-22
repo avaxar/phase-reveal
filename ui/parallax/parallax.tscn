@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cqcax806lv5mj" path="res://ui/parallax/back2.png" id="2_cb12t"]
 [ext_resource type="Texture2D" uid="uid://di7wsudx8ew55" path="res://ui/parallax/back3.png" id="3_lpc38"]
 [ext_resource type="Texture2D" uid="uid://b4pk8ycd00ipx" path="res://ui/parallax/back4.png" id="4_r2pce"]
+[ext_resource type="PackedScene" uid="uid://de3blgwwsaqma" path="res://ambients/monkey_swing.tscn" id="6_2umfq"]
 
 [node name="Parallax" type="Node2D" unique_id=1614897716]
 script = ExtResource("1_sxcf4")
@@ -45,3 +46,25 @@ repeat_size = Vector2(1920, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=499484108]
 position = Vector2(960, 135)
 texture = ExtResource("4_r2pce")
+
+[node name="MonkeySwings" type="Node2D" parent="." unique_id=1475333184]
+
+[node name="MonkeySwing" parent="MonkeySwings" unique_id=1702440024 instance=ExtResource("6_2umfq")]
+z_index = -2
+position = Vector2(120, 0)
+
+[node name="MonkeySwing2" parent="MonkeySwings" unique_id=1412124684 instance=ExtResource("6_2umfq")]
+z_index = -2
+position = Vector2(480, 0)
+
+[node name="MonkeySwing3" parent="MonkeySwings" unique_id=728528549 instance=ExtResource("6_2umfq")]
+z_index = -2
+position = Vector2(904, 0)
+
+[node name="MonkeySwing4" parent="MonkeySwings" unique_id=1962905714 instance=ExtResource("6_2umfq")]
+z_index = -2
+position = Vector2(1318, 0)
+
+[node name="MonkeySwing5" parent="MonkeySwings" unique_id=1419747046 instance=ExtResource("6_2umfq")]
+z_index = -2
+position = Vector2(1728, 0)

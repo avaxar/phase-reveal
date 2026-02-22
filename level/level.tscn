@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://c6bve3aguyrjg" path="res://level/tileset.tres" id="2_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://dfe3nvn1lo8gt" path="res://entities/cube/cube.tscn" id="4_6gtgk"]
 [ext_resource type="PackedScene" uid="uid://cufhrm7smx58x" path="res://entities/platform/platform.tscn" id="5_cw150"]
-[ext_resource type="Shader" uid="uid://4j5wbt6no0ji" path="res://level/passthrough_visualizer.gdshader" id="5_ivpvi"]
+[ext_resource type="Shader" path="res://level/passthrough_visualizer.gdshader" id="5_ivpvi"]
 [ext_resource type="PackedScene" uid="uid://b7sawdtg0b2mv" path="res://entities/player/player.tscn" id="5_ktfr2"]
 [ext_resource type="PackedScene" uid="uid://bnnfsc0sh8514" path="res://ui/hud/hud.tscn" id="7_ivpvi"]
 [ext_resource type="PackedScene" uid="uid://c2xyo4rwn443e" path="res://ui/pause/pause_menu.tscn" id="10_cw150"]
